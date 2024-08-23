@@ -1,28 +1,80 @@
-document.getElementById('formulario_ingreso').addEventListener('submit', function(event)){
-    document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function() {
+    const ingBtn = document.getElementById('ingBtn');
+  
+    ingBtn.addEventListener('click', (event) => {
+      event.preventDefault(); // Evita que el formulario se envíe
+  
+      const usuario = document.getElementById('usuario').value;
+      const contrasena = document.getElementById('contrasena').value;
+      const checkbox = document.getElementById("ingreso").checked;
+  
+      if (usuario.length > 0 && contrasena.length > 0) {
+             if (checkbox) {
+                localStorage.setItem('usuarioLogeado', usuario);
+                console.log("funcionachk");
+                  
+            }
+            localStorage.setItem('logueado', 'true');
 
-        const form = document.querySelector("#formulario_ingreso form");
-        const usuarioInput = document.getElementById("usuario");
-        const contrasenaInput = document.getElementById("contrasena");
+      }
+      setTimeout(() => {
+            window.location.href = 'index.html';
+        }, 1000);
+      console.log('Usuario:', usuario);
+      console.log('Contraseña:', contrasena);
+      console.log(checkbox);
       
-        // eventlistener para el form
-        form.addEventListener("submit", function (event) {
-          // Check if the input fields are empty
-          if (usuarioInput.value.trim() === "" || contrasenaInput.value.trim() === "") {
-            // Prevent form submission
-            event.preventDefault();
-            // mensaje de alerta
-            alert("Por favor, complete todos los campos antes de continuar.");
-          }
-        });
-      });
+    });
+  });
+// document.getElementById('formulario_ingreso').addEventListener('submit', function(event) {
+//     document.addEventListener("DOMContentLoaded", function () {
+// console.log('entro');
+
+//         const form = document.querySelector("#formulario_ingreso form");
+//         const usuarioInput = document.getElementById("usuario");
+//         const contrasenaInput = document.getElementById("contrasena");
+        
+      
+//         // eventlistener para el form
+//         form.addEventListener("submit", function (event) {
+//           // Check if the input fields are empty
+//           if (usuarioInput.value.trim() === "" || contrasenaInput.value.trim() === "") {
+//             // Prevent form submission
+//             console.log('entro');
+//             event.preventDefault();
+//             // mensaje de alerta
+//             alert("Por favor, complete todos los campos antes de continuar.");
+//           }
+//         });
+//       })});
       
 
-    /*const password1 = document.getElementById('password1').value;
-    const password2 = document.getElementById('password2').value;
-    const passwordHelp = document.getElementById('passwordHelp');
+    //   const usuario = document.getElementById('usuario').value.trim();
+    //   const password = document.getElementById('password1').value.trim();
+    //   const checkbox = document.getElementById("ingreso");
+  
+    //   // Verificar que los campos no estén vacíos
+    //   if (usuario && password) {
+    //       if (checkbox.checked) {
+    //           localStorage.setItem('usuarioLogeado', usuario);
+    //           localStorage.setItem('logueado', 'true');
+    //           console.log("funcionachk");
+              
+    //       }
+    //       showAlertSuccess();
+  
+    //       // Redirigir después de 1 segundo
+    //       setTimeout(() => {
+    //           window.location.href = 'index.html';
+    //       }, 1000);
+    //   } else {
+    //       showAlertError(); // Mostrar mensaje de error si los campos están vacíos
+    //   }
+    // /*const password1 = document.getElementById('password1').value;
+    // const password2 = document.getElementById('password2').value;
+    // const passwordHelp = document.getElementById('passwordHelp');
     
-    let formValid = true;*/
+    // let formValid = true;*/
 
     /*/ codigo reutilizable de la tarea anterior --- Validación de la contraseña
     if (password1.length < 6) {

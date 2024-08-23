@@ -11,4 +11,10 @@ document.addEventListener("DOMContentLoaded", function(){
         localStorage.setItem("catID", 103);
         window.location = "products.html"
     });
+    window.onload = function(){
+        const logueado = localStorage.getItem('logueado');
+        if (logueado !== 'true'){
+            window.location = '/login.html';
+        }
+   }
 });
