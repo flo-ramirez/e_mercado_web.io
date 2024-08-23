@@ -1,8 +1,8 @@
-document.getElementById('registroForm').addEventListener('submit', function(event) {
+document.getElementById('formulario_ingreso').addEventListener('submit', function(event) {
     const password1 = document.getElementById('password1').value;
     const password2 = document.getElementById('password2').value;
     const passwordHelp = document.getElementById('passwordHelp');
-    const checkbox = document.getElementById("terminos");
+    const checkbox = document.getElementById("ingrreso");
     const mensajeError = document.getElementById("mensajeError");
     let formValid = true;
 
