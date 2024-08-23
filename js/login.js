@@ -1,13 +1,28 @@
-document.getElementById('formulario_ingreso').addEventListener('submit', function(event) {
-    const usuario = document.getElementById('usuario');
-    const contrasena = document.getElementById('contrasena');
+document.getElementById('formulario_ingreso').addEventListener('submit', function(event)){
+    document.addEventListener("DOMContentLoaded", function () {
 
-    const password1 = document.getElementById('password1').value;
+        const form = document.querySelector("#formulario_ingreso form");
+        const usuarioInput = document.getElementById("usuario");
+        const contrasenaInput = document.getElementById("contrasena");
+      
+        // eventlistener para el form
+        form.addEventListener("submit", function (event) {
+          // Check if the input fields are empty
+          if (usuarioInput.value.trim() === "" || contrasenaInput.value.trim() === "") {
+            // Prevent form submission
+            event.preventDefault();
+            // mensaje de alerta
+            alert("Por favor, complete todos los campos antes de continuar.");
+          }
+        });
+      });
+      
+
+    /*const password1 = document.getElementById('password1').value;
     const password2 = document.getElementById('password2').value;
     const passwordHelp = document.getElementById('passwordHelp');
-    const checkbox = document.getElementById("ingreso");
-    const mensajeError = document.getElementById("mensajeError");
-    let formValid = true;
+    
+    let formValid = true;*/
 
     /*/ codigo reutilizable de la tarea anterior --- Validación de la contraseña
     if (password1.length < 6) {
@@ -35,7 +50,6 @@ document.getElementById('formulario_ingreso').addEventListener('submit', functio
     } else {
         showAlertSuccess();
     }
-});
 
 function showAlertSuccess() {
     document.getElementById("alert-success").classList.add("show");
@@ -43,5 +57,8 @@ function showAlertSuccess() {
 
 function showAlertError() {
     document.getElementById("alert-danger").classList.add("show");
-    */
+    
 }
+});
+*/ 
+
