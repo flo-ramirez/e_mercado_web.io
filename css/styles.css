@@ -193,3 +193,10 @@ form{
   background-color: rgb(243, 230, 205);
   
 }
+
+.card-img-top {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: bottom center; 
+}
