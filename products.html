@@ -9,57 +9,92 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/autos.css" rel="stylesheet">
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
-    <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav w-100 justify-content-between">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="categories.html">Categorías</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="sell.html">Vender</a>
-          </li>
-          <li class="nav-item">
-          </li>
-        </ul>
-      </div>
+    <main>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="categories.html">Catálogo</a></li>
+                <li><a href="#">Promociones</a></li>
+                <li><a href="#">Sobre nosotros</a></li>
+                <li><a href="#">Preguntas frecuentes</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="sell.html">Vender</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="logo-container">
+      <img src="jap.png" alt="Jovenes a Programar">
+    </div>
+
+    <div class="emercado">
+      <img src="EMercado.png" alt="e mercado">
     </div>
   </nav>
   <main class="pb-5 container">
-    <div class="container mt-5">
-      <div id="productos" class="row"></div>
-    </div>
-  </main>
-  <footer class="text-muted">
     <div class="container">
-      <p class="float-end">
-        <a href="#">Volver arriba</a>
-      </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
+      <div class="alert alert-danger text-center" role="alert">
+        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+      </div>
     </div>
-  </footer>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+        
+    <div class="filters">
+       <button>Filtros</button>
     </div>
-  </div>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/products.js"></script>
-</body>
 
+    <div class="product-card">
+      <p>50921</p>
+      <hr>
+      <img src="img/prod50921_1.jpg" alt="Chevrolet Onix Joy">
+      <h2>Chevrolet Onix Joy</h2>
+      <p class="description">Generación 2019, variedad de colores. Motor 1.0, ideal para ciudad.</p>
+      <p class="value">Precio: <br>usd 13500</p>
+      <p class="units">Vendidos: <br>52 un.</p>
+    </div>    
+    <div class="product-card">
+      <p>50922</p>
+      <hr>
+      <img src="img/prod50922_1.jpg" alt="Fiat Way">
+      <h2>Fiat Way</h2>
+      <p class="description">La versión de Fiat que brinda confort y a un precio accesible.</p>
+      <p class="value">Precio: <br>usd 14500</p>
+      <p class="units">Vendidos: <br>52 un.</p>
+      </div>
+    <div class="product-card">
+      <p>50923</p>
+      <hr>
+      <img src="img/prod50923_3.jpg" alt="Suzuki Celerio">
+      <h2>Suzuki Celerio</h2>
+      <p class="description">Un auto que se ha ganado la buena fama por su economía con el combustible.</p>
+      <p class="value">Precio: <br>usd 12500</p>
+      <p class="units">Vendidos: <br>25 un.</p>  
+      </div>
+    <div class="product-card">
+      <p>50924</p>
+      <hr>
+      <img src="img/prod50924_1.jpg" alt="Peugeot 208">
+      <h2>Peugeot 208</h2>
+      <p class="description">El modelo de auto que se sigue renovando y manteniendo su prestigio en comodidad.</p>
+      <p class="value">Precio: <br>usd 15200</p>
+      <p class="units">Vendidos: <br>17 un.</p>
+    </div>
+    <div class="product-card">
+      <p>50925</p>
+      <hr>
+      <img src="img/prod50925_2.jpg" alt="Bugatti Chiron">
+      <h2>Bugatti Chiron</h2>
+      <p class="description">El mejor hiperdeportivo de mundo. Producción limitada a 500 unidades</p>
+      <p class="value">Precio: <br> usd 3500000</p>
+      <p class="units">Vendidos: <br>112 un.</p>  
+      </div>
+      
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/init.js"></script>
+      <script src="js/product-info.js"></script>
+</body>
 </html>
