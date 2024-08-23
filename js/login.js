@@ -11,21 +11,24 @@ document.addEventListener('DOMContentLoaded', function() {
       if (usuario.length > 0 && contrasena.length > 0) {
              if (checkbox) {
                 localStorage.setItem('usuarioLogeado', usuario);
-                console.log("funcionachk");
-                  
             }
-            localStorage.setItem('logueado', 'true');
-
+        localStorage.setItem('logueado', 'true');
+        setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 1000);
+      }else {
+        showAlertError()
       }
-      setTimeout(() => {
-            window.location.href = 'index.html';
-        }, 1000);
-      console.log('Usuario:', usuario);
-      console.log('Contraseña:', contrasena);
-      console.log(checkbox);
+
       
     });
   });
+  function showAlertError() {
+    document.getElementById('pErrorLogin').innerHTML = "Debe completar los campos"
+    console.log("error");
+
+    
+}
 // document.getElementById('formulario_ingreso').addEventListener('submit', function(event) {
 //     document.addEventListener("DOMContentLoaded", function () {
 // console.log('entro');
@@ -107,10 +110,7 @@ function showAlertSuccess() {
     document.getElementById("alert-success").classList.add("show");
 }
 
-function showAlertError() {
-    document.getElementById("alert-danger").classList.add("show");
-    
-}
+
 });
 */ 
 
