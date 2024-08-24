@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>eMercado - Todo lo que busques está aquí</title>
+  <title>eMercado - Productos</title>
 
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -30,19 +30,25 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item">
-          </li>
         </ul>
       </div>
     </div>
   </nav>
-  <main class="pb-5 container">
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+
+  <main class="container py-5">
+    <div class="alert alert-danger text-center" role="alert">
+      <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+      <p>Estamos trabajando en esta sección, por favor, vuelve más tarde.</p>
+    </div>
+    <div class="album py-5 bg-light">
+      <div class="container">
+        <div class="row" id="products-container">
+          <!-- Los productos se cargarán aquí mediante JavaScript -->
+        </div>
       </div>
     </div>
   </main>
+
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">
@@ -51,6 +57,7 @@
       <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
     </div>
   </footer>
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
@@ -59,9 +66,65 @@
       <div></div>
     </div>
   </div>
+
   <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/products.js"></script>
+  <script src="js/products.js"></script> <!-- Incluye el script para cargar productos -->
+</footer>
+
+<!-- Incluyendo JSON directamente en el HTML -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // JSON de productos directamente en la página HTML
+    const products = [
+      
+        {
+            "image": "url_de_la_imagen_1",
+            "name": "Autos",
+            "description": "Descripción del producto 1",
+            "price": 200,
+            "sold_count": 50
+        }, {
+            "image": "url_de_la_imagen_2",
+            "name": "Juguetes",
+            "description": "Descripción del producto 2",
+            "price": 100,
+            "sold_count": 20
+        },
+        {
+            "image": "url_de_la_imagen_3",
+            "name": "Muebles",
+            "description": "Descripción del producto 3",
+            "price": 200,
+            "sol_count": 50
+        }
+    
+    
+    ];
+    let productsContainer = document.getElementById('products-container');
+    let productsHTML = '';
+
+    products.forEach(product => {
+      productsHTML += `
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img class="card-img-top" src="${product.image}" alt="${product.name}">
+            <div class="card-body">
+              <h5 class="card-title">${product.name}</h5>
+              <p class="card-text">${product.description}</p>
+              <p class="card-text"><strong>Precio:</strong> $${product.price}</p>
+              <p class="card-text"><small class="text-muted">Cantidad vendidos: ${product.sold_count}</small></p>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+
+    productsContainer.innerHTML = productsHTML;
+  });
+</script>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>

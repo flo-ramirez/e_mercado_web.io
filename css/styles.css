@@ -188,3 +188,37 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+/* Estilos para las tarjetas de productos */
+.card {
+  border: 1px solid #ddd; /* Borde de la tarjeta */
+  border-radius: 5px; /* Bordes redondeados */
+  overflow: hidden; /* Evita que el contenido se desborde */
+}
+
+.card-img-top {
+  height: 200px; /* Altura fija para las imágenes de los productos */
+  object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
+}
+
+.card-body {
+  padding: 1.25rem; /* Espaciado dentro de la tarjeta */
+}
+
+.card-title {
+  font-size: 1.25rem; /* Tamaño de la fuente del título */
+  margin-bottom: 0.5rem; /* Espacio debajo del título */
+}
+
+.card-text {
+  font-size: 1rem; /* Tamaño de la fuente de la descripción */
+  margin-bottom: 1rem; /* Espacio debajo de la descripción */
+}
+
+.card .d-flex {
+  justify-content: space-between; /* Alineación del precio y cantidad vendidos */
+}
+
+.card .text-muted {
+  color: rgb(40, 131, 40); /* Color del texto para información adicional */
+}
