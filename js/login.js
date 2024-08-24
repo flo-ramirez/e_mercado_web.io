@@ -8,39 +8,39 @@ document.addEventListener('DOMContentLoaded', function() {
       const contrasena = document.getElementById('contrasena').value;
       const checkbox = document.getElementById("ingreso").checked;
   
+
+      //log de ingreso 
       if (usuario.length > 0 && contrasena.length > 0) {
              if (checkbox) {
                 localStorage.setItem('usuarioLogeado', usuario);
+                console.log("funcionachk");
+                  
             }
-        localStorage.setItem('logueado', 'true');
-        setTimeout(() => {
-                window.location.href = 'index.html';
-            }, 1000);
-      }else {
-        showAlertError()
-      }
+            localStorage.setItem('logueado', 'true');
 
+      }
+      setTimeout(() => {
+            window.location.href = 'index.html';
+        }, 1000);
+      console.log('Usuario:', usuario);
+      console.log('Contraseña:', contrasena);
+      console.log(checkbox);
       
     });
   });
-  function showAlertError() {
-    document.getElementById('pErrorLogin').innerHTML = "Debe completar los campos"
-    console.log("error");
 
-    
-}
+
 // document.getElementById('formulario_ingreso').addEventListener('submit', function(event) {
 //     document.addEventListener("DOMContentLoaded", function () {
 // console.log('entro');
 
 //         const form = document.querySelector("#formulario_ingreso form");
 //         const usuarioInput = document.getElementById("usuario");
-//         const contrasenaInput = document.getElementById("contrasena");
-        
-      
+//         const contrasenaInput = document.getElementById("contrasena")
+
 //         // eventlistener para el form
 //         form.addEventListener("submit", function (event) {
-//           // Check if the input fields are empty
+//           // chequea que los campos no esten vacios
 //           if (usuarioInput.value.trim() === "" || contrasenaInput.value.trim() === "") {
 //             // Prevent form submission
 //             console.log('entro');
@@ -110,7 +110,10 @@ function showAlertSuccess() {
     document.getElementById("alert-success").classList.add("show");
 }
 
-
+function showAlertError() {
+    document.getElementById("alert-danger").classList.add("show");
+    
+}
 });
 */ 
 
