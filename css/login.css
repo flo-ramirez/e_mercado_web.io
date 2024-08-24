@@ -1,102 +1,111 @@
-/* Estilo basco para todo el sitio */
+/* Estilo basico para todo el sitio */
 body {
-    background-color: #FFF5E4;
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-  }
-  
-  /* asegura que ocupe casi todo el espacio */
-  main {
-    flex: 1; /* deja el footer en la parte inferior */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-  
-  /* Footer */
-  footer {
-    background-color: #f8f9fa;
-    width: 100%; /* para que se extienda todo el ancho de la web */
-    padding: 20px 0;
-    text-align: center;
-  }
-  
-  footer p {
-    margin: 0;
-  }
-  
-  footer .container {
-    max-width: 400px; /* alinear el ancho con el del formulario */
-    margin: auto;
-  }
-  
-  footer a {
-    color: #007bff; /* visibiliad del link */
-    text-decoration: none;
-  }
-  
-  footer a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Ccontainer */
-  .container {
-    background-color: #FFF5E4;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    text-align: center;
-    max-width: 400px;
-    width: 100%;
-  }
+  background-color: #FFF5E4;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
 
-  
-  form {
-    margin-top: 20px;
-  }
-  
-  label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-align: left;
-  }
-  
-  input[type="text"],
-  input[type="password"] {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  input[type="checkbox"] {
-    margin-right: 10px;
-  }
-  
-  button {
-    background-color: #FBB03B;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  button:hover {
-    background-color: #E89B2C;
-  }
-  
-  .footer img {
-    width: 50px;
-    height: auto;
-    margin-top: 10px;
-  }
+/* asegura que ocupe casi todo el espacio */
+main {
+  flex: 1; /* deja el footer en la parte inferior */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Footer */
+footer {
+  background-color: #fff; /* Cambiado a blanco */
+  width: 100%; /* Para que se extienda todo el ancho de la web */
+  padding: 10px 0; /* Reducido el padding para que el contenido esté en una sola línea */
+  text-align: center;
+  display: flex; /* Flex para centrar el contenido */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  font-size: 14px; /* Ajustar el tamaño de la fuente si es necesario */
+}
+
+footer p {
+  margin: 0;
+  padding: 0;
+}
+
+footer .container {
+  max-width: 100%; /* Eliminar el límite del ancho para el contenedor */
+  margin: 0;
+}
+
+footer a {
+  color: #007bff; /* Visibilidad del link */
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Container */
+.container {
+  background-color: #FFF5E4;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center; /* Centrar el texto del formulario */
+  max-width: 400px;
+  width: 100%;
+}
+
+form {
+  margin-top: 20px;
+  text-align: center; /* Centrar el texto dentro del formulario */
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center; /* Centrar el texto del label */
+}
+
+input[type="text"],
+input[type="password"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center; /* Centrar el texto en los campos de entrada */
+}
+
+input[type="checkbox"] {
+  margin-left: 10px;
+}
+
+#ingBtn {
+  background-color: #FBB03B;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#ingBtn:hover {
+  background-color: #E89B2C;
+}
+
+.footer img {
+  width: 50px;
+  height: auto;
+  margin-top: 10px;
+}
+.col-sm-6{
+  align-items: center;
+}
