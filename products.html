@@ -9,7 +9,8 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/products.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -30,21 +31,20 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="my-profile.html">Perfil</a>
+          </li>
+          <li class="nav-item">
+          </li>
         </ul>
       </div>
     </div>
   </nav>
+  <img src="img/productslogo.png" class="imageProductsLogo img-fluid">
+  <main class="pb-5 container">
+    <div class="container mt-5">
+      <div id="productos" class="row card-list">
 
-  <main class="container py-5">
-    <div class="alert alert-danger text-center" role="alert">
-      <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      <p>Estamos trabajando en esta sección, por favor, vuelve más tarde.</p>
-    </div>
-    <div class="album py-5 bg-light">
-      <div class="container">
-        <div class="row" id="products-container">
-          <!-- Los productos se cargarán aquí mediante JavaScript -->
-        </div>
       </div>
     </div>
   </main>
@@ -68,63 +68,8 @@
   </div>
 
   <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/products.js"></script> <!-- Incluye el script para cargar productos -->
-</footer>
-
-<!-- Incluyendo JSON directamente en el HTML -->
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    // JSON de productos directamente en la página HTML
-    const products = [
-      
-        {
-            "image": "url_de_la_imagen_1",
-            "name": "Autos",
-            "description": "Descripción del producto 1",
-            "price": 200,
-            "sold_count": 50
-        }, {
-            "image": "url_de_la_imagen_2",
-            "name": "Juguetes",
-            "description": "Descripción del producto 2",
-            "price": 100,
-            "sold_count": 20
-        },
-        {
-            "image": "url_de_la_imagen_3",
-            "name": "Muebles",
-            "description": "Descripción del producto 3",
-            "price": 200,
-            "sol_count": 50
-        }
-    
-    
-    ];
-    let productsContainer = document.getElementById('products-container');
-    let productsHTML = '';
-
-    products.forEach(product => {
-      productsHTML += `
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" src="${product.image}" alt="${product.name}">
-            <div class="card-body">
-              <h5 class="card-title">${product.name}</h5>
-              <p class="card-text">${product.description}</p>
-              <p class="card-text"><strong>Precio:</strong> $${product.price}</p>
-              <p class="card-text"><small class="text-muted">Cantidad vendidos: ${product.sold_count}</small></p>
-            </div>
-          </div>
-        </div>
-      `;
-    });
-
-    productsContainer.innerHTML = productsHTML;
-  });
-</script>
-
-<script src="js/bootstrap.bundle.min.js"></script>
-
+  <script src="js/init.js"></script>
+  <script src="js/produ  cts.js"></script>
+  <script src="https://kit.fontawesome.com/59c8fae222.js" crossorigin="anonymous"></script>
 </body>
-
 </html>
