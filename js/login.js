@@ -12,11 +12,12 @@ document.addEventListener('DOMContentLoaded', function() {
       // Verifica que ambos campos estén completos
       if (usuario.length > 0 && contrasena.length > 0) {
         if (checkbox) {
+          // Guarda los datos solo si el checkbox está marcado
           localStorage.setItem('usuarioLogeado', usuario);
+          localStorage.setItem('logueado', 'true');
         }
-        localStorage.setItem('logueado', 'true');
   
-        // Redirige a index.html después de 1 segundo
+        // Redirige a index.html después de 1 segundo si ambos campos están completos
         setTimeout(() => {
           window.location.href = 'index.html';
         }, 1000);
@@ -27,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
       console.log('Usuario:', usuario);
       console.log('Contraseña:', contrasena);
-      console.log(checkbox);
+      console.log('Checkbox marcado:', checkbox);
     });
   
     function showToast() {
