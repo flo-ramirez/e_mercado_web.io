@@ -52,7 +52,7 @@ footer a:hover {
 
 /* Container */
 .container {
-  background-color: #FFF5E4;
+  background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 30px;
@@ -108,4 +108,19 @@ input[type="checkbox"] {
 }
 .col-sm-6{
   align-items: center;
+}
+
+
+.toast {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centra el toast */
+  z-index: 1050; /* Asegura que esté por encima de otros elementos */
+  opacity: 0; /* Comienza invisible */
+  transition: opacity 0.5s ease; /* Suaviza la aparición y desaparición */
+}
+
+.toast.show {
+  opacity: 1; /* Muestra el toast */
 }
