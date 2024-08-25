@@ -116,6 +116,22 @@ div.formulario_ingreso{
   display: block;
   text-align: center;
 }
+
+
+.toast {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centra el toast */
+  z-index: 1050; /* Asegura que esté por encima de otros elementos */
+  opacity: 0; /* Comienza invisible */
+  transition: opacity 0.5s ease; /* Suaviza la aparición y desaparición */
+}
+
+.toast.show {
+  opacity: 1; /* Muestra el toast */
+}
+
 form {
     display: inline-block;
     margin-left: auto;
@@ -127,4 +143,5 @@ form {
   position: absolute;
   text-align: center;
 }
+
 
