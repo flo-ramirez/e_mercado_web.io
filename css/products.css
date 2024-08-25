@@ -3,6 +3,18 @@ body {
     background-color: #f9f9f9;
 }
 
+.navbar {
+  font-family: 'Verdana', serif !important;
+}
+
+.jumbotron .display-4 {
+  font-weight: bold;
+}
+
+nav a {
+  text-decoration: none;
+}
+
 header {
     background-color: #000;
     padding: 10px 0;
