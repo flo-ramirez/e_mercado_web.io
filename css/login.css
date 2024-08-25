@@ -1,6 +1,6 @@
 /* Estilo basico para todo el sitio */
 body {
-  background-color: #FFF5E4;
+  background-color: #FFF0D9;
   font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column;
@@ -52,7 +52,7 @@ footer a:hover {
 
 /* Container */
 .container {
-  background-color: #ffffff;
+  background-color: #FFF0D9;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 30px;
@@ -107,7 +107,14 @@ input[type="checkbox"] {
   margin-top: 10px;
 }
 .col-sm-6{
-  align-items: center;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+div.formulario_ingreso{
+  display: block;
+  text-align: center;
 }
 
 
@@ -124,3 +131,17 @@ input[type="checkbox"] {
 .toast.show {
   opacity: 1; /* Muestra el toast */
 }
+
+form {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#ingreso{
+  position: absolute;
+  text-align: center;
+}
+
+
