@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function(){
     // Verificar si el usuario está logueado antes de cargar cualquier otra cosa
     const logueado = localStorage.getItem('logueado');
     if (logueado !== 'true'){
-        window.location.href = '/login.html';
+        window.location.href = '/index.html';
         return; // Detiene la ejecución del resto del código si el usuario no está logueado
     }
 
