@@ -14,9 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
         if (checkbox) {
           // Guarda los datos solo si el checkbox está marcado
           localStorage.setItem('usuarioLogeado', usuario);
-          localStorage.setItem('logueado', 'true');
+          
         }
-  
+        localStorage.setItem('logueado', 'true');
         // Redirige a index.html después de 1 segundo si ambos campos están completos
         setTimeout(() => {
           window.location.href = 'index.html';
