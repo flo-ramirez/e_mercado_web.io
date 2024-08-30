@@ -4,30 +4,14 @@ document.addEventListener("DOMContentLoaded", function() {
   
     ingBtn.addEventListener("click", (event) => {
       event.preventDefault(); // Evita que el formulario se envíe
-  
-<<<<<<< Updated upstream
       const usuario = document.getElementById("usuario").value.trim();
       const contrasena = document.getElementById("contrasena").value.trim();
       const checkbox = document.getElementById("ingreso").checked;
   
       // Verifica que ambos campos estén completos
       if (usuario.length > 0 && contrasena.length > 0) {
-        if (checkbox) {
-          // Guarda los datos solo si el checkbox está marcado
-          localStorage.setItem("usuarioLogeado", usuario);
-          
-    
+        localStorage.setItem("usuarioLogeado", usuario);
         localStorage.setItem("logueado", "true");
-=======
-      const usuario = document.getElementById('usuario').value.trim();
-      const contrasena = document.getElementById('contrasena').value.trim();
-      // const checkbox = document.getElementById("ingreso").checked; funcionalidad en pausa
-   
-      // Verifica que ambos campos estén completos
-      if (usuario.length > 0 && contrasena.length > 0) {
-        localStorage.setItem('usuarioLogeado', usuario);
-        localStorage.setItem('logueado', 'true');
->>>>>>> Stashed changes
         // Redirige a index.html después de 1 segundo si ambos campos están completos
         setTimeout(() => {
           window.location.href = "index.html";
@@ -36,13 +20,6 @@ document.addEventListener("DOMContentLoaded", function() {
         // Muestra el cartel flotante si faltan datos
         showToast();
       }
-<<<<<<< Updated upstream
-  
-      console.log("Usuario:", usuario);
-      console.log("Contraseña:", contrasena);
-      console.log("Checkbox marcado:", checkbox);
-=======
->>>>>>> Stashed changes
     });
   
     function showToast() {

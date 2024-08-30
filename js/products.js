@@ -27,8 +27,7 @@ document.addEventListener('DOMContentLoaded', function(){
                                 </div>
                             </div>
                         </div>
-                    </div>`;
-                    console.log("funciona");                    
+                    </div>`;              
                     productosContainer.innerHTML+= cardHTML
         });
     })        
