@@ -10,20 +10,20 @@ document.addEventListener('DOMContentLoaded', function(){
             data.products.forEach(product => {
                 // Crear el HTML para cada tarjeta
                 const cardHTML = `
-                    <div class="col-md-4 mb-4 wow">
+                    <div class="col-md-4 mb-4 wow col-12 col-md-6 col-lg">
                         <div class="card pruebaCard">
                             <img src="${product.image}" class="card-img-top" alt="${product.name}">
-                            <div class="card-body">
+                            <div class="card-body"> 
                                 <div class="row">
                                     <div class="col-9"><h3 class="card-title">${product.name}</h3></div>
                                     <div class="col-3 text-end"><a class="fa-solid fa-bag-shopping h3 comprarIcon" href="cart.html"></a></div>
                                 </div>
                                     <p class="card-text descripcionCard">${product.description}</p>
                                 <div class="row">
-                                    <p class="card-text priceCard col-6"><strong>Precio: </strong></p><p class="card-text priceCard col-6 text-end">${product.cost} ${product.currency}</p>
+                                    <p class="card-text priceCard col-12"><strong>Precio: ${product.cost} ${product.currency} </strong></p>
                                 </div>
                                 <div class="row">
-                                    <p class="card-text cantCard col-6"><strong>Cantidad Vendidos:</strong></p> <p class="card-text cantCard col-6 text-end">${product.soldCount}</p>
+                                    <p class="card-text cantCard col-12"><strong>Cantidad Vendidos: ${product.soldCount}</strong></p>
                                 </div>
                             </div>
                         </div>

@@ -41,6 +41,8 @@ nav a {
   font-weight: bold;
 }
 
+
+
 @media (min-width: 768px) {
   .jumbotron {
     padding-top: 6rem;
@@ -200,3 +202,4 @@ form{
   object-fit: cover;
   object-position: bottom center; 
 }
+  

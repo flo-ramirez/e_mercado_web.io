@@ -50,6 +50,9 @@ body {
             transform: scale(1.20);
         }
 }
+.card-body{
+    height: 200px;
+}
 
 .pruebaCard {
     background-color: white;
@@ -64,3 +67,33 @@ body {
 .card-list:has(div.wow:hover) div.wow:not(:hover) {
   filter: blur(4px)
 }
+
+@media (max-width: 768px) {
+    .card-title {
+        font-size: 1.25rem;
+    }
+
+    .descripcionCard,
+    .priceCard,
+    .cantCard {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .descripcionCard,
+    .priceCard,
+    .cantCard {
+        font-size: 0.8rem;
+    }
+    .imageProductsLogo {
+        padding:20px;
+        max-width: 100%;
+        display: block;
+    }
+}
+
