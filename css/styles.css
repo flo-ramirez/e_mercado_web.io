@@ -5,57 +5,19 @@
   font-family: 'Verdana', serif !important;
 }
 
-.jumbotron .display-4 {
-  font-weight: bold;
-}
-
-nav a {
-  text-decoration: none;
-}
-
-.bd-placeholder-img {
-  font-size: 1.125rem;
-  text-anchor: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-@media (min-width: 768px) {
-  .bd-placeholder-img-lg {
-    font-size: 3.5rem;
-  }
-}
-
 .jumbotron {
   height: 50vh;
-  padding: 5em inherit;
+  padding: 5em;
   margin-bottom: 0;
   background-color: #53C0FB;
-  background: url('../img/cover_back.png');
+  background: url('../img/cover_back.png') no-repeat center center;
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   color: black;
   font-weight: bold;
 }
 
-
-
-@media (min-width: 768px) {
-  .jumbotron {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
-}
-
-.jumbotron p:last-child {
-  margin-bottom: 0;
-}
-
-.jumbotron-heading {
-  font-weight: 300;
+.jumbotron .display-4 {
+  font-weight: bold;
 }
 
 .jumbotron .container {
@@ -70,22 +32,52 @@ nav a {
 }
 
 footer {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding: 3rem 0;
 }
 
 footer p {
   margin-bottom: .25rem;
 }
 
-.site-header a {
-  color: white;
-  transition: ease-in-out color .15s;
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
-.site-header .dropdown-menu a {
-  color: black;
+.nav-item {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
 }
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.container{
+  margin: 1%;
+}
+
+
+.material-symbols-outlined {
+  font-size: 20px;
+  margin-right: 8px;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: bottom center;
+}
+
+#spnUsuario {
+  color: rgba(152, 152, 152, 0.328);
+  font-size: 16px;
+  padding-left: 100%;
 
 .dropzone {
   border: 2px dashed #0087F7;
@@ -114,16 +106,6 @@ footer p {
   left: 50%;
 }
 
-.cursor-active {
-  cursor: pointer;
-}
-
-.left {
-  float: left;
-  padding: 4px;
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
 .lds-ring div {
   box-sizing: border-box;
   display: block;
@@ -150,13 +132,8 @@ footer p {
 }
 
 @keyframes lds-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .signin {
@@ -191,15 +168,6 @@ a.custom-card:hover {
   color: orange;
 }
 
-form{
+form {
   background-color: rgb(243, 230, 205);
-  
 }
-
-.card-img-top {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  object-position: bottom center; 
-}
-  
