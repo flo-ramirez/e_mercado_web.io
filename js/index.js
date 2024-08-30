@@ -39,8 +39,6 @@ document.addEventListener("DOMContentLoaded", function(){
     })
 
     
-    
-
     // Lógica existente para manejar los clicks en las categorías
     document.getElementById("autos").addEventListener("click", function() {
         localStorage.setItem("catID", 101);

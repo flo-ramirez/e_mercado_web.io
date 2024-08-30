@@ -79,10 +79,6 @@ footer p {
   font-size: 16px;
   padding-left: 100%;
 
-.dropzone {
-  border: 2px dashed #0087F7;
-  border-radius: 5px;
-  background: white;
 }
 
 .img-fit {
@@ -170,4 +166,15 @@ a.custom-card:hover {
 
 form {
   background-color: rgb(243, 230, 205);
+}
+@media (max-width: 768px) {
+  #spnUsuario{
+    padding: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  #spnUsuario{
+    padding: 0;
+  }
 }

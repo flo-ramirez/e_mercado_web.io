@@ -10,6 +10,14 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/products.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <style>
+  .material-symbols-outlined {
+    font-size: 20px;
+    margin-top: 3px;
+  }
+  </style>
 
 </head>
 
@@ -38,7 +46,11 @@
             <a class="nav-link" href="cart.html">Carro</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="cart.html">Carro</a>
+            <a id="aLogout" class="nav-link d-flex align-items-center" href="login.html">
+              <span class="material-symbols-outlined">logout</span> Cerrar sesión
+            </a>
+          </li>
+          <li class="nav-item" id="liMostrarUsuario">
           </li>
         </ul>
       </div>
@@ -74,5 +86,6 @@
   <script src="js/init.js"></script>
   <script src="js/products.js"></script>
   <script src="https://kit.fontawesome.com/59c8fae222.js" crossorigin="anonymous"></script>
+  <script src="js/index.js"></script>
 </body>
 </html>
