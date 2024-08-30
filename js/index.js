@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function(){
     const aMostrarUsuario = document.getElementById("liMostrarUsuario");
     const Logout = document.getElementById("aLogout")
     if (logueado !== 'true'){
-        window.location.href = '/login.html';
+        window.location.href = 'login.html';
         return; // Detiene la ejecución del resto del código si el usuario no está logueado
     }
     else {
