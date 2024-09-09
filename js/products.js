@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function(){
                     productosContainer.innerHTML+= cardHTML
         });
 
-        // Redirigir al hacer clic en cualuier producto
+        // Redirigir al hacer clic en cualquier producto
         document.querySelectorAll('.pruebaCard').forEach(card => {
             card.addEventListener('click', function() {
                 const productId = this.getAttribute('data-id');
