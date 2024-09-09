@@ -30,6 +30,17 @@ document.addEventListener('DOMContentLoaded', function(){
                     </div>`;              
                     productosContainer.innerHTML+= cardHTML
         });
+
+        // Redirigir al hacer clic en cualuier producto
+        document.querySelectorAll('.pruebaCard').forEach(card => {
+            card.addEventListener('click', function() {
+                const productId = this.getAttribute('data-id');
+                // Guardar el ID del producto 
+                localStorage.setItem('selectedProductId', productId);
+                // Redirigir 
+                window.location.href = 'product-info.html';
+            });
+        });
     })        
     .catch(error => console.error("Error en el fetch de productos", error));
 });
