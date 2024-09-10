@@ -1,4 +1,4 @@
-//addEventListener para ubicar la id del producto, hacer la solicitud y obtener los datos del producto
+//addEventListener para ubicar la id del producto, hacer la solicitud y obtener los datos del articulo
 document.addEventListener('DOMContentLoaded', function() {
     // Recuperar el ID del producto desde el localStorage
     const productId = localStorage.getItem('selectedProductId');
