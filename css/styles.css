@@ -5,6 +5,13 @@
   font-family: 'Verdana', serif !important;
 }
 
+main{
+  background-image: url(../img/back.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
 .jumbotron {
   height: 50vh;
   padding: 5em;
@@ -175,5 +182,11 @@ form {
 @media (max-width: 576px) {
   #spnUsuario{
     padding: 0;
+  }
+  main{
+    background-image: url(../img/back-mobile.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
   }
 }
