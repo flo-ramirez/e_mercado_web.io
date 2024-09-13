@@ -64,3 +64,5 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     });
 });
+
+/*Teniamos dos DOM activos, lo que duplicaba las tarjetas. Unificando todo en un solo DOM reducimos código y evitamos la duplicación de tarjetas. */
