@@ -15,23 +15,24 @@ async function lista(url) {
 /* Maqueta de los productos */
 function getHTML(list) {
     return `
-                    <div class="p-3 mb-4 wow col-12 col-md-4 col-lg-3">
-                        <div class="card pruebaCard">
-                            <img src="${list.image}" class="card-img-top" alt="${list.name}">
-                            <div class="card-body"> 
-                                <div class="row">
-                                    <div class="col-9"><h3 class="card-title">${list.name}</h3></div>
-                                    <div class="col-3 text-end"><a class="fa-solid fa-bag-shopping h3 comprarIcon" href="cart.html"></a></div>
-                                </div>
-                                    <p class="card-text descripcionCard">${list.description}</p>
-                                <div class="row">
-                                    <p class="card-text priceCard col-12"><strong>Precio: ${list.cost} ${list.currency} </strong></p>
-                                </div>
-                                <div class="row">
-                                    <p class="card-text cantCard col-12"><strong>Cantidad Vendidos: ${list.soldCount}</strong></p>
-                                </div>
-                            </div>
-                        </div>
+        <div class="p-3 mb-4 wow col-12 col-md-4 col-lg-3">
+            <div class="card pruebaCard" data-id="${list.id}">
+                <img src="${list.image}" class="card-img-top" alt="${list.name}">
+                <div class="card-body"> 
+                    <div class="row">
+                        <div class="col-9"><h3 class="card-title">${list.name}</h3></div>
+                        <div class="col-3 text-end"><a class="fa-solid fa-bag-shopping h3 comprarIcon" href="cart.html"></a></div>
+                    </div>
+                    <p class="card-text descripcionCard">${list.description}</p>
+                    <div class="row">
+                        <p class="card-text priceCard col-12"><strong>Precio: ${list.cost} ${list.currency} </strong></p>
+                    </div>
+                    <div class="row">
+                        <p class="card-text cantCard col-12"><strong>Cantidad Vendidos: ${list.soldCount}</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     `;
 }
 
