@@ -11,12 +11,16 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/products.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@100..900&display=swap" rel="stylesheet">
   <style>
-  .material-symbols-outlined {
-    font-size: 20px;
-    margin-top: 3px;
-  }
+    .material-symbols-outlined {
+      font-size: 20px;
+      margin-top: 3px;
+    }
   </style>
 
 </head>
@@ -56,9 +60,35 @@
       </div>
     </div>
   </nav>
-  <img src="img/productslogo.png" class="imageProductsLogo img-fluid">
+  <div class="banner">
+    <img src="img/prod50925_1.jpg" alt="Imagen del banner">
+    <div class="banner-text">
+      <h1>Categoria autos</h1>
+    </div>
+  </div>
+  <!--  -->
   <main>
-    <div class="container mt-5">
+    <div class="container-fluid p-5">
+      <div class="textoYFiltros" style="border: 1px solid black;">
+        <p class="text">Nuestra seleccion de autos</p>
+        <div class="filtros" style="border: 1px solid rgb(179, 50, 50);">
+          <div class="porPrecio" style="border: 1px solid rgb(53, 149, 58);">
+            <label for="precio">Precio</label>
+            <input type="number" class="inputFiltro" id="precioMin" placeholder="Minimo">
+            <hr>
+            <input type="number"  class="inputFiltro" id="precioMax" placeholder="Maximo" >
+            <button class="btnFiltro" id="btnFiltro">Aplicar</button>
+          </div>
+          <div class="ordenar" style="border: 1px solid rgb(94, 53, 182);">
+            <label for="slcOrdenar">Ordenar por</label>
+            <select name="slcOrdenar" id="slcOrdenar">
+              <option value="menor">Menor Precio</option>
+              <option value="mayor">Mayor Precio</option>
+              <option value="menor">Mas relevantes</option>
+            </select>
+          </div>
+        </div>
+      </div>
       <div id="productos" class="row card-list">
       </div>
     </div>
@@ -69,7 +99,8 @@
       <p class="float-end">
         <a href="#">Volver arriba</a>
       </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
+      </p>
     </div>
   </footer>
 
@@ -89,4 +120,5 @@
   <script src="js/index.js"></script>
   <script src="js/logica-usuario.js"></script>
 </body>
+
 </html>
