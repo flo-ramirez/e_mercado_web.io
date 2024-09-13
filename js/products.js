@@ -15,26 +15,26 @@ async function lista(url) {
 /* Maqueta de los productos */
 function getHTML(list) {
     return `
-                    <div class="col-md-4 mb-4 wow col-12 col-md-6 col-lg">
-                        <div class="card pruebaCard">
-                            <img src="${list.image}" class="card-img-top" alt="${list.name}">
-                            <div class="card-body"> 
-                                <div class="row">
-                                    <div class="col-9"><h3 class="card-title">${list.name}</h3></div>
-                                    <div class="col-3 text-end"><a class="fa-solid fa-bag-shopping h3 comprarIcon" href="cart.html"></a></div>
-                                </div>
-                                    <p class="card-text descripcionCard">${list.description}</p>
-                                <div class="row">
-                                    <p class="card-text priceCard col-12"><strong>Precio: ${list.cost} ${list.currency} </strong></p>
-                                </div>
-                                <div class="row">
-                                    <p class="card-text cantCard col-12"><strong>Cantidad Vendidos: ${list.soldCount}</strong></p>
-                                </div>
-                            </div>
-                        </div>
+        <div class="col-md-4 mb-4 wow col-12 col-md-6 col-lg">
+            <div class="card pruebaCard" data-id="${list.id}">
+                <img src="${list.image}" class="card-img-top" alt="${list.name}">
+                <div class="card-body"> 
+                    <div class="row">
+                        <div class="col-9"><h3 class="card-title">${list.name}</h3></div>
+                        <div class="col-3 text-end"><a class="fa-solid fa-bag-shopping h3 comprarIcon" href="cart.html"></a></div>
                     </div>
-`
-};
+                    <p class="card-text descripcionCard">${list.description}</p>
+                    <div class="row">
+                        <p class="card-text priceCard col-12"><strong>Precio: ${list.cost} ${list.currency} </strong></p>
+                    </div>
+                    <div class="row">
+                        <p class="card-text cantCard col-12"><strong>Cantidad Vendidos: ${list.soldCount}</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+}
 
 
 /* Genera el título dinamicamente */
@@ -211,4 +211,25 @@ document.addEventListener("DOMContentLoaded", () => {
     if (localStorage.getItem("user") == null) {
         window.location = "index.html"
     };
+});
+
+/*guarda el id en local storage y redirige a prouct-indo*/
+document.addEventListener("DOMContentLoaded", async () => {
+    const list = await lista(productos);
+
+    list.forEach(element => {
+        let pag = getHTML(element);
+        document.getElementById("listaP").innerHTML += pag;
+    });
+
+    // Attach click event to each product card
+    document.querySelectorAll('.pruebaCard').forEach(card => {
+        card.addEventListener('click', function() {
+            const productId = this.getAttribute('data-id');
+            // Store the product ID in local storage
+            localStorage.setItem('selectedProductId', productId);
+            // Redirect to the product info page
+            window.location.href = 'product-info.html';
+        });
+    });
 });
