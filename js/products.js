@@ -15,7 +15,7 @@ async function lista(url) {
 /* Maqueta de los productos */
 function getHTML(list) {
     return `
-                    <div class="col-md-4 mb-4 wow col-12 col-md-6 col-lg">
+                    <div class="p-3 mb-4 wow col-12 col-md-4 col-lg-3">
                         <div class="card pruebaCard">
                             <img src="${list.image}" class="card-img-top" alt="${list.name}">
                             <div class="card-body"> 
