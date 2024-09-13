@@ -123,7 +123,7 @@ document.getElementById("minFiltro").value = "";
 })
 
 
-/* Filtra articulos de mander ascendente según su precio */
+/* Filtra articulos de manera ascendente según su precio */
 precioUp.addEventListener("click", async () => {
     const list = await lista(productos)
     let priceOrderAsc = list.sort((a, b) => {
@@ -190,15 +190,6 @@ buscador.addEventListener("keyup", async () => {
 });
 
 
-
-/* Deja en el local storage la información necesaria para ingresar al producto deseado tras su click */
-function setProdID(id) {
-    localStorage.setItem("selectedProductId", id);
-    window.location = "product-info.html"
-};
-
-
-
 /* Trae e imprime el username en la navbar */
 document.addEventListener("DOMContentLoaded", () => {
     const userHTML = document.getElementById("user")
@@ -213,7 +204,14 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 });
 
-/*guarda el id en local storage y redirige a prouct-indo*/
+
+/* Deja en el local storage la información necesaria para ingresar al producto deseado tras su click */
+function setProdID(id) {
+    localStorage.setItem("selectedProductId", id);
+    window.location = "product-info.html"
+};
+
+/*guarda el id en local storage y redirige a prouct-info*/
 document.addEventListener("DOMContentLoaded", async () => {
     const list = await lista(productos);
 
@@ -222,13 +220,13 @@ document.addEventListener("DOMContentLoaded", async () => {
         document.getElementById("listaP").innerHTML += pag;
     });
 
-    // Attach click event to each product card
+    // Click a la tarjeta
     document.querySelectorAll('.pruebaCard').forEach(card => {
         card.addEventListener('click', function() {
             const productId = this.getAttribute('data-id');
-            // Store the product ID in local storage
+            // Deja la id en local storage
             localStorage.setItem('selectedProductId', productId);
-            // Redirect to the product info page
+            // redirige a product-info
             window.location.href = 'product-info.html';
         });
     });
