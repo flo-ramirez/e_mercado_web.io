@@ -134,6 +134,7 @@ body {
 }
 input{
     width: 5rem;
+    align-items: center;
 }
 @media (max-width: 768px) {
     .card-title {
