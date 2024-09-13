@@ -61,16 +61,55 @@
     </div>
   </nav>
   <div class="banner">
-    <img src="img/prod50925_1.jpg" alt="Imagen del banner">
+    <img src="img/prod50925_1.jpg" alt="Imagen del banner" id="imagenTitulo">
     <div class="banner-text">
-      <h1>Categoria autos</h1>
+      <h1 id="titulo" style="color: goldenrod; font-weight: 600; font-size: 400%; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Categoria </h1>
     </div>
   </div>
   <!--  -->
   <main>
     <div class="container-fluid p-5">
-      <div class="textoYFiltros" style="border: 1px solid black;">
-        <p class="text">Nuestra seleccion de autos</p>
+      
+      <div class="textoYFiltros p-0" style="border: 1px solid black;">
+        <p class="text m-3" id="descripcion">Nuestra selección de </p>
+        <div class="container"> 
+          <div class="row">
+            <div class="col text-end">
+              <div class="btn-group btn-group-toggle mb-2 mt-5" data-bs-toggle="buttons" style="position: relative; right: 90px;">
+                <input type="radio" class="btn-check" name="options">
+                <label class="btn btn-light" for="sortAsc" style="color: #a57c15; font-weight: bold; border-color: gold;" id="precioUp">$<i class="fa-solid fa-arrow-down-short-wide" aria-hidden="true"></i></label>
+                <input type="radio" class="btn-check" name="options">
+                <label class="btn btn-light" for="sortDesc" style="color: #a57c15; font-weight: bold; border-color: gold;" id="precioDown">$<i class="fa-solid fa-arrow-up-wide-short" aria-hidden="true"></i></label>
+                <input type="radio" class="btn-check" name="options">
+                <label class="btn btn-light" for="sortByCount" style="color: #a57c15; font-weight: bold; border-color: gold;" id="filtroVentas"><i class="fa-solid fa-bag-shopping" aria-hidden="true"></i><i class="fa-solid fa-arrow-up-long" aria-hidden="true"></i></label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <input type="text" name="" id="buscador" class="form-control" placeholder="Filtrar por Nombre del Artículo" style="color: #a57c15; font-weight: bold; width: 35%; height: 45px; position:relative; left: 130px; border-color: gold;">
+            <div class="col-lg-6 mb-1 container">
+              <div class="row container p-0 m-0 ">
+                <div class="col">
+                  <p class="font-weight-normal text-end" style="color: #a57c15; font-weight: bold;">Rango de Precio</p>
+                </div>
+                <div class="col">
+                  <input class="form-control" type="number" placeholder="min." id="minFiltro" style="font-weight: bold; border-color: gold;">
+                </div>
+                <div class="col">
+                  <input class="form-control" type="number" placeholder="máx." id="maxFiltro" style="font-weight: bold; border-color: gold;">
+                </div>
+                <div class="col-3 p-0">
+                  <div class="btn-group" role="group">
+                    <button class="btn btn-light btn-block" id="botonFiltrar" style="color: #a57c15; font-weight: bold; border-color: gold;">Filtrar</button>
+                    <button class="btn btn-light btn-sm" id="limpiarFiltro" style="color: #a57c15; font-weight: bold; border-color: gold;">Limpiar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      <!--         
         <div class="filtros" style="border: 1px solid rgb(179, 50, 50);">
           <div class="porPrecio" style="border: 1px solid rgb(53, 149, 58);">
             <label for="precio">Precio</label>
@@ -87,12 +126,27 @@
               <option value="mayor">Mayor Precio</option>
               <option value="menor">Mas relevantes</option>
             </select>
-          </div>
+          </div> 
+        -->
         </div>
       </div>
-      <div id="productos" class="row card-list">
-      </div>
+
+
+
+       
+
+
+
     </div>
+
+    <div id="listaP" class="row card-list">
+    </div>
+
+
+
+
+
+
   </main>
 
   <footer class="text-muted">
