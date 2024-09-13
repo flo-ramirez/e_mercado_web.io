@@ -3,7 +3,6 @@ body {
     background-image: url(img/background-image_page-0001.jpg);  
 }
 
-
 .navbar {
   font-family: 'Verdana', serif !important;
 }
@@ -98,7 +97,7 @@ body {
 }
 .pruebaCard:hover {
     background-color: rgb(245, 234, 226);
-    transform: scale(1.08);
+    transform: scale(1.02);
 }
 
 .card-list:has(div.wow:hover) div.wow:not(:hover) {
@@ -164,4 +163,3 @@ input{
         display: block;
     }
 }
-
