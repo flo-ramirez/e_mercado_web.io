@@ -171,13 +171,13 @@ document.addEventListener("DOMContentLoaded", async () => {
         document.getElementById("listaP").innerHTML += pag;
     });
 
-    // Attach click event to each product card
+//evento click para cada tarjeta
     document.querySelectorAll('.pruebaCard').forEach(card => {
         card.addEventListener('click', function() {
             const productId = this.getAttribute('data-id');
-            // Store the product ID in local storage
+            // ID del producto en local storage
             localStorage.setItem('selectedProductId', productId);
-            // Redirect to the product info page
+            // Redirigir
             window.location.href = 'product-info.html';
         });
     });
