@@ -1,6 +1,6 @@
 const productos = "https://japceibal.github.io/emercado-api/cats_products/"+ localStorage.getItem("catID") + ".json";
 
-// Pide el json a la api
+// Pide el json a la API
 async function getData(url) {
     const respuesta = await fetch(url);
     const data = await respuesta.json();
@@ -10,12 +10,12 @@ async function getData(url) {
 async function lista(url) {
     const data2 = await getData(url);
     return data2.products;
-};
+}
 
 /* Maqueta de los productos */
 function getHTML(list) {
     return `
-        <div class="p-3 mb-4 wow col-12 col-md-4 col-lg-3">
+        <div class="col-md-4 mb-4 wow col-12 col-md-6 col-lg">
             <div class="card pruebaCard" data-id="${list.id}">
                 <img src="${list.image}" class="card-img-top" alt="${list.name}">
                 <div class="card-body"> 
@@ -41,21 +41,129 @@ document.addEventListener("DOMContentLoaded", async () => {
     const categTitle = document.getElementById("titulo");
     const categImg = document.getElementById("imagenTitulo");
     const categDesc = document.getElementById("descripcion");
-    const respuesta2 = await fetch(productos);
-    const data2 = await respuesta2.json();
+
+    const data2 = await getData(productos);
 
     categImg.src = data2.products[data2.products.length - 1].image;
     categTitle.innerHTML += data2.catName;
     categDesc.innerHTML += data2.catName;
+});
 
-    // fetch y renderizacion de la lista de productos
+/* Genera la lista inicial al cargar la página */
+document.addEventListener("DOMContentLoaded", async () => {
     const list = await lista(productos);
+
+    list.forEach(element => {
+        let pag = getHTML(element);
+        document.getElementById("listaP").innerHTML += pag;
+    });
+});
+
+/* Limpia los filtros actuales */
+document.getElementById("limpiarFiltro").addEventListener("click", async () => {
+    const list = await lista(productos);
+    document.getElementById("listaP").innerHTML = "";
+
     list.forEach(element => {
         let pag = getHTML(element);
         document.getElementById("listaP").innerHTML += pag;
     });
 
-    // click en tarjetas redirigen a product-info
+    document.getElementById("maxFiltro").value = "";
+    document.getElementById("minFiltro").value = "";
+});
+
+/* Filtra artículos en un margen de precio */
+document.getElementById("botonFiltrar").addEventListener("click", async () => {
+    let maxFiltro = document.getElementById("maxFiltro").value;
+    let minFiltro = document.getElementById("minFiltro").value;
+
+    const list = await lista(productos);
+    document.getElementById("listaP").innerHTML = "";
+
+    list.forEach(element => {
+        if (element.cost <= maxFiltro && element.cost >= minFiltro) {
+            let pag = getHTML(element);
+            document.getElementById("listaP").innerHTML += pag;
+        }
+    });
+});
+
+/* Filtra artículos de manera ascendente según su precio */
+document.getElementById("precioUp").addEventListener("click", async () => {
+    const list = await lista(productos);
+    const priceOrderAsc = list.sort((a, b) => a.cost - b.cost);
+
+    document.getElementById("listaP").innerHTML = "";
+
+    priceOrderAsc.forEach(element => {
+        let pag = getHTML(element);
+        document.getElementById("listaP").innerHTML += pag;
+    });
+});
+
+/* Filtra artículos de manera descendente según su precio */
+document.getElementById("precioDown").addEventListener("click", async () => {
+    const list = await lista(productos);
+    const priceOrderDesc = list.sort((a, b) => b.cost - a.cost);
+
+    document.getElementById("listaP").innerHTML = "";
+
+    priceOrderDesc.forEach(element => {
+        let pag = getHTML(element);
+        document.getElementById("listaP").innerHTML += pag;
+    });
+});
+
+/* Filtra artículos en función de su cantidad de vendidos */
+document.getElementById("filtroVentas").addEventListener("click", async () => {
+    const list = await lista(productos);
+    const sellOrder = list.sort((a, b) => b.soldCount - a.soldCount);
+
+    document.getElementById("listaP").innerHTML = "";
+
+    sellOrder.forEach(element => {
+        let pag = getHTML(element);
+        document.getElementById("listaP").innerHTML += pag;
+    });
+});
+
+/* Filtra artículos en función del buscador */
+document.getElementById("buscador").addEventListener("keyup", async () => {
+    const list = await lista(productos);
+    let busqueda = document.getElementById("buscador").value.toLowerCase();
+
+    document.getElementById("listaP").innerHTML = "";
+
+    list.forEach(element => {
+        if (element.name.toLowerCase().includes(busqueda)) {
+            let pag = getHTML(element);
+            document.getElementById("listaP").innerHTML += pag;
+        }
+    });
+});
+
+/* Trae e imprime el username en la navbar */
+document.addEventListener("DOMContentLoaded", () => {
+    const userHTML = document.getElementById("user");
+    const userData = JSON.parse(localStorage.getItem("user"));
+
+    if (userData) {
+        userHTML.innerHTML += userData.name || userData.email;
+    } else {
+        window.location = "index.html";
+    }
+});
+
+/* Guarda el ID en localStorage y redirige a product-info */
+document.addEventListener("DOMContentLoaded", async () => {
+    const list = await lista(productos);
+
+    list.forEach(element => {
+        let pag = getHTML(element);
+        document.getElementById("listaP").innerHTML += pag;
+    });
+
     document.querySelectorAll('.pruebaCard').forEach(card => {
         card.addEventListener('click', function() {
             const productId = this.getAttribute('data-id');
@@ -64,5 +172,3 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     });
 });
-
-/*Teniamos dos DOM activos, lo que duplicaba las tarjetas. Unificando todo en un solo DOM reducimos código y evitamos la duplicación de tarjetas. */
