@@ -1,17 +1,14 @@
-const productos = "https://japceibal.github.io/emercado-api/cats_products/"+ localStorage.getItem("catID") + ".json";
-
-// Pide el json a la API
+const productos = "https://japceibal.github.io/emercado-api/cats_products/"+ localStorage.getItem("catID") + ".json"
+// Pide el json a la api
 async function getData(url) {
     const respuesta = await fetch(url);
     const data = await respuesta.json();
     return data;
 };
-
 async function lista(url) {
     const data2 = await getData(url);
-    return data2.products;
-}
-
+    return data2.products
+};
 /* Maqueta de los productos */
 function getHTML(list) {
     return `
@@ -23,7 +20,7 @@ function getHTML(list) {
                         <div class="col-9"><h3 class="card-title">${list.name}</h3></div>
                         <div class="col-3 text-end"><a class="fa-solid fa-bag-shopping h3 comprarIcon" href="cart.html"></a></div>
                     </div>
-                    <p class="card-text descripcionCard">${list.description}</p>
+                        <p class="card-text descripcionCard">${list.description}</p>
                     <div class="row">
                         <p class="card-text priceCard col-12"><strong>Precio: ${list.cost} ${list.currency} </strong></p>
                     </div>
@@ -36,126 +33,136 @@ function getHTML(list) {
     `;
 }
 
-/* Genera el título dinámicamente */
+
+/* Genera el título dinamicamente */
 document.addEventListener("DOMContentLoaded", async () => {
-    const categTitle = document.getElementById("titulo");
-    const categImg = document.getElementById("imagenTitulo");
-    const categDesc = document.getElementById("descripcion");
-
-    const data2 = await getData(productos);
-
-    categImg.src = data2.products[data2.products.length - 1].image;
-    categTitle.innerHTML += data2.catName;
-    categDesc.innerHTML += data2.catName;
+    const categTitle = document.getElementById("titulo")
+    const categImg = document.getElementById("imagenTitulo")
+    const categDesc = document.getElementById("descripcion")
+    const respuesta2 = await fetch(productos);
+    const data2 = await respuesta2.json();
+    categImg.src = (data2.products[(data2.products.length)-1].image)
+    categTitle.innerHTML += (data2.catName)
+    categDesc.innerHTML += (data2.catName)
 });
-
-/* Genera la lista inicial al cargar la página */
+const botonFiltrar =  document.getElementById("botonFiltrar")
+const limpiarFiltro = document.getElementById("limpiarFiltro")
+let maxFiltro = document.getElementById("maxFiltro").value;
+let minFiltro = document.getElementById("minFiltro").value;
+const precioUp =   document.getElementById("precioUp")
+const precioDown = document.getElementById("precioDown")
+const filtroVentas = document.getElementById("filtroVentas")
+const filtroTexto = document.getElementById("filtroTexto")
+const buscador = document.getElementById("buscador")
+/* Genera La lista inicial al cargar la página */
 document.addEventListener("DOMContentLoaded", async () => {
-    const list = await lista(productos);
-
+    const list = await lista(productos)
+    
     list.forEach(element => {
-        let pag = getHTML(element);
-        document.getElementById("listaP").innerHTML += pag;
+        let pag = getHTML(element)
+        document.getElementById("listaP").innerHTML += pag
     });
 });
-
-/* Limpia los filtros actuales */
-document.getElementById("limpiarFiltro").addEventListener("click", async () => {
-    const list = await lista(productos);
-    document.getElementById("listaP").innerHTML = "";
-
-    list.forEach(element => {
-        let pag = getHTML(element);
-        document.getElementById("listaP").innerHTML += pag;
-    });
-
-    document.getElementById("maxFiltro").value = "";
-    document.getElementById("minFiltro").value = "";
-});
-
-/* Filtra artículos en un margen de precio */
-document.getElementById("botonFiltrar").addEventListener("click", async () => {
+/* Limpia los filtros acutales */
+limpiarFiltro.addEventListener("click", async () => {
     let maxFiltro = document.getElementById("maxFiltro").value;
     let minFiltro = document.getElementById("minFiltro").value;
-
-    const list = await lista(productos);
+    const list = await lista(productos)
     document.getElementById("listaP").innerHTML = "";
-
+    
+    list.forEach(element => {
+        let pag = getHTML(element)
+        document.getElementById("listaP").innerHTML += pag
+    })
+document.getElementById("maxFiltro").value = "";
+document.getElementById("minFiltro").value = "";
+})
+/* Filtra articulos en un margen de precio */
+botonFiltrar.addEventListener("click", async () => {
+    let maxFiltro = document.getElementById("maxFiltro").value;
+    let minFiltro = document.getElementById("minFiltro").value;
+    const list = await lista(productos)
+    document.getElementById("listaP").innerHTML = "";
+    
     list.forEach(element => {
         if (element.cost <= maxFiltro && element.cost >= minFiltro) {
-            let pag = getHTML(element);
-            document.getElementById("listaP").innerHTML += pag;
+        let pag = getHTML(element)
+        document.getElementById("listaP").innerHTML += pag
         }
+    })
+document.getElementById("maxFiltro").value = "";
+document.getElementById("minFiltro").value = "";
+})
+/* Filtra articulos de mander ascendente según su precio */
+precioUp.addEventListener("click", async () => {
+    const list = await lista(productos)
+    let priceOrderAsc = list.sort((a, b) => {
+        if (a.cost > b.cost) {return 1}
+        if (b.cost > a.cost) {return -1}
     });
-});
-
-/* Filtra artículos de manera ascendente según su precio */
-document.getElementById("precioUp").addEventListener("click", async () => {
-    const list = await lista(productos);
-    const priceOrderAsc = list.sort((a, b) => a.cost - b.cost);
-
     document.getElementById("listaP").innerHTML = "";
-
     priceOrderAsc.forEach(element => {
-        let pag = getHTML(element);
-        document.getElementById("listaP").innerHTML += pag;
+        let pag = getHTML(element)
+        document.getElementById("listaP").innerHTML += pag
     });
 });
-
-/* Filtra artículos de manera descendente según su precio */
-document.getElementById("precioDown").addEventListener("click", async () => {
-    const list = await lista(productos);
-    const priceOrderDesc = list.sort((a, b) => b.cost - a.cost);
-
+/* Filtra articulos de manera descendente según su precio */
+precioDown.addEventListener("click", async () => {
+    const list = await lista(productos)
+    let priceOrderDesc = list.sort((a, b) => {
+        if (a.cost > b.cost) {return -1}
+        if (b.cost > a.cost) {return 1}
+    });
     document.getElementById("listaP").innerHTML = "";
-
     priceOrderDesc.forEach(element => {
-        let pag = getHTML(element);
-        document.getElementById("listaP").innerHTML += pag;
+        let pag = getHTML(element)
+        document.getElementById("listaP").innerHTML += pag
     });
 });
-
-/* Filtra artículos en función de su cantidad de vendidos */
-document.getElementById("filtroVentas").addEventListener("click", async () => {
-    const list = await lista(productos);
-    const sellOrder = list.sort((a, b) => b.soldCount - a.soldCount);
-
+/* Filtra los articulos en función de su cantidad de vendidos */
+filtroVentas.addEventListener("click", async () => {
+    const list = await lista(productos)
+    let sellOrder = list.sort((a, b) => {
+        if (a.soldCount > b.soldCount) {return -1}
+        if (b.soldCount > a.soldCount) {return 1}
+    });
     document.getElementById("listaP").innerHTML = "";
-
     sellOrder.forEach(element => {
-        let pag = getHTML(element);
-        document.getElementById("listaP").innerHTML += pag;
+        let pag = getHTML(element)
+        document.getElementById("listaP").innerHTML += pag
     });
 });
-
-/* Filtra artículos en función del buscador */
-document.getElementById("buscador").addEventListener("keyup", async () => {
+/* Filtra articulos en función de un buscador */
+buscador.addEventListener("keyup", async () => {
     const list = await lista(productos);
-    let busqueda = document.getElementById("buscador").value.toLowerCase();
-
+    let busqueda = document.getElementById("buscador").value;
     document.getElementById("listaP").innerHTML = "";
-
     list.forEach(element => {
-        if (element.name.toLowerCase().includes(busqueda)) {
-            let pag = getHTML(element);
-            document.getElementById("listaP").innerHTML += pag;
-        }
+        if (element.name.toLowerCase().includes(busqueda.toLowerCase())) {
+        let pag = getHTML(element)
+        document.getElementById("listaP").innerHTML += pag
+        };
     });
 });
-
+/* Deja en el local storage la información necesaria para ingresar al producto deseado tras su click */
+function setProdID(id) {
+    localStorage.setItem("selectedProductId", id);
+    window.location = "product-info.html"
+};
 /* Trae e imprime el username en la navbar */
 document.addEventListener("DOMContentLoaded", () => {
-    const userHTML = document.getElementById("user");
-    const userData = JSON.parse(localStorage.getItem("user"));
-
-    if (userData) {
-        userHTML.innerHTML += userData.name || userData.email;
+    const userHTML = document.getElementById("user")
+    if (JSON.parse(localStorage.getItem("user")).name != undefined) {
+        userHTML.innerHTML += JSON.parse(localStorage.getItem("user")).name
     } else {
-        window.location = "index.html";
-    }
+        userHTML.innerHTML += JSON.parse(localStorage.getItem("user")).email
+    };
+    if (localStorage.getItem("user") == null) {
+        window.location = "index.html"
+    };
 });
 
-/* Guarda el ID en localStorage y redirige a product-info */
+/*guarda el id en local storage y redirige a prouct-indo*/
 document.addEventListener("DOMContentLoaded", async () => {
     const list = await lista(productos);
 
@@ -164,10 +171,13 @@ document.addEventListener("DOMContentLoaded", async () => {
         document.getElementById("listaP").innerHTML += pag;
     });
 
+    // Attach click event to each product card
     document.querySelectorAll('.pruebaCard').forEach(card => {
         card.addEventListener('click', function() {
             const productId = this.getAttribute('data-id');
+            // Store the product ID in local storage
             localStorage.setItem('selectedProductId', productId);
+            // Redirect to the product info page
             window.location.href = 'product-info.html';
         });
     });
