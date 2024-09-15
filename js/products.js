@@ -12,26 +12,26 @@ async function lista(url) {
 /* Maqueta de los productos */
 function getHTML(list) {
     return `
-        <div class="col-md-4 mb-4 wow col-12 col-md-6 col-lg">
-            <div class="card pruebaCard" data-id="${list.id}">
-                <img src="${list.image}" class="card-img-top" alt="${list.name}">
-                <div class="card-body"> 
-                    <div class="row">
-                        <div class="col-9"><h3 class="card-title">${list.name}</h3></div>
-                        <div class="col-3 text-end"><a class="fa-solid fa-bag-shopping h3 comprarIcon" href="cart.html"></a></div>
+                    <div class="col-md-4 mb-4 wow col-12 col-md-6 col-lg" id="${list.id}" onclick="setProdID(${list.id})">
+                        <div class="card pruebaCard">
+                            <img src="${list.image}" class="card-img-top" alt="${list.name}">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-9"><h3 class="card-title">${list.name}</h3></div>
+                                    <div class="col-3 text-end"><a class="fa-solid fa-bag-shopping h3 comprarIcon" href="cart.html"></a></div>
+                                </div>
+                                    <p class="card-text descripcionCard">${list.description}</p>
+                                <div class="row">
+                                    <p class="card-text priceCard col-12"><strong>Precio: ${list.cost} ${list.currency} </strong></p>
+                                </div>
+                                <div class="row">
+                                    <p class="card-text cantCard col-12"><strong>Cantidad Vendidos: ${list.soldCount}</strong></p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                        <p class="card-text descripcionCard">${list.description}</p>
-                    <div class="row">
-                        <p class="card-text priceCard col-12"><strong>Precio: ${list.cost} ${list.currency} </strong></p>
-                    </div>
-                    <div class="row">
-                        <p class="card-text cantCard col-12"><strong>Cantidad Vendidos: ${list.soldCount}</strong></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    `;
-}
+`
+};
 
 
 /* Genera el título dinamicamente */
@@ -136,6 +136,7 @@ filtroVentas.addEventListener("click", async () => {
 buscador.addEventListener("keyup", async () => {
     const list = await lista(productos);
     let busqueda = document.getElementById("buscador").value;
+
     document.getElementById("listaP").innerHTML = "";
     list.forEach(element => {
         if (element.name.toLowerCase().includes(busqueda.toLowerCase())) {
