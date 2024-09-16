@@ -1,9 +1,14 @@
+
+/* Estilos globales */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
   }
-  body {
+
+body {
     font-family: Arial, sans-serif;
     background-image: url(../img/background-img.jpg);
     background-size: cover;
@@ -29,8 +34,6 @@
     display: flex;
     padding: 20px;
     width: 85%;
-
-
 }
 
 /* galería de imágenes pequeñas */
@@ -38,7 +41,6 @@
     width: 500px;
     display: flex;
     flex-direction: column;
-
 }
 
 .product-gallery img.thumbnail {
@@ -52,7 +54,6 @@
 .product-gallery img.thumbnail:hover {
     border: 2px solid #f80;
     border-radius: 10px;
-
 }
 
 /* imagen principal */
@@ -71,11 +72,16 @@
     max-width: 1600px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     border-radius: 20px;
-
 }
+
 .descripcion {
 font-size: 30px;
-margin-top: 50px;
+margin-top: 50px;  
+}
+
+.descripcion {
+font-size: 30px;
+margin-top: 30px;
 }
 
 /* columna blanca con info */ 
@@ -93,6 +99,7 @@ margin-top: 50px;
     color: #333;
     margin-left: 20px;
 }
+
 .product-details p { /* todos los textos de info */
     font-size: 1.2em;
     color: #555;
@@ -136,10 +143,9 @@ button:hover {
     width: 250px; /* Ajusta el tamaño */
     height: auto; /* Mantén la proporción */
     margin-top: 50px; /* Espaciado superior */
-    margin-left: 25px;
-
-
-}
+    margin-left: 25px;      
+ }
+    
 
 footer {
 margin-top: 40px;
@@ -157,6 +163,7 @@ padding: 15px;
         width: 80%;
     }
 }
+
 /* iPhone SE 320x568 */
 @media only screen and (max-width: 320px) {
     header ul {
