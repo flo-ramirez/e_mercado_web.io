@@ -59,25 +59,42 @@
     <main>
       <div class="product-card">
         <div class="product-container">
-          <aside class="product-gallery" id="productGallery">
-            <!-- Aquí se llenarán las imágenes de manera dinámica desde el JSON -->
-          </aside>
-        
-          <section class="product-main-image">
-            <img id="mainImage" src="img/default.jpg" alt="Imagen principal del producto">
-          </section>
-          <div class="container mt-5">
-            <h1 id="productName"></h1>
-            <p id="productDescription"></p>
-            <p><strong>Precio:</strong> <span id="productPrice"></span></p>
-            <p><strong>Cantidad Vendidos:</strong> <span id="productSoldCount"></span></p>
-          </div>   
+            <aside class="product-gallery">
+                <img src="img/prod50921_1.jpg" class="thumbnail" alt="Chevrolet Onix Joy 1" >
+                <img src="img/prod50921_2.jpg" class="thumbnail" alt="Chevrolet Onix Joy 2" >
+                <img src="img/prod50921_3.jpg" class="thumbnail" alt="Chevrolet Onix Joy 3" >
+                <img src="img/prod50921_4.jpg" class="thumbnail" alt="Chevrolet Onix Joy 4" >
+                <img src="img/prod50921_5.jpg" class="thumbnail" alt="Chevrolet Onix Joy 5" >
+            </aside>
+
+            <section class="product-main-image">
+              <img id="mainImage" src="img/prod50921_1.jpg" alt="Chevrolet Onix Joy">
+              <p class="descripcion">Descripcion de producto</p>
+              <p class="caracteristicas">Aca va la info de Json</p>
+            </section>
+
+            <section class="product-details">
+                <h1>Chevrolet Onix Joy</h1>
+                <p class="valor"> U$S 19.840 </p>
+                <p>Características del producto</p>
+                <button>Preguntar</button>
+                <button>WhatsApp</button>
+                <p class="cuentanos">¿Tuviste un problema? Cuentanos</p>
+                <div class="seller-info">
+                    <p>Información del vendedor</p>
+                    <p>Tiempo vendiendo en e-Mercado: 3 años</p>
+                    <p>Productos vendidos: 56</p>
+                    <p>Ubicación: Montevideo</p>
+                    <img class= "estadistica" src="img/estadistica.png"  alt="estadistica">
+                </div>
+               
+            </section>
+        </div>
       </div>
     </main>
    
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
-    <script src="js/logica-usuario.js"></script>
     <script src="js/product-info.js"></script>
    
   </body>
