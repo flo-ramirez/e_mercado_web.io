@@ -35,7 +35,7 @@ body {
     margin-bottom: 10px;
   }
   .text{
-    font-size: 40px;
+    font-size: 2rem;
     font-family: "Lexend Exa", sans-serif;
   }
   hr {  
@@ -103,34 +103,74 @@ body {
 .card-list:has(div.wow:hover) div.wow:not(:hover) {
   filter: blur(4px)
 }
-
-.textoYFiltros{
+.textoYFiltros {
     display: flex;
     justify-content: space-between;
-    padding: 1rem;
-}
-
-.filtros{
-    width: 30%;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .ordenarBuscadorPrecio {
+    width: 60%;
     display: flex;
     justify-content: space-between;
     padding: 0.5rem;
     flex-direction: column;
     align-items: flex-end;
-}
-.rangoPrecio{
+  }
+  
+  .nombreYPrecio {
     width: 100%;
     display: flex;
-    justify-content: space-around;
-    padding: 0.5rem;
+    justify-content: space-between;
+    padding-top: 1rem;
     align-items: center;
-}
-.ordenar{
-    width: 65%;
+  }
+  
+  .rangoPrecio {
     display: flex;
     justify-content: space-around;
-    padding: 0.5rem;
-}
+    align-items: center;
+  }
+  .rangoPrecio p{
+    width: 70%;
+    font-size: 0.8rem;
+  }
+  label{
+    font-size: 12px;
+  }
+
+  
+  .filtrarNombre {
+    display: flex;
+    width: 30%;
+  }
+  
+  .ordenar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .filtros {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  input.form-control {
+    font-weight: bold;
+    border-color: gold;
+    font-size: 0.8rem;
+  }
+  
+  #precioUp, #precioDown, #filtroVentas, #botonFiltrar, #limpiarFiltro {
+    color: #a57c15;
+    font-weight: bold;
+    border-color: gold;
+    font-size: 0.8rem;
+    
+  }
 input{
     width: 5rem;
     align-items: center;

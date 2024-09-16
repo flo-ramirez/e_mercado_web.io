@@ -12,7 +12,7 @@ async function lista(url) {
 /* Maqueta de los productos */
 function getHTML(list) {
     return `
-                    <div class="col-md-4 mb-4 wow col-12 col-md-6 col-lg" id="${list.id}" onclick="setProdID(${list.id})">
+                    <div class="col-12 col-md-4 col-lg-3 p-2" id="${list.id}" onclick="setProdID(${list.id})">
                         <div class="card pruebaCard">
                             <img src="${list.image}" class="card-img-top" alt="${list.name}">
                             <div class="card-body">
@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const categDesc = document.getElementById("descripcion")
     const respuesta2 = await fetch(productos);
     const data2 = await respuesta2.json();
+    const divCards = document.getElementById("listaP");
     categImg.src = (data2.products[(data2.products.length)-1].image)
     categTitle.innerHTML += (data2.catName)
     categDesc.innerHTML += (data2.catName)
@@ -60,7 +61,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     
     list.forEach(element => {
         let pag = getHTML(element)
-        document.getElementById("listaP").innerHTML += pag
+        divCards.innerHTML = '';
+        divCards.innerHTML += pag
     });
 });
 /* Limpia los filtros acutales */
