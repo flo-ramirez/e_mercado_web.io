@@ -7,18 +7,18 @@
   
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/product-info.css" rel="stylesheet">
+    <link href="css/product-info.css" rel="stylesheet"> 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     
     <style>
-   .material-symbols-outlined {
-      font-size: 20px;
-      margin-top: 3px;
-    }
+      .material-symbols-outlined {
+        font-size: 20px;
+        margin-top: 3px;
+      }
     </style>
   </head>
 
-   <body>
+  <body>
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
         <div class="container">
@@ -48,8 +48,7 @@
                   <span class="material-symbols-outlined">logout</span> Cerrar sesión
                 </a>
               </li>
-              <li class="nav-item" id="liMostrarUsuario">
-              </li>
+              <li class="nav-item" id="liMostrarUsuario"></li>
             </ul>
           </div>
         </div>
@@ -62,16 +61,29 @@
           <aside class="product-gallery" id="productGallery">
             <!-- Aquí se llenarán las imágenes de manera dinámica desde el JSON -->
           </aside>
-        
+
           <section class="product-main-image">
             <img id="mainImage" src="img/default.jpg" alt="Imagen principal del producto">
+            <h1 class="descripcion" id="productName"></h1>
+            <p  class="caracteristicas" id="productDescription"></p>
           </section>
-          <div class="container mt-5">
+
+          <div class="product-details">
             <h1 id="productName"></h1>
-            <p id="productDescription"></p>
             <p><strong>Precio:</strong> <span id="productPrice"></span></p>
             <p><strong>Cantidad Vendidos:</strong> <span id="productSoldCount"></span></p>
-          </div>   
+            <button>Preguntar</button>
+            <button>WhatsApp</button>
+            <p class="cuentanos">¿Tuviste un problema? Cuentanos</p>
+            
+            <div class="seller-info">
+              <p>Información del vendedor</p>
+              <p>Tiempo vendiendo en e-Mercado: 3 años</p>
+              <p>Ubicación: Montevideo</p>
+              <img class="estadistica" src="img/estadistica.jpg" alt="estadistica">
+            </div>
+          </div>
+        </div>
       </div>
     </main>
    
@@ -79,6 +91,5 @@
     <script src="js/init.js"></script>
     <script src="js/logica-usuario.js"></script>
     <script src="js/product-info.js"></script>
-   
   </body>
 </html>
