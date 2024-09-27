@@ -180,3 +180,8 @@ padding: 15px;
         margin: 10px 0;
     }
 }
+
+.dropdown{
+    color: white;
+    justify-content: right;
+}
