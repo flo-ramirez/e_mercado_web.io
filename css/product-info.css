@@ -181,7 +181,30 @@ padding: 15px;
     }
 }
 
-.dropdown{
+
+.btn-primary,
+.btn-secondary,
+.dropdown-toggle {
+    background-color: #f80 !important;
+    border-color: #f80 !important;
+    color: white !important;
+}
+
+
+.dropdown-menu {
+    background-color: #f80;
+}
+
+.dropdown-item {
     color: white;
-    justify-content: right;
+}
+
+.dropdown-item:hover {
+    background-color: #e67300;
+    color: white;
+}
+
+.btn .bi,
+.dropdown-item .bi {
+    color: white;
 }

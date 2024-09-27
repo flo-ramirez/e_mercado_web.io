@@ -91,27 +91,61 @@
 
     <div class="container col-md">
       <form>
-        <div class="mb-3">
-          <label class="form-label">Calificar</label>
-          <input type="text" class="form-control">
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#"><i class="bi bi-star-fill"></i></a></li>
-              <li><a class="dropdown-item" href="#"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></a></li>
-              <li><a class="dropdown-item" href="#"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></a></li>
-              <li><a class="dropdown-item" href="#"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></a></li>
-              <li><a class="dropdown-item" href="#"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></a></li>
-            </ul>
+          <div class="mb-3">
+              <label class="form-label">Calificar</label>
+              <input type="text" class="form-control">
+              <div class="d-flex justify-content-end mt-3">
+                  <div class="dropdown me-2">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                          <li><a class="dropdown-item" href="#"><i class="bi bi-star-fill"></i></a></li>
+                          <li><a class="dropdown-item" href="#"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></a></li>
+                          <li><a class="dropdown-item" href="#"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></a></li>
+                          <li><a class="dropdown-item" href="#"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></a></li>
+                          <li><a class="dropdown-item" href="#"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></a></li>
+                      </ul>
+                  </div>
+                  <div>
+                    <button type="submit" class="btn btn-primary" class="button">Enviar</button>
+                  </div>
+
+                  <style>
+                      .btn-primary,
+                      .btn-secondary,
+                      .dropdown-toggle {
+                          background-color: #f80 !important;
+                          border-color: #f80 !important;
+                          color: white !important;
+                      }
+
+
+                      .dropdown-menu {
+                          background-color: #f80;
+                      }
+
+                      .dropdown-item {
+                          color: white;
+                      }
+
+                      .dropdown-item:hover {
+                          background-color: #e67300;
+                          color: white;
+                      }
+
+                      .btn .bi,
+                      .dropdown-item .bi {
+                          color: white;
+                      }
+
+                  </style>
+                </div>
+              </div>                 
           </div>
-          <div>
-          <button type="submit" class="btn btn-primary">Enviar</button>
-          </div>
-        </div>
       </form>
-    </div>
+  </div>
+  
 
    
     <script src="js/bootstrap.bundle.min.js"></script>
