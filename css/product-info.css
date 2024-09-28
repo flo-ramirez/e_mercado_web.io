@@ -1,4 +1,3 @@
-
 /* Estilos globales */
 
 * {
@@ -79,11 +78,6 @@ font-size: 30px;
 margin-top: 50px;  
 }
 
-.descripcion {
-font-size: 30px;
-margin-top: 30px;
-}
-
 /* columna blanca con info */ 
 .product-details {
     padding: 20px;
@@ -94,7 +88,7 @@ margin-top: 30px;
     height: 100%;
 }
 
-.product-details h1 { /* titulo onix */
+.product-details h1 { /* titulo del producto */
     font-size: 2em;
     color: #333;
     margin-left: 20px;
@@ -141,7 +135,7 @@ button:hover {
 
 .estadistica {
     width: 250px; /* Ajusta el tamaño */
-    height: auto; /* Mantén la proporción */
+    height: auto; /* Mantiene la proporción */
     margin-top: 50px; /* Espaciado superior */
     margin-left: 25px;      
  }
@@ -181,30 +175,12 @@ padding: 15px;
     }
 }
 
-
-.btn-primary,
-.btn-secondary,
-.dropdown-toggle {
-    background-color: #f80 !important;
-    border-color: #f80 !important;
-    color: white !important;
-}
-
-
-.dropdown-menu {
-    background-color: #f80;
-}
-
-.dropdown-item {
-    color: white;
-}
-
-.dropdown-item:hover {
-    background-color: #e67300;
-    color: white;
-}
-
-.btn .bi,
-.dropdown-item .bi {
-    color: white;
+#form-calificacion  {
+    background-color: #666 !important;
+    padding: 20px !important;
+    display: flex;
+    width: 85%;
+    background-color: #eaeaeb;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
