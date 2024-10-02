@@ -182,7 +182,7 @@ buscador.addEventListener("keyup", async () => {
     document.getElementById("listaP").innerHTML = "";
 
     list.forEach(element => {
-        if (element.name.toLowerCase().includes(busqueda.toLowerCase())) {
+        if (element.name.toLowerCase().includes(busqueda.toLowerCase()) || element.description.toLowerCase().includes(busqueda.toLowerCase())) {
         let pag = getHTML(element)
         document.getElementById("listaP").innerHTML += pag
         };
