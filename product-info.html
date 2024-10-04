@@ -96,22 +96,10 @@
     </section>
     
 
-    <div id="form-calificacion" class="container col-md" class="form-calificacion">
-      <style>
-        #form-calificacion  {
-          background-color: #eaeaeb !important;
-          padding: 20px !important;
-          width: 85%;
-          background-color: #eaeaeb;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-          border-radius: 15px;
-          margin: 0 auto;
-          height: 200px;
-        } 
-      </style>
+    <div id="form-calificacion" class="container col-md form-calificacion" style="padding: 20px !important;">
       <form>
           <div class="mb-3">
-              <label class="form-label">Calificar</label>
+              <label class="form-label"><b>Calificar</b></label>
               <input type="text" class="form-control" placeholder="Escribe tu opinión">
               <div class="d-flex justify-content-end mt-3">
                   <div class="dropdown me-2">
@@ -163,7 +151,22 @@
           </div>
       </form>
   </div>
-  
+
+  <div id="relatedProducts" class="row form-calificacion" style="display: flex; justify-content: space-evenly; flex-wrap: wrap; margin: 35px auto; height: auto; padding: 10px;">
+    <label class="form-label"><b>Productos relacionados</b></label>
+  </div>
+
+  <style>
+    .form-calificacion  {
+      background-color: #eaeaeb !important;
+      background-color: #eaeaeb;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+      height: 200px;
+      max-width: 1700px;
+    } 
+  </style>
+
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
     <script src="js/logica-usuario.js"></script>
