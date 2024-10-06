@@ -26,7 +26,7 @@ body {
     flex-direction: row;
     justify-content: center;
     max-width: 1700px;
-    height: 800px;
+    height: 650px;
 }
 
 .product-container {
@@ -134,10 +134,10 @@ button:hover {
 }
 
 .estadistica {
-    width: 250px; /* Ajusta el tamaño */
+    width: 180px; /* Ajusta el tamaño */
     height: auto; /* Mantiene la proporción */
     margin-top: 50px; /* Espaciado superior */
-    margin-left: 25px;      
+    margin-left: 65px;      
  }
     
 

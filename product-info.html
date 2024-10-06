@@ -46,7 +46,7 @@
               </li>
               <li class="nav-item">
                 <a id="aLogout" class="nav-link d-flex align-items-center" href="login.html">
-                  <span class="material-symbols-outlined">logout</span> Cerrar sesión
+                  <span class="material-symbols-outlined">logout</span> Cerrar sesiónm
                 </a>
               </li>
               <li class="nav-item" id="liMostrarUsuario"></li>
@@ -84,18 +84,9 @@
               <img class="estadistica" src="img/estadistica.jpg" alt="estadistica">
             </div>
           </div>
-
         </div>
       </div>
     </main>
-
-    <section id="reviews" class="container mt-5">
-      <h2>Reseñas del producto</h2>
-      <div id="reviews-list">
-        <!-- Aquí se llenarán los comentarios dinámicamente -->
-      </div>
-    </section>
-    
 
     <div id="form-calificacion" class="container col-md">
       <style>
@@ -111,110 +102,100 @@
       </style>
       <form id="calification-form">
         <div class="mb-3">
-          <label class="form-label">Calificar</label>
+          <label class="form-label"><b>Calificar</b></label>
           <input type="text" class="form-control" placeholder="Escribe tu opinión" id="comentarioInput">
-          <div class="d-flex justify-content-end mt-3">
+            <div class="d-flex justify-content-end mt-3">
 
-          <div class="dropdown me-2">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownRating" data-bs-toggle="dropdown" aria-expanded="false">
-                <span id="selectedRating">★ ★ ★ ★ ★</span>
-            </button>
-            <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href="#" data-value="1">★</a></li>
-                <li><a class="dropdown-item" href="#" data-value="2">★ ★</a></li>
-                <li><a class="dropdown-item" href="#" data-value="3">★ ★ ★</a></li>
-                <li><a class="dropdown-item" href="#" data-value="4">★ ★ ★ ★</a></li>
-                <li><a class="dropdown-item" href="#" data-value="5">★ ★ ★ ★ ★</a></li>
-            </ul>
-          </div>
+              <div class="dropdown me-2">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownRating" data-bs-toggle="dropdown" aria-expanded="false">
+                  <span id="selectedRating">★ ★ ★ ★ ★</span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#" data-value="1">★</a></li>
+                    <li><a class="dropdown-item" href="#" data-value="2">★ ★</a></li>
+                    <li><a class="dropdown-item" href="#" data-value="3">★ ★ ★</a></li>
+                    <li><a class="dropdown-item" href="#" data-value="4">★ ★ ★ ★</a></li>
+                    <li><a class="dropdown-item" href="#" data-value="5">★ ★ ★ ★ ★</a></li>
+                </ul>
+              </div>
 
-            <div>
-              <button type="submit" class="btn btn-primary">Enviar</button>
-            </div>
-          </div>
-        </div>
-      </form>
-      <div id="reviews-list"></div>
-    </div>
-    
+              <div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+                <style>
+                  
 
+                  .btn-primary,
+                  .btn-secondary,
+                  .dropdown-toggle {
+                      background-color: #f80 !important;
+                      border-color: #f80 !important;
+                      color: white !important;
+                  }
 
-                  <style>
-                      .btn-primary,
-                      .btn-secondary,
-                      .dropdown-toggle {
-                          background-color: #f80 !important;
-                          border-color: #f80 !important;
-                          color: white !important;
-                      }
+                  .dropdown-menu {
+                      background-color: #f80;
+                  }
 
-                      .dropdown-menu {
-                          background-color: #f80;
-                      }
+                  .dropdown-item {
+                      color: white;
+                  }
 
-                      .dropdown-item {
-                          color: white;
-                      }
+                  .dropdown-item:hover {
+                      background-color: #e67300;
+                      color: white;
+                  }
 
-                      .dropdown-item:hover {
-                          background-color: #e67300;
-                          color: white;
-                      }
-
-                      .btn .bi,
-                      .dropdown-item .bi {
-                          color: white;
-                          justify-content: right;
-                      }
-                  </style>
-                </div>
-              </div>                 
+                  .btn .bi,
+                  .dropdown-item .bi {
+                      color: white;
+                      justify-content: right;
+                  }
+                </style>
+              </div>
+            </div>                 
           </div>
       </form>
-  </div>
 
-  <section id="reviews" class="container mt-5">
-    <h2>Reseñas del producto</h2>
-    <div id="reviews-list">
-      <!-- Aquí se llenarán los comentarios dinámicamente -->
-    </div>
-  </section>
+    <section id="reviews" class="container mt-5">
+      <h2>Reseñas del producto</h2>
+      <div id="reviews-list">
+        <!-- Aquí se llenarán los comentarios dinámicamente -->
+      </div>
+    </section>
   
+    <div id="relatedProducts" class="row form-calificacion" style="display: flex; justify-content: space-evenly; flex-wrap: wrap; margin: 35px auto; height: auto; padding: 10px;">
+      <label class="form-label"><b>Productos relacionados</b></label>
+    </div>
 
+    <style>
+      .form-calificacion  {
+        background-color: #eaeaeb !important;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 15px;
+        height: 140px;
+        max-width: 1700px;
+      } 
+    </style>
 
-  <div id="relatedProducts" class="row form-calificacion" style="display: flex; justify-content: space-evenly; flex-wrap: wrap; margin: 35px auto; height: auto; padding: 10px;">
-    <label class="form-label"><b>Productos relacionados</b></label>
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-end">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
+      </p>
+    </div>
+  </footer>
+
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </div>
-
-  <style>
-    .form-calificacion  {
-      background-color: #eaeaeb !important;
-      background-color: #eaeaeb;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      border-radius: 15px;
-      height: 200px;
-      max-width: 1700px;
-    } 
-  </style>
-
-<footer class="text-muted">
-  <div class="container">
-    <p class="float-end">
-      <a href="#">Volver arriba</a>
-    </p>
-    <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
-    </p>
-  </div>
-</footer>
-
-<div id="spinner-wrapper">
-  <div class="lds-ring">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-</div>
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>

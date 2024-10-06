@@ -173,6 +173,13 @@ a.custom-card:hover {
 form {
   background-color: rgb(243, 230, 205);
 }
+
+@media (max-width: 1700px) {
+  #spnUsuario{
+    padding: 0;
+  }
+}
+
 @media (max-width: 768px) {
   #spnUsuario{
     padding: 0;
