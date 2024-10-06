@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
     function getHTML(relatedElement) {
       return `
         <div id="${relatedElement.id}" class="col-md-4" style="max-width: 25%; margin: 10px; flex: 1 1 200px;">
-          <a onclick="localStorage.setItem('selectedProductId', ${relatedElement.id})" class="card mb-4 shadow-sm custom-card cursor-active" style="color: black; text-decoration: none;"href="product-info.html">
+          <a onclick="localStorage.setItem('selectedProductId', ${relatedElement.id})" 
+          class="card mb-4 shadow-sm custom-card cursor-active" style="color: black; text-decoration: none;"href="product-info.html">
             <img class="bd-placeholder-img card-img-top" src="${relatedElement.image}"
               alt="Imagen representativa de un producto relacionado">
             <h3 class="m-3">${relatedElement.name}</h3>
