@@ -88,27 +88,56 @@
         </div>
       </div>
     </main>
-    <div id="form-calificacion" class="container col-md form-calificacion" style="padding: 20px !important;">
-      <form>
-          <div class="mb-3">
-              <label class="form-label"><b>Calificar</b></label>
-              <input type="text" class="form-control" placeholder="Escribe tu opinión">
-              <div class="d-flex justify-content-end mt-3">
-                  <div class="dropdown me-2">
-                      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                      </button>
-                      <ul class="dropdown-menu dropdown-menu-end">
-                          <li><a class="dropdown-item" href="#"><i class="bi bi-star-fill"></i></a></li>
-                          <li><a class="dropdown-item" href="#"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></a></li>
-                          <li><a class="dropdown-item" href="#"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></a></li>
-                          <li><a class="dropdown-item" href="#"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></a></li>
-                          <li><a class="dropdown-item" href="#"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></a></li>
-                      </ul>
-                  </div>
-                  <div>
-                    <button type="submit" class="btn btn-primary" class="button">Enviar</button>
-                  </div>
+
+    <section id="reviews" class="container mt-5">
+      <h2>Reseñas del producto</h2>
+      <div id="reviews-list">
+        <!-- Aquí se llenarán los comentarios dinámicamente -->
+      </div>
+    </section>
+    
+
+    <div id="form-calificacion" class="container col-md">
+      <style>
+        #form-calificacion {
+          background-color: #eaeaeb !important;
+          padding: 20px !important;
+          width: 85%;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          border-radius: 15px;
+          margin: 0 auto;
+          height: 200px;
+        }
+      </style>
+      <form id="calification-form">
+        <div class="mb-3">
+          <label class="form-label">Calificar</label>
+          <input type="text" class="form-control" placeholder="Escribe tu opinión" id="comentarioInput">
+          <div class="d-flex justify-content-end mt-3">
+
+          <div class="dropdown me-2">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownRating" data-bs-toggle="dropdown" aria-expanded="false">
+                <span id="selectedRating">★ ★ ★ ★ ★</span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#" data-value="1">★</a></li>
+                <li><a class="dropdown-item" href="#" data-value="2">★ ★</a></li>
+                <li><a class="dropdown-item" href="#" data-value="3">★ ★ ★</a></li>
+                <li><a class="dropdown-item" href="#" data-value="4">★ ★ ★ ★</a></li>
+                <li><a class="dropdown-item" href="#" data-value="5">★ ★ ★ ★ ★</a></li>
+            </ul>
+          </div>
+
+            <div>
+              <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div id="reviews-list"></div>
+    </div>
+    
+
 
                   <style>
                       .btn-primary,
