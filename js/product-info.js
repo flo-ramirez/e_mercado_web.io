@@ -142,9 +142,6 @@ document.addEventListener('DOMContentLoaded', function () {
           selectedRating.innerHTML = 'Selecciona estrellas'; // Reiniciar selección
           puntaje = 0; // Reiniciar el puntaje
       } else {
-
-        //cambiar por toast//
-        
           alert('Por favor, escribe un comentario y selecciona una calificación.');
       }
   });
