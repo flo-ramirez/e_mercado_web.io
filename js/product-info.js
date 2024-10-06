@@ -1,12 +1,26 @@
 document.addEventListener('DOMContentLoaded', function () {
   // Recuperar el ID del producto desde el localStorage
   const productId = localStorage.getItem('selectedProductId');
-
+  
   if (productId) {
     const url = `https://japceibal.github.io/emercado-api/products/${productId}.json`;
     const commentsUrl = `https://japceibal.github.io/emercado-api/products_comments/${productId}.json`;
 
+
     // Obtener detalles del producto
+
+    function getHTML(relatedElement) {
+      return `
+        <div id="${relatedElement.id}" class="col-md-4" style="max-width: 25%; margin: 10px; flex: 1 1 200px;">
+          <a onclick="localStorage.setItem('selectedProductId', ${relatedElement.id})" class="card mb-4 shadow-sm custom-card cursor-active" style="color: black; text-decoration: none;"href="product-info.html">
+            <img class="bd-placeholder-img card-img-top" src="${relatedElement.image}"
+              alt="Imagen representativa de un producto relacionado">
+            <h3 class="m-3">${relatedElement.name}</h3>
+          </a>
+        </div>
+    `
+    };
+    
     fetch(url)
       .then(response => response.json())
       .then(data => {
@@ -15,6 +29,11 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('productPrice').textContent = `${data.cost} ${data.currency}`;
         document.getElementById('productSoldCount').textContent = data.soldCount;
 
+        data.relatedProducts.forEach(element => {
+          let pag = getHTML(element)
+          document.getElementById("relatedProducts").innerHTML += pag
+        });
+        // Referencia al contenedor de la galería de imágenes
         const galleryContainer = document.getElementById('productGallery');
         const mainImage = document.getElementById('mainImage');
         galleryContainer.innerHTML = '';

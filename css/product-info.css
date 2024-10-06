@@ -146,6 +146,7 @@ margin-top: 40px;
 @@ -121,7 +157,7 @@ footer {
 padding: 15px;
 }
+}
 
 /* Tablet Landscape 1024x768 */
 @media only screen and (max-width: 1024px) {
@@ -173,14 +174,4 @@ padding: 15px;
         width: 100%;
         margin: 10px 0;
     }
-}
-
-#form-calificacion  {
-    background-color: #666 !important;
-    padding: 20px !important;
-    display: flex;
-    width: 85%;
-    background-color: #eaeaeb;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
 }
