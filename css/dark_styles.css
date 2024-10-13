@@ -5,8 +5,8 @@
   font-family: 'Verdana', serif !important;
 }
 
-main{
-  background-image: url(../img/back.jpg);
+main {
+  background-image: url(../img/dark.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -16,10 +16,10 @@ main{
   height: 50vh;
   padding: 5em;
   margin-bottom: 0;
-  background-color: #53C0FB;
-  background: url('../img/cover_back.png') no-repeat center center;
+  background-color: #1a1a2e;
+  background: url('../img/cover_back_dark.png') no-repeat center center;
   background-size: cover;
-  color: black;
+  color: #e0e0e0;
   font-weight: bold;
 }
 
@@ -29,9 +29,9 @@ main{
 
 .jumbotron .container {
   max-width: 40rem;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
-  text-shadow: 1px 1px 2px grey;
+  text-shadow: 1px 1px 2px #000;
 }
 
 .jumbotron .lead {
@@ -40,6 +40,8 @@ main{
 
 footer {
   padding: 3rem 0;
+  background-color: #121212;
+  color: #e0e0e0;
 }
 
 footer p {
@@ -63,10 +65,12 @@ footer p {
   display: flex;
   align-items: center;
   text-decoration: none;
+  color: #e0e0e0;
 }
+
 .container {
-  margin: 0 auto; /* Centrar automáticamente */
-  padding: 0 1rem; /* Ajusta el padding para controlar el espacio interno */
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .material-symbols-outlined {
@@ -81,10 +85,9 @@ footer p {
 }
 
 #spnUsuario {
-  color: rgba(152, 152, 152, 0.328);
+  color: rgba(255, 255, 255, 0.5);
   font-size: 16px;
   padding-left: 100%;
-
 }
 
 .img-fit {
@@ -97,6 +100,8 @@ footer p {
   width: 50%;
   left: 50%;
   transform: translate(-50%, 0);
+  background-color: #333;
+  color: #e0e0e0;
 }
 
 .lds-ring {
@@ -143,11 +148,13 @@ footer p {
   max-width: 330px;
   padding: 15px;
   margin: auto;
+  background-color: #2b2b2b;
+  color: #e0e0e0;
 }
 
 #spinner-wrapper {
   position: fixed;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   width: 100%;
   height: 100%;
   top: 0;
@@ -158,11 +165,13 @@ footer p {
 
 main {
   min-height: calc(100vh - 210px);
+  background-color: #121212;
+  color: #e0e0e0;
 }
 
 a.custom-card,
 a.custom-card:hover {
-  color: inherit;
+  color: #e0e0e0;
   text-decoration: inherit;
 }
 
@@ -171,43 +180,30 @@ a.custom-card:hover {
 }
 
 form {
-  background-color: rgb(243, 230, 205);
+  background-color: #2b2b2b;
+  color: #e0e0e0;
 }
 
 @media (max-width: 1700px) {
-#spnUsuario{
+  #spnUsuario {
     padding: 0;
-}
+  }
 }
 
 @media (max-width: 768px) {
-#spnUsuario{
-  padding: 0;
-}
+  #spnUsuario {
+    padding: 0;
+  }
 }
 
 @media (max-width: 576px) {
-#spnUsuario{
-  padding: 0;
-}
-main{
-  background-image: url(../img/back-mobile.jpg);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-
-#theme-toggle {
-  background: none;
-  border: none;
-  padding: 0;
-}
-
-#theme-icon {
-  font-size: 50px; /* Ajusta el tamaño del ícono según tus preferencias */
-  color: #808080; /* Color gris claro */
-}
-
-#theme-toggle:hover #theme-icon {
-  color: #c7c7c7; /* Cambia el color al pasar el cursor si deseas */
+  #spnUsuario {
+    padding: 0;
+  }
+  main {
+    background-image: url(../img/mobile-dark.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
 }
