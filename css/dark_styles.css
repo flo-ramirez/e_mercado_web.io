@@ -171,9 +171,9 @@ main {
 
 a.custom-card,
 a.custom-card:hover {
-  color: #e0e0e0;
+  color: #000000af;
   text-decoration: inherit;
-}
+} 
 
 .checked {
   color: orange;
@@ -207,3 +207,4 @@ form {
     background-attachment: fixed;
   }
 }
+
