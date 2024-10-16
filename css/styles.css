@@ -190,6 +190,7 @@ form {
 #spnUsuario{
   padding: 0;
 }
+
 main{
   background-image: url(../img/back-mobile.jpg);
   background-size: cover;
@@ -210,4 +211,5 @@ main{
 
 #theme-toggle:hover #theme-icon {
   color: #c7c7c7; /* Cambia el color al pasar el cursor si deseas */
+}
 }

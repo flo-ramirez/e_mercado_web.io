@@ -208,3 +208,33 @@ form {
   }
 }
 
+.custom-card {
+  background-color: rgb(141, 141, 141);
+}
+
+h p {
+  color: whitesmoke;
+}
+
+.btn { 
+  color: rgb(187, 187, 187);
+}
+
+.form-control{
+  background-color: rgb(66, 66, 66);
+  border-color: transparent;
+}
+
+.btn-group {
+  background-color: rgba(187, 187, 187, 0.459);
+  color: #fff;
+}
+
+.list-group-item {
+  color: #d1d1d1;
+  text-decoration: none;
+  background-color: rgb(66, 66, 66);
+}
+.list-group-item::hover{
+  background-color: rgba(66, 66, 66, 0.575);
+}
