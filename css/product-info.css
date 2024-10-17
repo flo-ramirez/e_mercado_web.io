@@ -48,6 +48,8 @@ body {
     cursor: pointer;
     border: 2px solid transparent;
     transition: border 0.3s ease;
+    height: 150px;
+    object-fit: cover; 
 }
 
 .product-gallery img.thumbnail:hover {
@@ -127,6 +129,17 @@ button {
 button:hover {
     background-color: #e76a00;
 }
+
+#theme-toggle {
+    padding: 10px 25px;
+    margin-right: 10px;
+    border: none;
+    cursor: pointer;
+    margin-left: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
 .seller-info {
     margin-top: 20px;
     font-size: 0.9em;
@@ -175,3 +188,13 @@ padding: 15px;
         margin: 10px 0;
     }
 }
+
+#form-calificacion {
+    background-color: #eaeaeb !important;
+    padding: 20px !important;
+    width: 85%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    margin: 0 auto;
+    height: 200px;
+  }
