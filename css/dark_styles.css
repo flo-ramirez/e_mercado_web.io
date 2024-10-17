@@ -209,7 +209,7 @@ form {
 }
 
 .custom-card {
-  background-color: rgb(141, 141, 141);
+  background-color: rgb(141, 141, 141) !important;
 }
 
 h p {
@@ -237,4 +237,8 @@ h p {
 }
 .list-group-item::hover{
   background-color: rgba(66, 66, 66, 0.575);
+}
+
+.pruebaCard {
+  background-color: rgb(66, 66, 66) !important;
 }
