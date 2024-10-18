@@ -175,25 +175,41 @@ form {
 }
 
 @media (max-width: 1700px) {
-  #spnUsuario{
+#spnUsuario{
     padding: 0;
-  }
+}
 }
 
 @media (max-width: 768px) {
-  #spnUsuario{
-    padding: 0;
-  }
+#spnUsuario{
+  padding: 0;
+}
 }
 
 @media (max-width: 576px) {
-  #spnUsuario{
-    padding: 0;
-  }
-  main{
-    background-image: url(../img/back-mobile.jpg);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-  }
+#spnUsuario{
+  padding: 0;
+}
+
+main{
+  background-image: url(../img/back-mobile.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+#theme-icon {
+  font-size: 50px; /* Ajusta el tamaño del ícono según tus preferencias */
+  color: #808080; /* Color gris claro */
+}
+
+#theme-toggle:hover #theme-icon {
+  color: #c7c7c7; /* Cambia el color al pasar el cursor si deseas */
+}
 }
