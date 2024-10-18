@@ -38,19 +38,18 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="my-profile.html">Perfil</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="cart.html">Carro</a>
-          </li>
-          <li class="nav-item">
-            <a id="aLogout" class="nav-link d-flex align-items-center" href="login.html">
-              <span class="material-symbols-outlined">logout</span> Cerrar sesión
+          <!-- Menú desplegable de usuario -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <!-- Aquí se mostrará dinámicamente el nombre del usuario -->
             </a>
-          </li>
-          <li class="nav-item" id="liMostrarUsuario">
-          </li>
+            <ul class="dropdown-menu" aria-labelledby="userDropdown">
+              <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+              <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" id="logout" href="#">Cerrar sesión</a></li>
+            </ul>
         </ul>
       </div>
     </div>
@@ -82,6 +81,7 @@
   <script src="js/init.js"></script>
   <script src="js/cart.js"></script>
   <script src="js/logica-usuario.js"></script>
+  <script src="js/dropdown.js"></script>
 </body>
 
 </html>

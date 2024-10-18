@@ -50,6 +50,19 @@
                 </a>
               </li>
               <li class="nav-item" id="liMostrarUsuario"></li>
+              <!-- Menú desplegable de usuario -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <!-- Aquí se mostrará dinámicamente el nombre del usuario -->
+              Nombre de Usuario
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="userDropdown">
+              <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+              <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" id="logout" href="#">Cerrar sesión</a></li>
+            </ul>
             </ul>
           </div>
         </div>
@@ -215,5 +228,6 @@
     <script src="js/init.js"></script>
     <script src="js/logica-usuario.js"></script>
     <script src="js/product-info.js"></script>
+    <script src="js/dropdown.js"></script>
   </body>
 </html>
