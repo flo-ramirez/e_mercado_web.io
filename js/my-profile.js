@@ -94,6 +94,8 @@ function verify() {
 
         let user = JSON.parse(localStorage.getItem("user")) || {};
         user = { name, surname, phone, email, secName, secSurname };
+        
+        localStorage.setItem("usuarioLogueado", JSON.stringify(email));
 
         localStorage.setItem("user", JSON.stringify(user));
         alert("Datos guardados correctamente");

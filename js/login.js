@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
       // Verifica que ambos campos estén completos y que el usuario tenga formato de email válido
       if (usuario.length > 0 && contrasena.length > 0 && validateEmail(usuario)) {
-          localStorage.setItem("usuarioLogeado", usuario);
+          localStorage.setItem("usuarioLogueado", usuario);
           localStorage.setItem("logueado", "true");
           // Redirige a index.html después de 1 segundo si ambos campos están completos
           setTimeout(() => {
