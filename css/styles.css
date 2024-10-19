@@ -196,22 +196,6 @@ main{
   background-attachment: fixed;
 }
 
-#theme-toggle {
-  background: none;
-  border: none;
-  padding: 0;
-}
-
-#theme-icon {
-  font-size: 50px; /* Ajusta el tamaño del ícono según tus preferencias */
-  color: #808080; /* Color gris claro */
-}
-
-#theme-toggle:hover #theme-icon {
-  color: #c7c7c7; /* Cambia el color al pasar el cursor si deseas */
-}
-}
-
 
 .btn-primary,
 .btn-secondary,
@@ -239,3 +223,19 @@ main{
     color: white;
     justify-content: right;
 }
+
+#userDropdown,
+#theme-toggle {
+  color: white;
+  background-color: #212529 !important;
+}
+
+#theme-icon {
+  font-size: 50px; /* Ajusta el tamaño del ícono según tus preferencias */
+  color: #808080; /* Color gris claro */
+}
+
+#theme-toggle:hover #theme-icon {
+  color: #c7c7c7; /* Cambia el color al pasar el cursor si deseas */
+}
+
