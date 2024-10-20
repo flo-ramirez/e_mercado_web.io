@@ -56,11 +56,11 @@ function returnFileSize(bytes) {
 function verify() {
     let valid = true;
 
-    // Verificar campos requeridos (sin incluir teléfono)
+    // Verificar campos requeridos
     document.querySelectorAll(".verify").forEach(element => {
         const errorElement = element.nextElementSibling;
 
-        if (element.value.trim() === "" && element.id !== "phone") { // Excluye el campo de teléfono
+        if (element.value.trim() === "" && element.id !== "phone") { 
             element.classList.add("is-invalid");
             errorElement.textContent = "Este campo es obligatorio";
             valid = false;
@@ -71,7 +71,7 @@ function verify() {
         }
 
         element.addEventListener("keyup", () => {
-            if (element.value.trim() === "" && element.id !== "phone") { // Excluye el campo de teléfono
+            if (element.value.trim() === "" && element.id !== "phone") {
                 element.classList.add("is-invalid");
                 errorElement.textContent = "Este campo es obligatorio";
                 valid = false;
