@@ -63,45 +63,47 @@
     <h2><i class="fa-solid fa-user user"></i> Mi perfil</h2>
     <section class="profile">
       <form style="background-color: transparent;">
-        <label for="name" class="form-label">Primer Nombre *</label>
-        <input type="text" name="name" id="name" class="form-control verify" required>
-        <span class="error-message"></span>
-
-        <label for="secName" class="form-label">Segundo Nombre</label>
-        <input type="text" name="secName" id="secName" class="form-control">
-        <span class="error-message"></span>
-
-        <label for="surName" class="form-label">Primer Apellido *</label>
-        <input type="text" name="surname" id="surname" class="form-control verify" required>
-        <span class="error-message"></span>
-
-        <label for="secSurname" class="form-label">Segundo Apellido</label>
-        <input type="text" name="secSurname" id="secSurname" class="form-control">
-        <span class="error-message"></span>
-
-        <label for="email" class="form-label">E-Mail *</label>
-        <input type="text" name="email" id="email" class="form-control verify" required>
-        <span class="error-message"></span>
-
-        <label for="phone" class="form-label">Telefono de Contacto</label>
-        <input type="text" name="phone" id="phone" class="form-control verify">
-        <span class="error-message"></span>
+          <label for="name" class="form-label">Primer Nombre *</label>
+          <input type="text" name="name" id="name" class="form-control verify" required>
+          <span class="error-message"></span>
+  
+          <label for="secName" class="form-label">Segundo Nombre</label>
+          <input type="text" name="secName" id="secName" class="form-control">
+          <span class="error-message"></span>
+  
+          <label for="surName" class="form-label">Primer Apellido *</label>
+          <input type="text" name="surname" id="surname" class="form-control verify" required>
+          <span class="error-message"></span>
+  
+          <label for="secSurname" class="form-label">Segundo Apellido</label>
+          <input type="text" name="secSurname" id="secSurname" class="form-control">
+          <span class="error-message"></span>
+  
+          <label for="email" class="form-label">E-Mail *</label>
+          <input type="text" name="email" id="email" class="form-control verify" required>
+          <span class="error-message"></span>
+  
+          <label for="phone" class="form-label">Teléfono de Contacto</label>
+          <input type="text" name="phone" id="phone" class="form-control verify">
+          <span class="error-message"></span>
+  
+          <!-- Mueve el botón aquí -->
+          <button type="button" class="guardar" onclick="verify()">Guardar cambios</button>
       </form>
-
+  
       <div class="profile-pic">
-        <div id="pfp">
-          <img id="pic" src="img/img_perfil.png" alt="" class="img">
-          <div id="preview">
-            <p class="p-1 text-center fs-6 mb-1" id=message>No hay ningún archivo seleccionado actualmente.</p>
+          <div id="pfp">
+              <img id="pic" src="img/img_perfil.png" alt="" class="img">
+              <div id="preview">
+                  <p class="p-1 text-center fs-6 mb-1" id="message">No hay ningún archivo seleccionado actualmente.</p>
+              </div>
           </div>
-        </div>
-        <label for="img" class="cambiar-imagen"><i class="fa-solid fa-pen-to-square pen-square"></i> Cambiar imagen de
-          perfil</label>
-        <input type="file" id="img" name="img" accept=".jpg, .jpeg, .png">
-        <button type="button" class=guardar onclick="verify()">Guardar cambios</button>
+          <label for="img" class="cambiar-imagen">
+              <i class="fa-solid fa-pen-to-square pen-square"></i> Cambiar imagen de perfil
+          </label>
+          <input type="file" id="img" name="img" accept=".jpg, .jpeg, .png">
       </div>
-      </div>
-      </div>
+  </section>
   </main>
 
   <footer>
@@ -122,4 +124,5 @@
   <script src="js/dark-mode.js"></script>
 
 </body>
+
 </html>
