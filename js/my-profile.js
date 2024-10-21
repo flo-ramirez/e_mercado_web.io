@@ -8,7 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (user && user.email) {
         document.getElementById("email").value = user.email;
     }
-
+    if (!user || !user.email) {
+        // Redirige al usuario a la página de inicio de sesión si no está logueado
+        window.location.href = "login.html";
+    }
     if (localStorage.getItem("userPfp")) {
         document.getElementById('pic').src = localStorage.getItem('userPfp');
     }
