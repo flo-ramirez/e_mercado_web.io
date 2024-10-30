@@ -87,7 +87,6 @@ footer p {
 #spnUsuario {
   color: rgba(255, 255, 255, 0.5);
   font-size: 16px;
-  padding-left: 100%;
 }
 
 .img-fit {
@@ -226,7 +225,6 @@ h p {
 }
 
 .btn-group {
-  background-color: rgba(187, 187, 187, 0.459);
   color: #fff;
 }
 
@@ -435,4 +433,37 @@ footer {
   border-radius: 15px;
   margin: 0 auto;
   height: 200px;
+}
+
+.btn-primary,
+.btn-secondary,
+.dropdown-toggle{
+    background-color: #f80 !important;
+    border-color: #f80 !important;
+    color: white !important;
+}
+
+.dropdown-menu {
+    background-color: #f0b34a;
+}
+
+.dropdown-item {
+    color: white;
+}
+
+.dropdown-item:hover {
+    background-color: #e67300ea;
+    color: white;
+}
+
+.btn .bi,
+.dropdown-item .bi {
+    color: white;
+    justify-content: right;
+}
+
+#userDropdown,
+#theme-toggle {
+  color: white;
+  background-color: #212529 !important;
 }

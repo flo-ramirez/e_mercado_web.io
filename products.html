@@ -43,19 +43,18 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="my-profile.html">Perfil</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="cart.html">Carro</a>
-          </li>
-          <li class="nav-item">
-            <a id="aLogout" class="nav-link d-flex align-items-center" href="login.html">
-              <span class="material-symbols-outlined">logout</span> Cerrar sesión
+          <!-- Menú desplegable de usuario -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <!-- Aquí se mostrará dinámicamente el nombre del usuario -->
             </a>
-          </li>
-          <li class="nav-item" id="liMostrarUsuario">
-          </li>
+            <ul class="dropdown-menu" aria-labelledby="userDropdown">
+              <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+              <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" id="logout" href="#">Cerrar sesión</a></li>
+            </ul>
           </li>
             <button id="theme-toggle" class="btn p-0">
               <i id="theme-icon" class="bi bi-sun-fill text-secondary"></i>
@@ -100,36 +99,13 @@
               <input class="form-control" type="number" placeholder="min." id="minFiltro">
               <input class="form-control" type="number" placeholder="máx." id="maxFiltro">
               <div class="btn-group">
-                <button class="btn btn-light" id="botonFiltrar">Filtrar</button>
-                <button class="btn btn-light btn-sm" id="limpiarFiltro">Limpiar</button>
+                <button class="btn btn-light" id="botonFiltrar" style="margin-top: 0px;">Filtrar</button>
+                <button class="btn btn-light btn-sm" id="limpiarFiltro" style="margin-top: 0px;">Limpiar</button>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <!--         
-        <div class="filtros" style="border: 1px solid rgb(179, 50, 50);">
-          <div class="porPrecio" style="border: 1px solid rgb(53, 149, 58);">
-            <label for="precio">Precio</label>
-            <input type="number" class="inputFiltro" id="precioMin" placeholder="Minimo">
-            <hr>
-            <input type="number"  class="inputFiltro" id="precioMax" placeholder="Maximo" >
-            <button class="btnFiltro" id="btnFiltro">Aplicar</button>
-            <button class="btnLimpiarFiltro" id="btnLimpiarFiltro">Limpiar</button>
-          </div>
-          <div class="ordenar" style="border: 1px solid rgb(94, 53, 182);">
-            <label for="slcOrdenar">Ordenar por</label>
-            <select name="slcOrdenar" id="slcOrdenar">
-              <option value="menor">Menor Precio</option>
-              <option value="mayor">Mayor Precio</option>
-              <option value="menor">Mas relevantes</option>
-            </select>
-          </div> 
-        </div>
-        -->
-
     </div>
     <div id="listaP" class="row card-list m-2">
     </div>
@@ -160,7 +136,6 @@
   <script src="js/index.js"></script>
   <script src="js/logica-usuario.js"></script>
   <script src="js/dark-mode.js"></script>
-
 </body>
 
 </html>

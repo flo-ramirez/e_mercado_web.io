@@ -40,19 +40,18 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="my-profile.html">Perfil</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="cart.html">Carro</a>
-          </li>
-          <li class="nav-item">
-            <a id="aLogout" class="nav-link d-flex align-items-center" href="login.html">
-              <span class="material-symbols-outlined">logout</span> Cerrar sesión
+          <!-- Menú desplegable de usuario -->
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <!-- Aquí se mostrará dinámicamente el nombre del usuario -->
             </a>
-          </li>
-          <li class="nav-item" id="liMostrarUsuario">
-          </li>
+            <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+                <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" id="logout" href="#">Cerrar sesión</a></li>
+            </ul>
           <li class="nav-item">
             <button id="theme-toggle" class="btn p-0">
               <i id="theme-icon" class="bi bi-sun-fill text-secondary"></i>
@@ -94,8 +93,8 @@
             </div>
             <div class="col-3 p-0">
               <div class="btn-group" role="group">
-                <button class="btn btn-block" id="rangeFilterCount">Filtrar</button>
-                <button class="btn btn-block" id="clearRangeFilter">Limpiar</button>
+                <button class="btn btn-block" id="rangeFilterCount" style="margin-top: 0px;">Filtrar</button>
+                <button class="btn btn-block" id="clearRangeFilter" style="margin-right: 0px; margin-top: 0px; ">Limpiar</button>
               </div>
             </div>
           </div>
@@ -130,5 +129,4 @@
   <script src="js/dark-mode.js"></script>
 
 </body>
-
 </html>

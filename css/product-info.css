@@ -198,3 +198,37 @@ padding: 15px;
     margin: 0 auto;
     height: 200px;
   }
+
+#userDropdown,
+#theme-toggle {
+  color: white;
+  background-color: #212529 !important;
+}
+
+
+.btn-primary,
+.btn-secondary,
+.dropdown-toggle{
+    background-color: #f80 !important;
+    border-color: #f80 !important;
+    color: white !important;
+}
+
+.dropdown-menu {
+    background-color: #f0b34a;
+}
+
+.dropdown-item {
+    color: white;
+}
+
+.dropdown-item:hover {
+    background-color: #e67300ea;
+    color: white;
+}
+
+.btn .bi,
+.dropdown-item .bi {
+    color: white;
+    justify-content: right;
+}

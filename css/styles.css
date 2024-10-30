@@ -81,10 +81,8 @@ footer p {
 }
 
 #spnUsuario {
-  color: rgba(152, 152, 152, 0.328);
+  color: rgb(#ffff);
   font-size: 16px;
-  padding-left: 100%;
-
 }
 
 .img-fit {
@@ -198,10 +196,38 @@ main{
   background-attachment: fixed;
 }
 
+
+.btn-primary,
+.btn-secondary,
+.dropdown-toggle{
+    background-color: #f80 !important;
+    border-color: #f80 !important;
+    color: white !important;
+}
+
+.dropdown-menu {
+    background-color: #f0b34a;
+}
+
+.dropdown-item {
+    color: white;
+}
+
+.dropdown-item:hover {
+    background-color: #e67300ea;
+    color: white;
+}
+
+.btn .bi,
+.dropdown-item .bi {
+    color: white;
+    justify-content: right;
+}
+
+#userDropdown,
 #theme-toggle {
-  background: none;
-  border: none;
-  padding: 0;
+  color: white;
+  background-color: #212529 !important;
 }
 
 #theme-icon {
@@ -212,4 +238,4 @@ main{
 #theme-toggle:hover #theme-icon {
   color: #c7c7c7; /* Cambia el color al pasar el cursor si deseas */
 }
-}
+
