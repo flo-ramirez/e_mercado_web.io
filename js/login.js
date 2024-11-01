@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
       event.preventDefault(); // Evita que el formulario se envíe
       const usuario = document.getElementById("usuario").value.trim();
       const contrasena = document.getElementById("contrasena").value.trim();
-      const checkbox = document.getElementById("ingreso").checked;
+    //   const checkbox = document.getElementById("ingreso").checked;
 
       // Verifica que ambos campos estén completos y que el usuario tenga formato de email válido
       if (usuario.length > 0 && contrasena.length > 0 && validateEmail(usuario)) {
