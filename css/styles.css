@@ -168,9 +168,6 @@ a.custom-card:hover {
   color: orange;
 }
 
-form {
-  background-color: rgb(243, 230, 205);
-}
 
 @media (max-width: 1700px) {
 #spnUsuario{
