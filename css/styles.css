@@ -203,7 +203,7 @@ main{
 }
 
 .dropdown-menu {
-    background-color: #f0b34a;
+    background-color: #f0b34a !important;
 }
 
 .dropdown-item {
@@ -211,7 +211,7 @@ main{
 }
 
 .dropdown-item:hover {
-    background-color: #e67300ea;
+    background-color: #e67300ea !important;
     color: white;
 }
 
@@ -235,4 +235,4 @@ main{
 #theme-toggle:hover #theme-icon {
   color: #c7c7c7; /* Cambia el color al pasar el cursor si deseas */
 }
-
+}
