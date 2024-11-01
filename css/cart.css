@@ -1,0 +1,72 @@
+main {
+    width: 100%; /* O un ancho fijo que funcione con tu diseño */
+    display: flex; /* Esto permite que los elementos se alineen correctamente */
+    justify-content: center; /* Centra el contenedor horizontalmente */
+    align-items: flex-start; /* Alinea los elementos en la parte superior */
+}
+.contenedor-carrito{
+    width: 1370px;
+    height: 875px;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(212, 212, 212, 0.6);
+    border-radius: 25px;
+    margin: 20px;
+}
+.carrito{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    border: 2px solid yellow;
+    width: 80%;
+    height: 80%;
+    margin-top: 30px;
+}
+.texto-carrito{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+h1{
+    font-size: 32px;
+}
+.icono{
+    color: #F5B24F;
+}
+.eliminar{
+    position: absolute;
+    right: 20px;
+    top: 100px;
+    font-size: 14px;
+    color: black;
+}
+.eliminar:hover {
+    color: red;
+}
+.seguir-comprando{
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
+    font-size: 24px;
+    background-color: #999898;
+    color: white;
+    width: 279px;
+    height: 53px;
+    border-radius: 10px;
+    border: none;
+
+}
+.finalizar-compra{
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    font-size: 24px;
+    background-color: #F5B24F;
+    color: white;
+    width: 279px;
+    height: 53px;
+    border-radius: 10px;
+    border: none;
+
+}
