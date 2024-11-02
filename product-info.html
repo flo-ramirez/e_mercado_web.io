@@ -7,6 +7,7 @@
   
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
     <link id="light-theme" href="css/product-info.css" rel="stylesheet">  
     <link id="dark-theme" href="css/dark_styles.css" rel="stylesheet" disabled> <!-- Queda disabled para que tengamos el tema claro por defecto y se cambie al clckear el boton-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
@@ -98,7 +99,6 @@
     </main>
 
     <div id="form-calificacion" class="container col-md">
-      
       <form id="calification-form">
         <div class="mb-3">
           <label class="form-label"><b>Calificar</b></label>
@@ -109,12 +109,12 @@
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownRating" data-bs-toggle="dropdown" aria-expanded="false">
                   <span id="selectedRating">★ ★ ★ ★ ★</span>
                 </button>
-                <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" href="#" data-value="1">★</a></li>
-                    <li><a class="dropdown-item" href="#" data-value="2">★ ★</a></li>
-                    <li><a class="dropdown-item" href="#" data-value="3">★ ★ ★</a></li>
-                    <li><a class="dropdown-item" href="#" data-value="4">★ ★ ★ ★</a></li>
-                    <li><a class="dropdown-item" href="#" data-value="5">★ ★ ★ ★ ★</a></li>
+                <ul  class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item dropdownStars" href="#" data-value="1">★</a></li>
+                    <li><a class="dropdown-item dropdownStars" href="#" data-value="2">★ ★</a></li>
+                    <li><a class="dropdown-item dropdownStars" href="#" data-value="3">★ ★ ★</a></li>
+                    <li><a class="dropdown-item dropdownStars" href="#" data-value="4">★ ★ ★ ★</a></li>
+                    <li><a class="dropdown-item dropdownStars" href="#" data-value="5">★ ★ ★ ★ ★</a></li>
                 </ul>
               </div>
 

@@ -16,7 +16,7 @@ function verify() {
     document.querySelectorAll(".verify").forEach(element => {
         const errorElement = element.nextElementSibling;
 
-        if (element.value.trim() === "" && element.id !== "phone") { 
+        if (element.value.trim() === "" && element.id !== "phone") {
             element.classList.add("is-invalid");
             errorElement.textContent = "Este campo es obligatorio";
             valid = false;
@@ -77,7 +77,21 @@ document.addEventListener("DOMContentLoaded", () => {
     if (fotoAlmacenada) {
         fotoPerfil.src = fotoAlmacenada;
     }
+    userData()
 });
+function userData() {
+    const userLocalStorage = JSON.parse(localStorage.getItem("user"));
+    if (userLocalStorage) {
+        const fields = ["name", "surname", "phone", "secName", "secSurname", "email"];
+        
+        fields.forEach(field => {
+            const input = document.getElementById(field);
+            if (input) {
+                input.value = userLocalStorage[field] || '';
+            }
+        });
+    }
+}
 
 // Actualizar la vista previa de la imagen seleccionada
 fotoPerfilInput.addEventListener('change', updateImageDisplay);
@@ -91,7 +105,7 @@ function updateImageDisplay() {
     } else {
         if (validFileType(imagenes[0])) {
             const reader = new FileReader();
-            reader.onload = function() {
+            reader.onload = function () {
                 const base64Imagen = reader.result;
                 fotoPerfil.src = base64Imagen; // Mostrar la imagen en el perfil
                 localStorage.setItem("userPfp", base64Imagen); // Guardar la imagen en localStorage
