@@ -58,3 +58,7 @@ function displayCartItems(cartItems) {
         productsContainer.appendChild(productElement);
     });
 }
+
+
+
+s
