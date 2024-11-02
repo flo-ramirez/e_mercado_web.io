@@ -28,6 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
         logoutButton.addEventListener('click', function() {
             localStorage.removeItem('logueado');
             localStorage.removeItem('usuarioLogueado');
+            localStorage.removeItem('user');
+            localStorage.removeItem('catID');
             window.location.href = 'login.html'; // Redirigir a la página de login después de cerrar sesión
         });
     }

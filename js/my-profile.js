@@ -1,59 +1,12 @@
-const input = document.getElementById("img");
-const preview = document.getElementById("preview");
 const saveBtn = document.getElementById("saveBtn");
 
-// Cargar la imagen de perfil guardada al cargar la página
+// Cargar la información del usuario guardada al cargar la página
 document.addEventListener("DOMContentLoaded", () => {
     const user = JSON.parse(localStorage.getItem("user"));
     if (user && user.email) {
         document.getElementById("email").value = user.email;
     }
-    if (!user || !user.email) {
-        // Redirige al usuario a la página de inicio de sesión si no está logueado
-        window.location.href = "login.html";
-    }
-    if (localStorage.getItem("userPfp")) {
-        document.getElementById('pic').src = localStorage.getItem('userPfp');
-    }
 });
-
-// Actualizar la vista previa de la imagen seleccionada
-input.addEventListener('change', updateImageDisplay);
-
-function updateImageDisplay() {
-    preview.innerHTML = "";
-    const imagenes = input.files;
-
-    if (imagenes.length === 0) {
-        preview.innerHTML = '<p class="p-1 text-center fs-5 mb-1">No hay ningún archivo seleccionado actualmente.</p>';
-    } else {
-        if (validFileType(imagenes[0])) {
-            preview.innerHTML = `
-            <p><b>Nombre de archivo:</b> ${imagenes[0].name} <br> <b>Tamaño de archivo:</b> ${returnFileSize(imagenes[0].size)}.</p>`;
-            document.getElementById("pic").src = URL.createObjectURL(imagenes[0]); // Cambiar la imagen en el perfil
-        } else {
-            preview.innerHTML = `<p class="p-1 text-center fs-5 mb-1"><b>Nombre de archivo:</b> ${imagenes[0].name}: El formato del archivo no es válido.</p>`;
-        }
-    }
-}
-
-// Validar tipo de archivo
-const fileTypes = ["image/jpeg", "image/jpg", "image/png"];
-
-function validFileType(file) {
-    return fileTypes.includes(file.type);
-}
-
-// Convertir tamaño de archivo
-function returnFileSize(bytes) {
-    if (bytes < 1024) {
-        return `${bytes} bytes`;
-    } else if (bytes < 1048576) {
-        return `${(bytes / 1024).toFixed(1)} KB`;
-    } else {
-        return `${(bytes / 1048576).toFixed(1)} MB`;
-    }
-}
 
 // Función para verificar campos del formulario
 function verify() {
@@ -63,7 +16,7 @@ function verify() {
     document.querySelectorAll(".verify").forEach(element => {
         const errorElement = element.nextElementSibling;
 
-        if (element.value.trim() === "" && element.id !== "phone") { 
+        if (element.value.trim() === "" && element.id !== "phone") {
             element.classList.add("is-invalid");
             errorElement.textContent = "Este campo es obligatorio";
             valid = false;
@@ -97,8 +50,6 @@ function verify() {
 
         let user = JSON.parse(localStorage.getItem("user")) || {};
         user = { name, surname, phone, email, secName, secSurname };
-        
-        localStorage.setItem("usuarioLogueado", JSON.stringify(email));
 
         localStorage.setItem("user", JSON.stringify(user));
         alert("Datos guardados correctamente");
@@ -115,16 +66,60 @@ document.querySelectorAll("input").forEach(element => {
     });
 });
 
-// Guardar imagen de perfil seleccionada en localStorage
-input.addEventListener("change", () => {
-    const imgCatch = input.files[0];
-    const reader = new FileReader();
+// DESAFIATE
+const fotoPerfilInput = document.getElementById("img");
+const preview = document.getElementById("preview");
+const fotoPerfil = document.getElementById("pic");
 
-    reader.addEventListener("load", function () {
-        localStorage.setItem("userPfp", reader.result);
-    }, false);
-
-    if (imgCatch) {
-        reader.readAsDataURL(imgCatch);
+// Cargar la imagen de perfil guardada al cargar la página
+document.addEventListener("DOMContentLoaded", () => {
+    const fotoAlmacenada = localStorage.getItem("userPfp");
+    if (fotoAlmacenada) {
+        fotoPerfil.src = fotoAlmacenada;
     }
+    userData()
 });
+function userData() {
+    const userLocalStorage = JSON.parse(localStorage.getItem("user"));
+    if (userLocalStorage) {
+        const fields = ["name", "surname", "phone", "secName", "secSurname", "email"];
+        
+        fields.forEach(field => {
+            const input = document.getElementById(field);
+            if (input) {
+                input.value = userLocalStorage[field] || '';
+            }
+        });
+    }
+}
+
+// Actualizar la vista previa de la imagen seleccionada
+fotoPerfilInput.addEventListener('change', updateImageDisplay);
+
+function updateImageDisplay() {
+    preview.innerHTML = ""; // Limpiar el contenido anterior de la vista previa
+    const imagenes = fotoPerfilInput.files;
+
+    if (imagenes.length === 0) {
+        preview.innerHTML = '<p class="p-1 text-center fs-5 mb-1">No hay ningún archivo seleccionado actualmente.</p>';
+    } else {
+        if (validFileType(imagenes[0])) {
+            const reader = new FileReader();
+            reader.onload = function () {
+                const base64Imagen = reader.result;
+                fotoPerfil.src = base64Imagen; // Mostrar la imagen en el perfil
+                localStorage.setItem("userPfp", base64Imagen); // Guardar la imagen en localStorage
+            };
+            reader.readAsDataURL(imagenes[0]);
+        } else {
+            preview.innerHTML = `<p class="p-1 text-center fs-5 mb-1"><b>Nombre de archivo:</b> ${imagenes[0].name}: El formato del archivo no es válido.</p>`;
+        }
+    }
+}
+
+// Validar tipo de archivo
+const fileTypes = ["image/jpeg", "image/jpg", "image/png"];
+
+function validFileType(file) {
+    return fileTypes.includes(file.type);
+}

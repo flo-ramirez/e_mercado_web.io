@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
   let puntaje = 0;
 
   //  seleccionar la calificacion
-  const dropdownItems = document.querySelectorAll('.dropdown-item');
+  const dropdownItems = document.getElementsByClassName('.dropdownStars');
   dropdownItems.forEach(item => {
       item.addEventListener('click', function (e) {
           e.preventDefault();
@@ -147,3 +147,5 @@ document.addEventListener('DOMContentLoaded', function () {
       }
   });
 });
+
+
