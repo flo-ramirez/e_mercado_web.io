@@ -87,8 +87,10 @@ margin-top: 50px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     width: 850px; /* ancho fijo en píxeles */
-    height: 100%;
+    height: auto; /* Asegúrate de que el alto sea automático o ajustable */
+    overflow: hidden; /* Esto asegura que cualquier contenido que sobrepase el contenedor no se muestre */
 }
+
 
 .product-details h1 { /* titulo del producto */
     font-size: 2em;
@@ -115,7 +117,7 @@ margin-top: 50px;
 }
 
 button {
-    padding: 10px 25px;
+    padding: 8px 15px;
     margin-right: 10px;
     background-color: #f80;
     color: white;
@@ -124,6 +126,18 @@ button {
     margin-left: 20px;
     border-radius: 8px;
     margin-top: 20px;
+}
+.buy-button {
+    padding: 8px 80px; 
+    margin-top: 7px;
+    background-color: rgb(16, 169, 34); 
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 10px; 
+    font-size: 1.2em; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
 }
 
 button:hover {
@@ -141,25 +155,25 @@ button:hover {
 }
 
 .seller-info {
-    margin-top: 20px;
-    font-size: 0.9em;
+    margin-top: 10px;
+    font-size: 0.8em;
     color: #666;
 }
 
 .estadistica {
-    width: 180px; /* Ajusta el tamaño */
-    height: auto; /* Mantiene la proporción */
-    margin-top: 50px; /* Espaciado superior */
-    margin-left: 65px;      
- }
-    
+    max-width:55%; 
+    height: auto;
+    margin-top: 10px;
+    margin-left: 50px;      
+    display: block;
+}
+
 
 footer {
-margin-top: 40px;
-@@ -121,7 +157,7 @@ footer {
-padding: 15px;
+    margin-top: 40px;
+    padding: 15px;
 }
-}
+
 
 /* Tablet Landscape 1024x768 */
 @media only screen and (max-width: 1024px) {

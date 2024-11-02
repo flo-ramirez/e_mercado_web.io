@@ -61,4 +61,3 @@ function displayCartItems(cartItems) {
 
 
 
-s
