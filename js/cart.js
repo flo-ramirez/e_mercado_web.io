@@ -1,22 +1,13 @@
+//Lo que recomienda el chatito
+
+
 const productsContainer = document.getElementById('products-container');
 const emptyMessage = document.getElementById('empty-message');
+const cartTotal = document.createElement('p'); // Contenedor para el subtotal
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Crear un producto de ejemplo | Deberia traer lo que seguarde en LS desde product-info y products |
-    const exampleItem = {
-        name: "Producto de Ejemplo",
-        currency: "USD",
-        price: "10.00",
-        quantity: 1
-    };
-    
     // Obtener los items del carrito del localStorage
     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-
-    if (cartItems.length === 0) {
-        cartItems.push(exampleItem);
-        localStorage.setItem('cartItems', JSON.stringify(cartItems)); // Guardar en localStorage
-    }
 
     if (cartItems.length === 0) {
         emptyMessage.style.display = 'block';
@@ -28,11 +19,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+
+// Función para mostrar los productos en el carrito
 function displayCartItems(cartItems) {
     productsContainer.innerHTML = ''; 
+    let subtotal = 0;
 
     // Iterar sobre los items del carrito y crear las cards
-    cartItems.forEach(item => {
+    cartItems.forEach((item, index) => {
+        subtotal += item.price * item.quantity;
+
         const productElement = document.createElement('div');
         productElement.classList.add('card', 'mb-3');
 
@@ -47,8 +43,8 @@ function displayCartItems(cartItems) {
                         <h5 class="card-title">${item.name}</h5>
                         <p class="card-text">Moneda: ${item.currency}</p>
                         <p class="card-text">Precio: ${item.price}</p>
-                        <p class="card-text">Cantidad: ${item.quantity}</p>
-                        <p class="card-text"><small class="text-body-secondary">Agregado al carrito</small></p>
+                        <label for="quantity-${index}">Cantidad: </label>
+                        <input type="number" id="quantity-${index}" value="${item.quantity}" min="1" data-index="${index}" class="quantity-input">
                     </div>
                 </div>
             </div>
@@ -57,7 +53,38 @@ function displayCartItems(cartItems) {
         // Añadir la card al contenedor de productos
         productsContainer.appendChild(productElement);
     });
+
+    // Mostrar subtotal
+    cartTotal.textContent = `Subtotal: ${subtotal.toFixed(2)}`;
+    productsContainer.appendChild(cartTotal);
+
+    // Añadir eventos para actualizar el subtotal cuando se cambia la cantidad
+    const quantityInputs = document.querySelectorAll('.quantity-input');
+    quantityInputs.forEach(input => {
+        input.addEventListener('input', (event) => updateQuantity(event, cartItems));
+    });
 }
 
+// Función para actualizar la cantidad de un producto y el subtotal
+function updateQuantity(event, cartItems) {
+    const index = event.target.dataset.index;
+    const newQuantity = parseInt(event.target.value);
+
+    if (newQuantity > 0) {
+        cartItems[index].quantity = newQuantity;
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        calculateSubtotal(cartItems);
+    }
+}
+
+// Función para calcular el subtotal
+function calculateSubtotal(cartItems) {
+    let subtotal = 0;
+    cartItems.forEach(item => {
+        subtotal += item.price * item.quantity;
+    });
+
+    cartTotal.textContent = `Subtotal: ${subtotal.toFixed(2)}`;
+}
 
 

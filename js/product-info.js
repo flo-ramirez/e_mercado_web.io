@@ -147,7 +147,9 @@ document.addEventListener('DOMContentLoaded', function () {
       }
   });
 });
-// script.js
+
+/* 
+//Agrega al LS el producto seleccionado usando el boton comprar // modificado para que guarde el producto en cartItems[] // 
 
 document.addEventListener("DOMContentLoaded", function () {
  
@@ -171,6 +173,46 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.setItem("selectedProduct", JSON.stringify(product));
 
       // Redirigir cart.html en una nueva pestaña
+      window.open("cart.html", "_blank");
+  });
+}); */
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Seleccionar el botón por clase
+  document.querySelector(".buy-button").addEventListener("click", function () {
+      const image = document.getElementById("mainImage").src;
+      const name = document.getElementById("productName").innerText;
+      const price = parseFloat(document.getElementById("productPrice").innerText);
+      const description = document.getElementById("productDescription").innerText;
+
+      // Crear objeto del producto
+      const cartItem = {
+        id: product.id,
+        image: product.image,
+        name: product.name,
+        price: product.cost,
+        currency: product.currency,
+        quantity: 1
+    };
+
+      // Obtener los productos actuales del carrito en localStorage
+      let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+      // Verificar si el producto ya está en el carrito
+      const existingProductIndex = cartItems.findIndex(item => item.id === product.id);
+
+      if (existingProductIndex !== -1) {
+          // Si ya existe, incrementar la cantidad
+          cartItems[existingProductIndex].quantity += 1;
+      } else {
+          // Si no existe, agregarlo al carrito
+          cartItems.push(product);
+      }
+
+      // Guardar el carrito actualizado en localStorage
+      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
+      // Redirigir a cart.html en una nueva pestaña
       window.open("cart.html", "_blank");
   });
 });
