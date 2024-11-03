@@ -1,7 +1,7 @@
 const cartBadge = document.getElementById('cart-badge'); 
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Obtener los items del carrito del localStorage
+    // Obtengo los items del carrito del localStorage
     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
     updateBadgeCount(cartItems);
 
