@@ -88,3 +88,12 @@ function calculateSubtotal(cartItems) {
 }
 
 
+// Función para actualizar el badge del carrito
+function updateCartBadge() {
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
+    
+    const cartBadge = document.getElementById('cart-badge');
+    cartBadge.textContent = totalQuantity;
+}
+

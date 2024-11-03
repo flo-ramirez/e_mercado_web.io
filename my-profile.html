@@ -43,7 +43,7 @@
                 <!-- Aquí se mostrará dinámicamente el nombre del usuario -->
               </a>
               <ul class="dropdown-menu" aria-labelledby="userDropdown">
-                <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+                <li><a class="dropdown-item" href="cart.html">Mi carrito <span id="cart-badge" class="badge badge-pill badge-warning">0</span></a></li>
                 <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
                 <li>
                   <hr class="dropdown-divider">
@@ -80,7 +80,7 @@
           <span class="error-message"></span>
   
           <label for="email" class="form-label">E-Mail *</label>
-          <input type="text" name="email" id="email" class="form-control verify" required>
+          <input type="text" name="email" id="email" class="form-control verify" required readonly>
           <span class="error-message"></span>
   
           <label for="phone" class="form-label">Teléfono de Contacto</label>
@@ -118,6 +118,7 @@
 
   <script src="https://kit.fontawesome.com/59c8fae222.js" crossorigin="anonymous"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/badge-cart.js"></script>
   <script src="js/init.js"></script>
   <script src="js/my-profile.js"></script>
   <script src="js/logica-usuario.js"></script>
