@@ -52,7 +52,7 @@
               <!-- Aquí se mostrará dinámicamente el nombre del usuario -->
             </a>
             <ul class="dropdown-menu" aria-labelledby="userDropdown">
-              <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+              <li><a class="dropdown-item" href="cart.html">Mi carrito <span id="cart-badge" class="badge badge-pill badge-warning">0</span></a></li>
               <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
               <li>
                 <hr class="dropdown-divider">
@@ -68,7 +68,7 @@
       </div>
     </div>
   </nav>
-  <main>
+  <main>    
     <div class="contenedor-carrito">
       <div class="carrito">
         <div class="texto-carrito">
@@ -107,6 +107,7 @@
     </div>
   </div>
   <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/badge-cart.js"></script>
   <script src="js/init.js"></script>
   <script type="module" src="js/cart.js"></script>
   <script src="js/logica-usuario.js"></script>
