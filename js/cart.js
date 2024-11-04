@@ -31,23 +31,27 @@ function displayCartItems(cartItems) {
 
         // Crear el contenido de la card
         productElement.innerHTML = `
-            <div class="row g-0" style="border: solid 1px red">
-                <div class="col-md-4 img-container" style="border: solid 1px green">
-                    <img src="${item.image}" class="img-fluid rounded-start" alt="${item.name}">
+            <div class="card">
+                <div class="img-div">
+                    <img  src="${item.image}" class="img-fluid rounded-start" alt="${item.name}">
                 </div>
-                <div class="col-md-8" style="border: solid 1px blue">
-                    <div class="card-body product-info" style="border: solid 1px yellow">
-                        <div style="border: solid 2px violet" class="title-price">
-                            <h5 class="card-title">${item.name}</h5>
-                            <div style="border: solid 2px #ffff" class="price">
-                                <p class="card-text">${item.currency}</p>
-                                <p class="card-text">${item.price}</p>
+                <div class="col-md-8">
+                    <div class="card-body product-info">
+                        <div class="card-content">
+                            <div class="title-price">
+                                <h5 class="card-title">${item.name}</h5>
+                                <div class="price">
+                                    <p class="card-text">${item.currency}</p>
+                                    <p class="card-text">${item.price}</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class= quantity-delate style="border: solid 2px orange">
-                            <label for="quantity-${index}"></label>
-                            <input type="number" id="quantity-${index}" value="${item.quantity}" min="1" data-index="${index}" class="quantity-input">
-                            <i id="delateProduct"class="bi bi-trash3"></i>
+                            <div class= "quantity-delate">
+                                <div>
+                                    <label for="quantity-${index}"></label>
+                                    <input type="number" id="quantity-${index}" value="${item.quantity}" min="1" data-index="${index}" class="quantity-input">
+                                </div>
+                                <i id="delateProduct"class="bi bi-trash3"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -60,6 +64,7 @@ function displayCartItems(cartItems) {
 
     // Mostrar subtotal
     cartTotal.textContent = `Subtotal: ${subtotal.toFixed(2)}`;
+    cartTotal.classList.add('subtotal');
     productsContainer.appendChild(cartTotal);
 
     // Añadir eventos para actualizar el subtotal cuando se cambia la cantidad

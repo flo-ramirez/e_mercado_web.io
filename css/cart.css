@@ -38,7 +38,7 @@ h1 {
 
 
 .delete-cart {
-  padding: 0 1rem 1rem 54rem;
+  padding: 0 0 1rem 61rem;
   font-size: 14px;
   color: black;
   text-decoration: underline;
@@ -52,16 +52,32 @@ empty-message{
 }
 
 .card {
-  border-radius: 8px; 
-  overflow: hidden;
-  background: linear-gradient(to right, #f5b24e78 0%, #9bd9ca57);
+  flex-direction: row;
+  display: flex;
+  border-radius: 8px;
+  width: 1149px;
+  height: 172px;
+  background: linear-gradient(to right, #f5b24e39 0%, #9bd9c93a);
+  justify-content: flex-start;
+  align-items: center;
 }
+.img-div{
+  padding: 1rem;
+} 
+ .img-fluid{
+  width: 268px;
+  border: solid #F5B24F 1px;
+  border-radius: 10px;
+  height: 133px;
+  object-fit: cover;
+ }
 
 .title-price{
   display: flex;
   justify-content: space-between;
-  padding-right: 2%;
+  padding-bottom: 2rem;
 }
+
 
 .card-title{
   font-size: 24px;
@@ -78,10 +94,34 @@ empty-message{
   padding: 2%;
 }
 
+.product-info{
+  height: 100%;
+  padding: 1rem 1rem 1rem 0rem;
+}
 
+.card-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.quantity-delate{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3rem 0 3rem;
+}
 .quantity-input{
   width: 3rem;
-  text-align: center;
+  text-align: end;
+}
+.bi-trash3::before {
+  font-size: 1.5rem;
+  color: #F5B24F;
+}
+.subtotal{
+  position: absolute;
+  right: 1rem;
 }
 .continue-buying {
   position: absolute;
