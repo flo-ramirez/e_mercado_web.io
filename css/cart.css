@@ -60,6 +60,7 @@ empty-message{
   background: linear-gradient(to right, #f5b24e39 0%, #9bd9c93a);
   justify-content: flex-start;
   align-items: center;
+  border: none;
 }
 .img-div{
   padding: 1rem;
@@ -111,18 +112,24 @@ empty-message{
   justify-content: space-between;
   padding: 0 1rem 0 3rem;
 }
+
 .quantity-input{
   width: 3rem;
   text-align: end;
 }
+
 .bi-trash3::before {
   font-size: 1.5rem;
   color: #F5B24F;
 }
+
 .subtotal{
   position: absolute;
-  right: 1rem;
+  right: 3rem;
+  font-size: 24px;
+  color: black;
 }
+
 .continue-buying {
   position: absolute;
   left: 20px;
@@ -137,7 +144,7 @@ empty-message{
 }
 .finalize-purchase{
   position: absolute;
-  right: 20px;
+  right: 0px;
   bottom: 10px;
   font-size: 24px;
   background-color: #f5b24f;
