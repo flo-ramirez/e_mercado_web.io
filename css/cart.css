@@ -4,7 +4,7 @@ main {
   justify-content: center; /* Centra el contenedor horizontalmente */
   align-items: flex-start; /* Alinea los elementos en la parte superior */
 }
-.contenedor-carrito {
+.cart-container {
   width: 1370px;
   height: 875px;
   display: flex;
@@ -14,17 +14,16 @@ main {
   margin: 20px;
 }
 
-.carrito {
+.cart {
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
-  border: 2px solid yellow;
   width: 1149px;
   height: 80%;
   margin-top: 30px;
 }
-.texto-carrito {
+.cart-text{
   display: flex;
   align-items: center;
   gap: 10px;
@@ -32,23 +31,59 @@ main {
 h1 {
   font-size: 32px;
 }
-.icono {
+.bi-cart{
   color: #f5b24f;
   font-size: 32px;
 }
-.eliminar {
-  /* position: absolute;
-  right: 20px;
-  top: 100px; */
+
+
+.delete-cart {
   padding: 0 1rem 1rem 54rem;
   font-size: 14px;
   color: black;
   text-decoration: underline;
 }
-.eliminar:hover {
+.delete-cart:hover {
   color: red;
 }
-.seguir-comprando {
+empty-message{
+  display: none;
+  background-color: #BAB7B7;
+}
+
+.card {
+  border-radius: 8px; 
+  overflow: hidden;
+  background: linear-gradient(to right, #f5b24e78 0%, #9bd9ca57);
+}
+
+.title-price{
+  display: flex;
+  justify-content: space-between;
+  padding-right: 2%;
+}
+
+.card-title{
+  font-size: 24px;
+  color: black;
+}
+
+.price{
+  display: flex;
+  width: 6rem;
+}
+.card-text{
+  font-size: 20px;
+  color: black;
+  padding: 2%;
+}
+
+
+.quantity-input{
+  width: 3rem;
+  text-align: center;
+}
+.continue-buying {
   position: absolute;
   left: 20px;
   bottom: 10px;
@@ -60,7 +95,7 @@ h1 {
   border-radius: 10px;
   border: none;
 }
-.finalizar-compra {
+.finalize-purchase{
   position: absolute;
   right: 20px;
   bottom: 10px;
@@ -72,36 +107,7 @@ h1 {
   border-radius: 10px;
   border: none;
 }
-#products-container {
-  border: solid 1px black;
-  width: 90%;
-  margin: 0 auto; /* Centrar el contenedor */
-  padding: 20px; /* Añadir un poco de espacio */
-  border-radius: 8px; /* Bordes redondeados */
-  background-color: #f8f9fa; /* Fondo claro para contraste */
-}
 
-.card {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-content: center;
-  justify-content: space-between;
-  margin-bottom: 15px; /* Espacio entre tarjetas */
-  border: 1px solid #dee2e6; /* Borde suave para la tarjeta */
-  border-radius: 8px; /* Bordes redondeados */
-  overflow: hidden; /* Para que no se desborde el contenido */
-  background-color: #fff; /* Fondo blanco */
-}
-
-.card img {
-  max-width: 100%; /* Asegurar que la imagen no se desborde */
-  height: auto; /* Mantener la proporción de la imagen */
-}
-
-.product-info {
-  padding: 10px; /* Espaciado interno */
-}
 
 @media (max-width: 768px) {
 }
