@@ -109,7 +109,7 @@ empty-message{
 .quantity-delate{
   display: flex;
   justify-content: space-between;
-  padding: 0 3rem 0 3rem;
+  padding: 0 1rem 0 3rem;
 }
 .quantity-input{
   width: 3rem;
