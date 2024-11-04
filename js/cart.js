@@ -1,6 +1,3 @@
-//Lo que recomienda el chatito
-
-
 const productsContainer = document.getElementById('products-container');
 const emptyMessage = document.getElementById('empty-message');
 const cartTotal = document.createElement('p'); // Contenedor para el subtotal
@@ -18,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
         displayCartItems(cartItems);
     }
 });
-
 
 // Función para mostrar los productos en el carrito
 function displayCartItems(cartItems) {
