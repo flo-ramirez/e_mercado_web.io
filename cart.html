@@ -10,14 +10,10 @@
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link id="light-theme" href="css/styles.css" rel="stylesheet">
-  <link id="dark-theme" href="css/dark_styles.css" rel="stylesheet" disabled>
   <!-- Queda disabled para que tengamos el tema claro por defecto y se cambie al clckear el boton-->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link id="dark-theme" href="css/dark_styles.css" rel="stylesheet" disabled>
   <link rel="stylesheet" href="css/cart.css">
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=shopping_cart" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <style>
     .material-symbols-outlined {
       font-size: 32px;
@@ -52,7 +48,8 @@
               <!-- Aquí se mostrará dinámicamente el nombre del usuario -->
             </a>
             <ul class="dropdown-menu" aria-labelledby="userDropdown">
-              <li><a class="dropdown-item" href="cart.html">Mi carrito <span id="cart-badge" class="badge badge-pill badge-warning">0</span></a></li>
+              <li><a class="dropdown-item" href="cart.html">Mi carrito <span id="cart-badge"
+                    class="badge badge-pill badge-warning">0</span></a></li>
               <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
               <li>
                 <hr class="dropdown-divider">
@@ -68,22 +65,22 @@
       </div>
     </div>
   </nav>
-  <main>    
-    <div class="contenedor-carrito">
-      <div class="carrito">
-        <div class="texto-carrito">
+  <main>
+    <div class="cart-container">
+      <div class="cart">
+        <div class="cart-text">
           <h1>
-            <span class="material-symbols-outlined icono"> shopping_cart</span>
+            <i class="bi bi-cart"></i>
             Mi carrito
             <span class="cantCarrito"></span> <!--Aca deberia quedar lo del DESAFIATE-->
           </h1>
         </div>
-        <a class="eliminar" href="#">Eliminar todos los articulos </a>
-        <div id="empty-message" style="display: none;">El carrito está vacío.</div>
+        <a class="delete-cart" href="#">Eliminar todos los articulos </a>
+        <div id="empty-message">El carrito está vacío.</div>
         <div id="products-container" style="display: none;"></div> <!--Aca deberian aparecer los productos-->
         <div class="botones">
-          <button class="seguir-comprando">Seguir comprando </button>
-          <button class="finalizar-compra">Finalizar compra </button>
+          <button class="continue-buying">Seguir comprando </button>
+          <button class="finalize-purchase">Finalizar compra </button>
         </div>
       </div>
     </div>

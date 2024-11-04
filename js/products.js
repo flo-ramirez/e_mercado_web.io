@@ -53,6 +53,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     const divCards = document.getElementById("listaP");
     const list = await lista(productos);
     divCards.innerHTML = ''; // Limpiar contenedor de productos
+    console.log(list);
+    
 
     list.forEach(element => {
         divCards.innerHTML += getHTML(element);
@@ -66,7 +68,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             const productId = this.getAttribute("data-id");
             const product = list.find(item => item.id == productId);
-
+            console.log(product.image);
+            
             // Crear objeto del producto en formato compatible con el carrito
             const cartItem = {
                 id: product.id,
