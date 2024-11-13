@@ -89,8 +89,10 @@ document.addEventListener("DOMContentLoaded", function () {
       const priceText = document.getElementById("productPrice").innerText;
       const price = parseFloat(priceText.split(" ")[0]);
       const currency = priceText.split(" ")[1] || "USD";
-      const productId = localStorage.getItem('selectedProductId') || Date.now();
+      const productId = localStorage.getItem('selectedProductId');
 
+      
+      
       // Crear el objeto del producto en formato de carrito
       const cartItem = {
         id: productId,
