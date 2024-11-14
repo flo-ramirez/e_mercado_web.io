@@ -67,23 +67,93 @@
   </nav>
   <main>
     <div class="cart-container">
-      <div class="cart">
-        <div class="cart-text">
-          <h1>
-            <i class="bi bi-cart"></i>
-            Mi carrito
-            <span class="cantCarrito"></span> <!--Aca deberia quedar lo del DESAFIATE-->
-          </h1>
-        </div>
-        <a class="delete-cart" href="#">Eliminar todos los articulos </a>
-        <div id="empty-message">El carrito está vacío.</div>
-        <div id="products-container" style="display: none;"></div> <!--Aca deberian aparecer los productos-->
-        <div class="botones">
-          <button class="continue-buying">Seguir comprando </button>
-          <button class="finalize-purchase">Finalizar compra </button>
+      <div id="cart-hiden">
+        <div class="container-content" id="cart">
+          <div class="cart-text">
+            <h2>
+              <i class="bi bi-cart"></i>
+              Mi carrito
+              <span class="cantCarrito"></span> <!--Aca deberia quedar lo del DESAFIATE-->
+            </h2>
+          </div>
+          <a class="delete-cart" href="#">Eliminar todos los articulos </a>
+          <div id="empty-message">El carrito está vacío.</div>
+          <div id="products-container" style="display: none;"></div> <!--Aca deberian aparecer los productos-->
+          <div class="botones">
+            <button class="continue-buying" id="continue-buying-button">Seguir comprando</button>
+            <button class="finalize-purchase" id="finalize-purchase-button">Continuar Compra</button>
+          </div>
         </div>
       </div>
-    </div>
+      <div id="purchse-hiden">
+        <div class="container-content" id="purchase-data-section">
+          <div class="cart-text">
+            <h2>
+              <i class="bi bi-cart"></i>
+              Datos de la Compra
+            </h2>
+          </div>
+          <div class="forms-container">
+            <div id="shipment">
+              <div class="title-purchase" id="shipment-title">
+                <h3>Envio</h3>
+              </div>
+              <div class="forms-div">
+                <form id="form-shipment-tipe">
+                  <span>Tipo de envío</span>
+                  <div class="radio-group">
+                    <div class="radio-item">
+                      <input type="radio" id="premium" name="envio" value="premium">
+                      <label for="premium">Premium (15%) <span>2 - 5 días</span></label>
+                    </div>
+                    <div class="radio-item">
+                      <input type="radio" id="express" name="envio" value="express">
+                      <label for="express">Express (7%) <span>5 - 8 días</span></label>
+                    </div>
+                    <div class="radio-item">
+                      <input type="radio" id="standard" name="envio" value="standard">
+                      <label for="standard">Standard (5%) <span>8 - 12 días</span></label>
+                    </div>
+                  </div>
+                  <div class="text-group">
+                    <label for="departamento">Depratamento</label>
+                    <input type="text" id="departamento">
+
+                    <label for="localidad">Localidad</label>
+                    <input type="text" id="localidad">
+
+                    <label for="calle">Calle</label>
+                    <input type="text" id="calle">
+
+                    <label for="numeroDirec">Numero</label>
+                    <input type="text" id="numeroDirec">
+
+                    <label for="esquina">Esquina</label>
+                    <input type="text" id="esquina">
+
+                    <input class="next" type="button" value="&#8594;">
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div id="pay">
+              <div class="title-purchase" id="pay-title">
+                <h3>Pago</h3>
+              </div>
+              <div class="forms-div">
+              </div>
+            </div>
+            <div id="final-step">
+              <div class="title-purchase" id="final-step-title">
+                <h3>Finalizar Compra</h3>
+              </div>
+              <div class="forms-div">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
   <footer class="text-muted">

@@ -22,15 +22,23 @@ document.addEventListener('DOMContentLoaded', function() {
             mostrarUsuario.innerHTML = `<span class="nav-link" id="spnUsuario">${user.name}</span>`;
         }
     }
+    if(logueado = flase){
+        console.log("esta deslogueado");
+        
+        window.location.href = 'login.html';
+    }
 
     // Evento para cerrar sesión
     if (logoutButton) {
         logoutButton.addEventListener('click', function() {
+            window.location.href = 'login.html';
+            console.log("se salio");
+            
             localStorage.removeItem('logueado');
             localStorage.removeItem('usuarioLogueado');
             localStorage.removeItem('user');
             localStorage.removeItem('catID');
-            window.location.href = 'login.html'; // Redirigir a la página de login después de cerrar sesión
+           // Redirigir a la página de login después de cerrar sesión
         });
     }
 });
