@@ -3,6 +3,10 @@ const emptyMessage = document.getElementById('empty-message');
 const cartTotal = document.createElement('p'); // Contenedor para el subtotal
 const deleteCart = document.getElementById("delete-cart");
 
+
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     // Obtener los items del carrito del localStorage
     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
@@ -106,6 +110,18 @@ function updateCartBadge() {
     cartBadge.textContent = totalQuantity;
 }
 
-deleteCart.addEventListener('click', () => {
-    localStorage.removeItem('cartItems')
-})
+// deleteCart.addEventListener('click', () => {
+//     localStorage.removeItem('cartItems')
+// })
+
+const finalizePurchaseButton = document.getElementById('finalize-purchase-button');
+const finalizePurchaseContainer = document.getElementById('purchse-hiden');
+finalizePurchaseContainer.style.display = 'none';
+
+finalizePurchaseButton.addEventListener('click', showPurchaseData)
+function showPurchaseData() {
+    const cartContainer = document.getElementById('cart-hiden');
+    cartContainer.style.display = 'none';
+    finalizePurchaseContainer.style.display = 'block';
+
+}
