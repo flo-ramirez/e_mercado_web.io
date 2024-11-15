@@ -99,9 +99,10 @@
                 <h3>Envio</h3>
               </div>
               <div class="forms-div">
-                <form id="form-shipment-tipe">
-                  <span>Tipo de envío</span>
+                <form id="form-shipment-tipe" class="forms">
+                  <h5>Datos de envio</h5>
                   <div class="radio-group">
+                    <span>Tipo de envío</span>
                     <div class="radio-item">
                       <input type="radio" id="premium" name="envio" value="premium">
                       <label for="premium">Premium (15%) <span>2 - 5 días</span></label>
@@ -131,7 +132,7 @@
                     <label for="esquina">Esquina</label>
                     <input type="text" id="esquina">
 
-                    <input class="next" type="button" value="&#8594;">
+                    <input id="ship-next-button" class="next" type="button" value="&#8594;">
                   </div>
                 </form>
               </div>
@@ -141,14 +142,68 @@
                 <h3>Pago</h3>
               </div>
               <div class="forms-div">
+                <form id="form-pay-tipe" class="forms">
+                  <h5>Seleccionar forma de pago</h5>
+                  <div class="radio-group">
+                    <div class="radio-item">
+                      <input type="radio" id="transferencia" name="envio" value="transferencia">
+                      <label for="transferencia">Transferencia bancaria</label>
+                    </div>
+                    <div class="radio-item">
+                      <input type="radio" id="tarjeta" name="envio" value="tarjeta">
+                      <label for="tarjeta">Tarjeta de crédito/débito</label>
+                    </div>
+                    <div class="radio-item">
+                      <input type="radio" id="redesCobranza" name="envio" value="redesCobranza">
+                      <label for="redesCobranza">Redes de cobranza</label>
+                    </div>
+                    <div class="radio-item">
+                      <input type="radio" id="mercadoPago" name="envio" value="mercadoPago">
+                      <label for="mercadoPago">Mercado pago</label>
+                    </div>
+                    <div class="radio-item">
+                      <input type="radio" id="paypal" name="envio" value="paypal">
+                      <label for="paypal">PayPal</label>
+                    </div>
+                    <div class="radio-item">
+                      <input type="radio" id="efectivo" name="envio" value="efectivo">
+                      <label for="efectivo">Efectivo en el momento de entrega</label>
+                    </div>
+                  </div>
+                  <div class="text-group"><input id="pay-next-button" class="next" type="button" value="&#8594;"></div>
+                </form>
               </div>
             </div>
             <div id="final-step">
               <div class="title-purchase" id="final-step-title">
                 <h3>Finalizar Compra</h3>
               </div>
-              <div class="forms-div">
-
+              <div class="forms-div resume">
+                <form id="form-final-step" class="forms">
+                  <h5>Resumen</h5>
+                  <div id="div-table">
+                    <table id="table-resume">
+                      <thead>
+                        <tr>
+                          <th>Producto</th>
+                          <th>Precio</th>
+                          <th>Cantidad</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="costs">
+                    <h6>Costos</h6>
+                    <span id="totalUyu">Total UYU</span>
+                    <span id="totalUsd">Total USD</span>
+                    <span id="subtotal">Subtotal</span>
+                    <span id="shipCost">Costo de envio</span>
+                  </div>
+                  <h5 id="total">TOTAL</h5>
+                  <div class="text-group resume"><input id="pay-next-button" class="next" type="button" value="Confirmar Compra"></div>
+                </form>
               </div>
             </div>
           </div>
