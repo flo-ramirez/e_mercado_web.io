@@ -160,3 +160,68 @@ function loadCartItems() {
 
 // Llama a loadCartItems
 document.addEventListener("DOMContentLoaded", loadCartItems);
+document.addEventListener("DOMContentLoaded", () => {
+    const confirmButton = document.getElementById("final-button");
+
+    // Evento al presionar "Confirmar Compra"
+    confirmButton.addEventListener("click", () => {
+        const errores = [];
+
+        // Validar campos de dirección
+        const departamento = document.getElementById("departamento").value.trim();
+        const localidad = document.getElementById("localidad").value.trim();
+        const calle = document.getElementById("calle").value.trim();
+        const numeroDirec = document.getElementById("numeroDirec").value.trim();
+        const esquina = document.getElementById("esquina").value.trim();
+
+        if (!departamento) errores.push("Debe ingresar el departamento.");
+        if (!localidad) errores.push("Debe ingresar la localidad.");
+        if (!calle) errores.push("Debe ingresar la calle.");
+        if (!numeroDirec || isNaN(numeroDirec)) errores.push("Debe ingresar un número válido.");
+        if (!esquina) errores.push("Debe ingresar la esquina.");
+
+        // Validar selección de envío
+        const envioSeleccionado = document.querySelector('input[name="envio"]:checked');
+        if (!envioSeleccionado) {
+            errores.push("Debe seleccionar un tipo de envío.");
+        }
+
+        // Validar selección de forma de pago
+        const formaPagoSeleccionada = document.querySelector('input[name="envio"]:checked');
+        if (!formaPagoSeleccionada) {
+            errores.push("Debe seleccionar una forma de pago.");
+        }
+
+        // Mostrar errores si existen
+        if (errores.length > 0) {
+            mostrarErrores(errores);
+        } else {
+            mostrarExito("¡Compra realizada con éxito! La factura y los pasos para completar el pago según el método seleccionado serán enviados a su correo. ");
+        
+        }
+    });
+
+    //  mostrar errores
+    function mostrarErrores(errores) {
+        const alertContainer = document.createElement("div");
+        alertContainer.classList.add("alert", "alert-danger");
+        alertContainer.innerHTML = errores.map(msg => `<p>${msg}</p>`).join("");
+        document.body.prepend(alertContainer);
+
+        // Eliminar alerta después de 5 segundos
+        setTimeout(() => alertContainer.remove(), 5000);
+    }
+
+    // Función para mostrar mensaje de éxito
+    function mostrarExito(mensaje) {
+        const successContainer = document.createElement("div");
+        successContainer.classList.add("alert", "alert-success");
+        successContainer.textContent = mensaje;
+        document.body.prepend(successContainer);
+
+        // Eliminar mensaje después de 5 segundos
+        setTimeout(() => successContainer.remove(), 5000);
+    }
+
+});
+
