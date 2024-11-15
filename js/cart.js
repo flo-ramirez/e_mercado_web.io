@@ -57,7 +57,9 @@ function displayCartItems(cartItems) {
         // Añadir la card al contenedor de productos
         productsContainer.appendChild(productElement);
     });
-}
+        }
+ 
 
 
 
+            
