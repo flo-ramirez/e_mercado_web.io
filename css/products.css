@@ -7,6 +7,8 @@ body {
   font-family: 'Verdana', serif !important;
 }
 
+  /* Banner */
+
 .banner {
     position: relative;
     width: 100%;
@@ -43,7 +45,28 @@ body {
     color: black;
   }
 
-.descripcionCard {
+  /* Icono carrito */
+
+.comprarIcon {
+    color: black;
+    transition: color 0.2s;
+    text-shadow: 0px 5px 10px rgba(darken(dodgerblue, 40%));
+    transition: all .3s;
+    cursor: pointer;
+        &:hover{   /* Zoom in on hover */
+            color: goldenrod;
+            text-shadow: 3px 3px 3px rgba(92, 78, 74, 0.521);
+            transform: scale(1.5);
+        }
+        &:active{
+            text-shadow: 3px 3px 3px rgba(95, 79, 75, 0.445);
+            transform: scale(1.20);
+        }
+}
+
+  /* Card */
+  
+  .descripcionCard {
     color: gray;
     font-style: italic;
     margin-top: 1%;
@@ -60,25 +83,10 @@ body {
     font-size: 0.9rem;
 }
 
-.comprarIcon {
-    color: black;
-    transition: color 0.2s;
-    text-shadow: 0px 5px 10px rgba(darken(dodgerblue, 40%));
-    transition: all .3s;
-    cursor: pointer;
-        &:hover{
-            color: goldenrod;
-            text-shadow: 3px 3px 3px rgba(92, 78, 74, 0.521);
-            transform: scale(1.5);
-        }
-        &:active{
-            text-shadow: 3px 3px 3px rgba(95, 79, 75, 0.445);
-            transform: scale(1.20);
-        }
-}
 .card-body{
     height: 300px;
 }
+
 .pruebaCard {
     width: 100%; 
     height: 100%;
@@ -95,6 +103,7 @@ body {
     object-fit: cover;
     max-height: 250px;
 }
+
 .pruebaCard:hover {
     background-color: rgb(245, 234, 226);
     transform: scale(1.02);
@@ -103,22 +112,9 @@ body {
 .card-list:has(div.wow:hover) div.wow:not(:hover) {
   filter: blur(4px)
 }
-.textoYFiltros {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    align-items: center;
-  }
-  
-  .ordenarBuscadorPrecio {
-    width: 60%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0.5rem;
-    flex-direction: column;
-    align-items: flex-end;
-  }
-  
+
+  /* Precio */
+
   .nombreYPrecio {
     width: 100%;
     display: flex;
@@ -132,15 +128,34 @@ body {
     justify-content: space-around;
     align-items: center;
   }
+  
   .rangoPrecio p{
     width: 70%;
     font-size: 0.8rem;
   }
+
   label{
     font-size: 12px;
   }
 
-  
+  /* Filtros */
+
+.textoYFiltros {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+.ordenarBuscadorPrecio {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
   .filtrarNombre {
     display: flex;
     width: 30%;
