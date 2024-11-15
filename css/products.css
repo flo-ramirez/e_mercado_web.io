@@ -104,6 +104,7 @@ body {
     max-height: 250px;
 }
 
+/* Blur other cards on hover */
 .pruebaCard:hover {
     background-color: rgb(245, 234, 226);
     transform: scale(1.02);

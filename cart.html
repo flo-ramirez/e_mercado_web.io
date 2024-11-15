@@ -6,11 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>eMercado - Todo lo que busques está aquí</title>
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
-  <link id="light-theme" href="css/styles.css" rel="stylesheet">
-  <!-- Queda disabled para que tengamos el tema claro por defecto y se cambie al clckear el boton-->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link id="light-theme" href="css/styles.css" rel="stylesheet"> <!-- Queda disabled para que tengamos el tema claro por defecto y se cambie al clckear el boton-->
   <link id="dark-theme" href="css/dark_styles.css" rel="stylesheet" disabled>
   <link rel="stylesheet" href="css/cart.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
@@ -49,7 +48,7 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="userDropdown">
               <li><a class="dropdown-item" href="cart.html">Mi carrito <span id="cart-badge"
-                    class="badge badge-pill badge-warning">0</span></a></li>
+                    class="badge badge-pill badge-warning">0</span></a></li> <!-- Badge -->
               <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
               <li>
                 <hr class="dropdown-divider">
@@ -79,13 +78,13 @@
           <a class="delete-cart" href="#">Eliminar todos los articulos </a>
           <div id="empty-message">El carrito está vacío.</div>
           <div id="products-container" style="display: none;"></div> <!--Aca deberian aparecer los productos-->
-          <div class="botones">
+          <div class="buttons">
             <button class="continue-buying" id="continue-buying-button">Seguir comprando</button>
             <button class="finalize-purchase" id="finalize-purchase-button">Continuar Compra</button>
           </div>
         </div>
       </div>
-      <div id="purchse-hiden">
+      <div id="purchase-hiden">
         <div class="container-content" id="purchase-data-section">
           <div class="cart-text">
             <h2>
