@@ -1,205 +1,286 @@
+/* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
-    background-image: url(img/background-image_page-0001.jpg);  
+  font-family: Arial, sans-serif;
+  background-image: url(img/background-image_page-0001.jpg);  
 }
 
 .navbar {
   font-family: 'Verdana', serif !important;
 }
 
+/* Banner */
 .banner {
-    position: relative;
-    width: 100%;
-    height: 300px;
-    overflow: hidden;
-  }
-  
-  .banner img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .banner-text {
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    transform: translateY(-50%);
-    text-align: left;
-    color: white;
-    padding: 20px;
-  }
-  
-  h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-  }
-  .text{
-    font-size: 2rem;
-    font-family: "Lexend Exa", sans-serif;
-  }
-  hr {  
-    width:12px;
-    color: black;
-  }
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
 
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  text-align: left;
+  color: white;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.text {
+  font-size: 2rem;
+  font-family: "Lexend Exa", sans-serif;
+}
+
+hr {  
+  width: 12px;
+  color: black;
+}
+
+/* Tarjeta de producto */
 .descripcionCard {
-    color: gray;
-    font-style: italic;
-    margin-top: 1%;
-    margin-bottom: 1%;
+  color: gray;
+  font-style: italic;
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
 
 .card-title {
-    font-size: 1.25rem;
+  font-size: 1.25rem;
 }
 
 .descripcionCard,
 .priceCard,
 .cantCard {
-    font-size: 0.9rem;
+  font-size: 0.9rem;
 }
 
 .comprarIcon {
-    color: black;
-    transition: color 0.2s;
-    text-shadow: 0px 5px 10px rgba(darken(dodgerblue, 40%));
-    transition: all .3s;
-    cursor: pointer;
-        &:hover{
-            color: goldenrod;
-            text-shadow: 3px 3px 3px rgba(92, 78, 74, 0.521);
-            transform: scale(1.5);
-        }
-        &:active{
-            text-shadow: 3px 3px 3px rgba(95, 79, 75, 0.445);
-            transform: scale(1.20);
-        }
+  color: black;
+  transition: color 0.2s, all 0.3s;
+  text-shadow: 0px 5px 10px rgba(dodgerblue, 0.6);
+  cursor: pointer;
 }
-.card-body{
-    height: 300px;
+
+.comprarIcon:hover {
+  color: goldenrod;
+  text-shadow: 3px 3px 3px rgba(92, 78, 74, 0.521);
+  transform: scale(1.5);
 }
+
+.comprarIcon:active {
+  text-shadow: 3px 3px 3px rgba(95, 79, 75, 0.445);
+  transform: scale(1.2);
+}
+
+.card-body {
+  height: 300px;
+}
+
 .pruebaCard {
-    width: 100%; 
-    height: 100%;
-    max-height: 400px;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    transition: all 0.5s;
+  width: 100%; 
+  height: 100%;
+  max-height: 400px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  transition: all 0.5s;
 }
 
 .card-img-top {
-    width: 100%; 
-    height: auto;
-    object-fit: cover;
-    max-height: 250px;
+  width: 100%; 
+  height: auto;
+  object-fit: cover;
+  max-height: 250px;
 }
+
 .pruebaCard:hover {
-    background-color: rgb(245, 234, 226);
-    transform: scale(1.02);
+  background-color: rgb(245, 234, 226);
+  transform: scale(1.02);
 }
 
 .card-list:has(div.wow:hover) div.wow:not(:hover) {
-  filter: blur(4px)
+  filter: blur(4px);
 }
+
+/* Filtros y ordenamiento */
 .textoYFiltros {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    align-items: center;
-  }
-  
-  .ordenarBuscadorPrecio {
-    width: 60%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0.5rem;
-    flex-direction: column;
-    align-items: flex-end;
-  }
-  
-  .nombreYPrecio {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding-top: 1rem;
-    align-items: center;
-  }
-  
-  .rangoPrecio {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-  .rangoPrecio p{
-    width: 70%;
-    font-size: 0.8rem;
-  }
-  label{
-    font-size: 12px;
-  }
-
-  
-  .filtrarNombre {
-    display: flex;
-    width: 30%;
-  }
-  
-  .ordenar {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  .filtros {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-  
-  input.form-control {
-    font-weight: bold;
-    border-color: gold;
-    font-size: 0.8rem;
-  }
-  
-  #precioUp, #precioDown, #filtroVentas, #botonFiltrar, #limpiarFiltro {
-    color: #a57c15;
-    font-weight: bold;
-    border-color: gold;
-    font-size: 0.8rem;
-    
-  }
-input{
-    width: 5rem;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+.ordenarBuscadorPrecio {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.nombreYPrecio {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+  align-items: center;
+}
+
+.rangoPrecio {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.rangoPrecio p {
+  width: 70%;
+  font-size: 0.8rem;
+}
+
+label {
+  font-size: 12px;
+}
+
+.filtrarNombre {
+  display: flex;
+  width: 30%;
+}
+
+.ordenar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.filtros {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+input.form-control {
+  font-weight: bold;
+  border-color: gold;
+  font-size: 0.8rem;
+}
+
+#precioUp, #precioDown, #filtroVentas, #botonFiltrar, #limpiarFiltro {
+  color: #a57c15;
+  font-weight: bold;
+  border-color: gold;
+  font-size: 0.8rem;
+}
+
+input {
+  width: 5rem;
+  align-items: center;
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
-    .card-title {
-        font-size: 1.25rem;
-    }
+  .banner {
+      height: 200px;
+  }
+  
+  .banner-text {
+      top: 60%;
+      left: 5%;
+      transform: translateY(-50%);
+      padding: 10px;
+  }
 
-    .descripcionCard,
-    .priceCard,
-    .cantCard {
-        font-size: 0.9rem;
-    }
+  h1 {
+      font-size: 2.5rem;
+  }
+
+  .textoYFiltros {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .ordenarBuscadorPrecio {
+      width: 100%;
+      align-items: flex-start;
+      padding: 0;
+  }
+
+  .nombreYPrecio {
+      flex-direction: column;
+      align-items: flex-start;
+      padding-top: 0;
+  }
+
+  .filtros {
+      justify-content: flex-start;
+      width: 100%;
+      flex-direction: column;
+      gap: 5px;
+  }
+
+  .rangoPrecio, .filtrarNombre {
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .rangoPrecio input {
+      width: 100%;
+  }
+
+  #botonFiltrar, #limpiarFiltro {
+      width: 100%;
+  }
 }
 
-@media (max-width: 576px) {
-    .card-title {
-        font-size: 1rem;
-    }
+@media (max-width: 568px) {
+  .banner {
+      height: 150px;
+  }
 
-    .descripcionCard,
-    .priceCard,
-    .cantCard {
-        font-size: 0.8rem;
-    }
-    .imageProductsLogo {
-        padding:20px;
-        max-width: 100%;
-        display: block;
-    }
+  .banner-text {
+      font-size: 1.5rem;
+      padding: 5px;
+  }
+
+  h1 {
+      font-size: 2rem;
+  }
+
+  .descripcionCard,
+  .priceCard,
+  .cantCard {
+      font-size: 0.8rem;
+  }
+
+  .card-img-top {
+      max-height: 150px;
+  }
+
+  .textoYFiltros {
+      padding: 0 10px;
+  }
+
+  .text {
+      font-size: 1.2rem;
+  }
+
+  .banner-text h1 {
+      font-size: 1.5rem;
+      color: goldenrod; 
+      font-weight: 600; 
+      font-size: 250%; 
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, 
+      sans-serif;
+  }
 }
