@@ -125,3 +125,38 @@ function showPurchaseData() {
     finalizePurchaseContainer.style.display = 'block';
 
 }
+
+const tableResume = document.getElementById('table-resume');
+
+// Función para mostrar los productos en el resumen
+function displayResumeItems(cartItems) {
+    const tbody = tableResume.getElementsByTagName("tbody")[0];
+    tbody.innerHTML = '';
+
+    cartItems.forEach((item) => {
+        const row = document.createElement("tr");
+        const cellName = document.createElement("td");
+        cellName.textContent = item.name;
+
+        const cellPrice = document.createElement("td");
+        cellPrice.textContent = `${item.currency} ${item.price}`;
+
+        const cellQuantity = document.createElement("td");
+        cellQuantity.textContent = item.quantity;
+
+        cellPrice.classList.add('price');
+        row.appendChild(cellName);
+        row.appendChild(cellPrice);
+        row.appendChild(cellQuantity);
+        tbody.appendChild(row);
+    });
+}
+
+// con esto se trae los items desde el localStorage para pasarle por parametro a la otra funcion que los muestra en la tabla
+function loadCartItems() {
+    const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+    displayResumeItems(cartItems);
+}
+
+// Llama a loadCartItems
+document.addEventListener("DOMContentLoaded", loadCartItems);
