@@ -112,7 +112,7 @@ function updateCartBadge() {
 // })
 
 const finalizePurchaseButton = document.getElementById('finalize-purchase-button');
-const finalizePurchaseContainer = document.getElementById('purchse-hiden');
+const finalizePurchaseContainer = document.getElementById('purchase-hiden');
 finalizePurchaseContainer.style.display = 'none';
 
 finalizePurchaseButton.addEventListener('click', showPurchaseData)

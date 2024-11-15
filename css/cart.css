@@ -28,7 +28,7 @@ main {
   height: 80% !important;
 }
 
-#purchse-hiden {
+#purchase-hiden {
   height: 95% !important;
   width: 100%;
 }
@@ -146,7 +146,9 @@ empty-message {
   right: 3rem;
   position: absolute;
 }
-
+.buttons{
+  margin-top:10rem ;
+}
 .continue-buying {
   background-color: #999898;
   border-radius: 10px;
