@@ -30,10 +30,9 @@ main {
 
 }
 
-#purchse-hiden {
-  height: auto;
+#purchase-hiden {
+  height: 95% !important;
   width: 100%;
-
 }
 
 .cart-text {
@@ -149,9 +148,11 @@ empty-message {
   right: 3rem;
   position: absolute;
 }
-.botones{
+
+.buttons{
   margin-top:10rem ;
 }
+
 .continue-buying {
   background-color: #999898;
   border-radius: 10px;
