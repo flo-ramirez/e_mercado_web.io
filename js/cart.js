@@ -4,9 +4,6 @@ const cartTotal = document.createElement('p'); // Contenedor para el subtotal
 const deleteCart = document.getElementById("delete-cart");
 
 
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
     // Obtener los items del carrito del localStorage
     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
@@ -152,7 +149,7 @@ function displayResumeItems(cartItems) {
     });
 }
 
-// con esto se trae los items desde el localStorage para pasarle por parametro a la otra funcion que los muestra en la tabla
+// Con esto se trae los items desde el localStorage para pasarle por parametro a la otra funcion que los muestra en la tabla
 function loadCartItems() {
     const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
     displayResumeItems(cartItems);

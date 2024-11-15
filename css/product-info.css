@@ -35,7 +35,7 @@ body {
     width: 85%;
 }
 
-/* galería de imágenes pequeñas */
+/* Galería de imágenes pequeñas */
 .product-gallery {
     width: 500px;
     display: flex;
@@ -57,7 +57,7 @@ body {
     border-radius: 10px;
 }
 
-/* imagen principal */
+/* Imagen principal */
 .product-main-image {
     width: 1600px;
     justify-content: center;
@@ -68,7 +68,7 @@ body {
     margin-bottom: 500px;
 }
 
-.product-main-image img { /* borde de la imagen principal */
+.product-main-image img { /* Borde de la imagen principal */
     width: 100%;
     max-width: 1600px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -80,31 +80,31 @@ font-size: 30px;
 margin-top: 50px;  
 }
 
-/* columna blanca con info */ 
+/* Columna blanca con info */ 
 .product-details {
     padding: 20px;
     background-color: #fdfdfd;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    width: 850px; /* ancho fijo en píxeles */
-    height: auto; /* Asegúrate de que el alto sea automático o ajustable */
+    width: 850px; /* Ancho fijo en píxeles */
+    height: auto; /* Asegura que el alto sea automático o ajustable */
     overflow: hidden; /* Esto asegura que cualquier contenido que sobrepase el contenedor no se muestre */
 }
 
 
-.product-details h1 { /* titulo del producto */
+.product-details h1 { /* Titulo del producto */
     font-size: 2em;
     color: #333;
     margin-left: 20px;
 }
 
-.product-details p { /* todos los textos de info */
+.product-details p { /* Todos los textos de info */
     font-size: 1.2em;
     color: #555;
     margin-left: 20px;
 }
 
-.product-details .valor { /* texto del precio */
+.product-details .valor { /* Texto del precio */
     font-size: 40px;
     color: #555;
     margin-left: 20px;
