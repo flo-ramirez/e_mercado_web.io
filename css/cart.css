@@ -9,7 +9,7 @@ main {
   background-color: rgba(212, 212, 212, 0.6);
   border-radius: 25px;
   display: flex;
-  height: auto;
+  height: 100%;
   justify-content: center;
   margin: 20px;
   width: 1370px;
@@ -22,10 +22,12 @@ main {
   height: 100%;
   position: relative;
   margin-top: 30px;
+  margin: 1rem 0 1rem 0;
 }
 
 #cart-hiden {
   height: 80% !important;
+
 }
 
 #purchase-hiden {
@@ -146,9 +148,11 @@ empty-message {
   right: 3rem;
   position: absolute;
 }
+
 .buttons{
   margin-top:10rem ;
 }
+
 .continue-buying {
   background-color: #999898;
   border-radius: 10px;
@@ -200,13 +204,14 @@ h3 {
   flex-wrap: wrap;
   height: 100%;
   justify-content: space-around;
+  padding-bottom: 2rem;
 
 }
 
 #shipment,
 #pay,
 #final-step {
-  margin: 1rem 0.2rem;
+  margin: 1rem 0.2rem 0 0.2rem; 
 
 }
 
@@ -287,11 +292,21 @@ label {
   height: 30px;
   justify-content: center;
   padding: 0;
-  margin: 1rem 0 1rem 0;
   text-align: center;
   width: 300px;
 }
 
+#pay-next-button{
+  margin-top:99.5%;
+}
+
+#ship-next-button{
+  margin-top: 5%;
+}
+
+#final-button{
+  margin-bottom: 5%;
+}
 .resume {
   display: flex;
   justify-content: center;
@@ -342,9 +357,9 @@ tr {
 }
 
 .forms{
+  align-items: center;
   display: flex;
   flex-direction: column;
   padding: 1rem;
   justify-content: space-between;
-  align-items: center;
 }
