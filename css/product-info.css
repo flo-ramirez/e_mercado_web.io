@@ -14,7 +14,7 @@ body {
 /* Tarjeta gris contenedora */
 .product-card {
     background-color: #eaeaeb;
-    padding: 20px;
+    padding: 15%;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 0 auto;
@@ -23,174 +23,13 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    max-width: 1700px;
+    max-width: 100%;
     height: auto; /* Cambié de 650px a auto */
 }
 
 /* galería de imágenes pequeñas */
 .product-gallery {
-    width: 500px;
-    display: flex;
-    flex-direction: column;
-}
-
-.product-gallery img.thumbnail {
-    width: 100%;
-    margin-bottom: 10px;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: border 0.3s ease;
-    height: auto; /* Cambié de 150px a auto */
-    object-fit: cover;
-}
-
-.product-gallery img.thumbnail:hover {
-    border: 2px solid #f80;
-    border-radius: 10px;
-}
-
-/* imagen principal */
-.product-main-image {
-    width: 100%; /* Cambié de 1600px a 100% para ser responsivo */
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-    margin: 0 50px; /* Ajusté los márgenes */
-    margin-bottom: 20px; /* Ajusté el margen inferior */
-}
-
-.product-main-image img {
-    width: 100%; /* Cambié a 100% */
-    max-width: 100%; /* Asegura que la imagen no exceda el contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
-}
-
-.descripcion {
-    font-size: 30px;
-    margin-top: 50px;
-}
-
-/* columna blanca con info */
-.product-details {
-    padding: 20px;
-    background-color: #fdfdfd;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 850px;
-    height: auto;
-    overflow: hidden;
-}
-
-/* Ajustes para pantallas pequeñas y tabletas */
-@media only screen and (max-width: 1024px) {
-    .product-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    .product-gallery, .product-details {
-        width: 80%;
-    }
-
-    /* Ajusta la imagen principal */
-    .product-main-image img {
-        width: 100%;
-    }
-
-    .descripcion {
-        font-size: 1.5em;
-    }
-
-    .product-details p {
-        font-size: 1em;
-    }
-
-    .buy-button,
-    button {
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    #form-calificacion {
-        width: 90%;
-    }
-}
-
-@media only screen and (max-width: 320px) {
-    header ul {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .product-gallery, .product-details {
-        width: 100%;
-    }
-
-    .product-gallery img.thumbnail {
-        height: 100px;
-    }
-
-    .product-main-image img {
-        width: 100%; /* Asegura que la imagen principal ocupe todo el ancho */
-        margin-bottom: 20px;
-    }
-
-    .product-details h1 {
-        font-size: 1.2em;
-    }
-
-    button {
-        width: 100%;
-        padding: 12px;
-        margin-top: 10px;
-    }
-
-    #form-calificacion {
-        width: 90%;
-    }
-
-    .seller-info {
-        font-size: 0.8em;
-    }
-
-    .estadistica {
-        max-width: 50%;
-        margin-left: 0;
-    }
-}
-/* Estilos globales */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-image: url(../img/background-img.jpg);
-    background-size: cover;
-}
-
-/* Tarjeta gris contenedora */
-.product-card {
-    background-color: #eaeaeb;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 0 auto;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    max-width: 1700px;
-    height: auto; /* Cambié de 650px a auto */
-}
-
-/* galería de imágenes pequeñas */
-.product-gallery {
-    width: 500px;
+    max-width: 98%;
     display: flex;
     flex-direction: column;
 }
@@ -288,10 +127,38 @@ body {
     .product-gallery {
         width: 100%; /* Asegura que ocupe todo el ancho disponible */
         margin-top: 20px; /* Agrega un margen superior para separarlo de la imagen principal */
+        flex-direction: row; /* Cambié a fila para hacer la galería horizontal */
+        overflow-x: auto; /* Permite hacer scroll horizontal si es necesario */
+        justify-content: flex-start; /* Alinea las miniaturas hacia la izquierda */
     }
 
     .product-gallery img.thumbnail {
+        width: auto; /* Ajusta el tamaño de las miniaturas */
         height: 100px; /* Ajusta el tamaño de las miniaturas */
+        margin-right: 10px; /* Agrega margen entre las miniaturas */
+    }
+
+    .product-main-image {
+        margin: 0 20px; /* Ajusta los márgenes para la imagen principal */
+    }
+
+    .descripcion {
+        font-size: 1.5em; /* Ajusta el tamaño de la descripción */
+    }
+
+    .product-details {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .product-details h1 {
+        font-size: 1.4em;
+    }
+
+    .buy-button,
+    button {
+        width: 100%;
+        margin-top: 10px;
     }
 }
 
