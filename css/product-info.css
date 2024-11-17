@@ -17,14 +17,12 @@ body {
     padding: 15%;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 0 auto;
-    margin-top: 2%;
-    margin-bottom: 2%;
+    margin: 2% auto;
     display: flex;
     flex-direction: row;
     justify-content: center;
     max-width: 100%;
-    height: auto; /* Cambié de 650px a auto */
+    height: auto;
 }
 
 /* galería de imágenes pequeñas */
@@ -40,7 +38,7 @@ body {
     cursor: pointer;
     border: 2px solid transparent;
     transition: border 0.3s ease;
-    height: auto; /* Cambié de 150px a auto */
+    height: auto;
     object-fit: cover;
 }
 
@@ -49,30 +47,30 @@ body {
     border-radius: 10px;
 }
 
-/* imagen principal */
+/* Imagen principal */
 .product-main-image {
-    width: 100%; /* Cambié de 1600px a 100% para ser responsivo */
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    margin: 0 50px; /* Ajusté los márgenes */
-    margin-bottom: 20px; /* Ajusté el margen inferior */
+    margin: 0 50px;
+    margin-bottom: 20px;
 }
 
 .product-main-image img {
-    width: 100%; /* Cambié a 100% */
-    max-width: 100%; /* Asegura que la imagen no exceda el contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
+    width: 100%;
+    max-width: 100%;
+    height: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
 }
 
+/* Descripción del producto */
 .descripcion {
     font-size: 30px;
     margin-top: 50px;
 }
 
-/* columna blanca con info */
+/* Columna blanca con información */
 .product-details {
     padding: 20px;
     background-color: #fdfdfd;
@@ -85,15 +83,17 @@ body {
 
 /* Ajustes para pantallas pequeñas y tabletas */
 @media only screen and (max-width: 1024px) {
-    .product-container {
+    .product-card {
         flex-direction: column;
         align-items: center;
+        padding: 10px;
     }
-    .product-gallery, .product-details {
+
+    .product-gallery,
+    .product-details {
         width: 80%;
     }
 
-    /* Ajusta la imagen principal */
     .product-main-image img {
         width: 100%;
     }
@@ -115,35 +115,55 @@ body {
     #form-calificacion {
         width: 90%;
     }
+    .review-item .d-flex {
+        flex-direction: row; /* Alineación en fila */
+        align-items: center; /* Alineación vertical centrada */
+        gap: 5px; /* Espacio reducido entre las estrellas */
+    }
+    
+    .stars {
+        margin-right: 8px; /* Espaciado entre las estrellas y el nombre de usuario */
+    }
+    
+    .review-date {
+        font-size: 0.9rem; /* Tamaño reducido */
+        color: #6c757d; /* Color gris */
+        margin-left: auto; /* Empuja la fecha hacia la derecha */
+        text-align: right; /* Opcional: alinea la fecha a la derecha */
+    }
 }
 
 @media only screen and (max-width: 768px) {
     .product-card {
-        flex-direction: column; /* Cambié para que los elementos se apilen verticalmente */
+        flex-direction: column;
         align-items: center;
-        justify-content: flex-start;
+        width: 100%;
     }
 
     .product-gallery {
-        width: 100%; /* Asegura que ocupe todo el ancho disponible */
-        margin-top: 20px; /* Agrega un margen superior para separarlo de la imagen principal */
-        flex-direction: row; /* Cambié a fila para hacer la galería horizontal */
-        overflow-x: auto; /* Permite hacer scroll horizontal si es necesario */
-        justify-content: flex-start; /* Alinea las miniaturas hacia la izquierda */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        width: 100%;
+        margin: 20px 0;
     }
 
     .product-gallery img.thumbnail {
-        width: auto; /* Ajusta el tamaño de las miniaturas */
-        height: 100px; /* Ajusta el tamaño de las miniaturas */
-        margin-right: 10px; /* Agrega margen entre las miniaturas */
+        width: 100%;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 8px;
     }
 
-    .product-main-image {
-        margin: 0 20px; /* Ajusta los márgenes para la imagen principal */
+    .product-main-image img {
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto;
     }
 
     .descripcion {
-        font-size: 1.5em; /* Ajusta el tamaño de la descripción */
+        font-size: 1.2em;
+        margin: 10px 0;
     }
 
     .product-details {
@@ -151,56 +171,121 @@ body {
         padding: 15px;
     }
 
-    .product-details h1 {
-        font-size: 1.4em;
-    }
-
-    .buy-button,
     button {
         width: 100%;
         margin-top: 10px;
+    }
+
+    .review-item .d-flex {
+        gap: 3px; /* Reduce aún más el espacio entre las estrellas */
+    }
+
+    .stars {
+        margin-right: 5px; /* Menor espaciado entre las estrellas y el nombre de usuario */
+    }
+    #relatedProducts .card {
+        flex: 1 1 calc(50% - 20px); /* Cambia a 2 tarjetas por fila */
     }
 }
 
 @media only screen and (max-width: 320px) {
-    header ul {
-        flex-direction: column;
-        text-align: center;
+    body {
+        background-image: none;
+        background-color: #ffffff;
     }
 
-    .product-gallery, .product-details {
-        width: 100%;
+    .product-card {
+        padding: 10px;
+        max-width: 320px;
     }
 
-    .product-gallery img.thumbnail {
-        height: 100px; /* Ajusta el tamaño de las miniaturas */
+    .descripcion {
+        font-size: 1em;
     }
 
-    .product-main-image img {
-        width: 100%; /* Asegura que la imagen principal ocupe todo el ancho */
-        margin-bottom: 20px;
-    }
-
-    .product-details h1 {
-        font-size: 1.2em;
+    .product-details {
+        font-size: 0.9em;
     }
 
     button {
-        width: 100%;
-        padding: 12px;
-        margin-top: 10px;
+        font-size: 0.9em;
     }
 
-    #form-calificacion {
-        width: 90%;
+    .product-gallery img.thumbnail {
+        height: 100px;
+    }
+    #relatedProducts .card {
+        flex: 1 1 calc(100% - 20px); /* Cambia a 1 tarjeta por fila */
     }
 
-    .seller-info {
-        font-size: 0.8em;
+    #relatedProducts .card h3 {
+        font-size: 0.9rem; /* Reduce el tamaño de la fuente */
     }
+}
 
-    .estadistica {
-        max-width: 50%;
-        margin-left: 0;
-    }
+/* Botones */
+.buy-button {
+    background-color: #28a745; /* Verde */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #218838;
+}
+
+button:not(.buy-button) {
+    background-color: #fd7e14; /* Naranja */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:not(.buy-button):hover {
+    background-color: #e65c00;
+}
+#relatedProducts {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 35px auto;
+    padding: 10px;
+    gap: 20px; /* Espaciado entre tarjetas */
+}
+
+#relatedProducts .card {
+    flex: 1 1 calc(25% - 20px); /* Ajusta al 25% del contenedor menos el gap */
+    max-width: calc(25% - 20px);
+    height: auto;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#relatedProducts .card img {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho */
+    height: auto; /* Mantiene las proporciones de la imagen */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    object-fit: cover; /* Ajusta la imagen para que se recorte proporcionalmente */
+}
+
+#relatedProducts .card h3 {
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+#relatedProducts .card:hover {
+    transform: scale(1.03); /* Ligeramente más grande al pasar el ratón */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
