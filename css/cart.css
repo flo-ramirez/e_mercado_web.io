@@ -336,19 +336,24 @@ tr {
   width: 90%;
 }
 
+#div-table{
+  padding: 4rem 0 5rem 0;
+  width: 73%;
+}
+
 #table-resume {
-  width: auto;
-  border-collapse: collapse;
+  margin-left: -2rem;
 }
 
 #table-resume th, #table-resume td {
-  padding: 0 1rem .5rem 0;
+  padding: 0px 2rem .5rem 0rem;
   text-align: left;
+  white-space: nowrap;
 }
 
 #table-resume td:nth-child(3) {
   text-align: center;
-  width: 50px; 
+
 }
 
 #table-resume td:nth-child(2) {
