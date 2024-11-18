@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Función para generar el HTML de productos relacionados
     function getHTML(relatedElement) {
       return `
-        <div id="${relatedElement.id}" class="col-md-4" style="max-width: 25%; margin: 10px; flex: 1 1 200px;">
+        <div id="${relatedElement.id}" class="col-md-4">
           <a onclick="localStorage.setItem('selectedProductId', ${relatedElement.id})" 
           class="card mb-4 shadow-sm custom-card cursor-active" style="color: black; text-decoration: none;" href="product-info.html">
             <img class="bd-placeholder-img card-img-top" src="${relatedElement.image}"
@@ -66,8 +66,8 @@ document.addEventListener("DOMContentLoaded", function () {
               <div class="d-flex align-items-center">
                 ${createStars(comment.score)}
                 <span class="ms-2 fw-bold">${comment.user}</span>
-                <span class="ms-auto text-muted">${comment.dateTime}</span>
               </div>
+              <span class="review-date text-muted">${comment.dateTime}</span> <!-- Fecha debajo -->
               <p class="mt-2">${comment.description}</p>
               <hr>
             </div>
