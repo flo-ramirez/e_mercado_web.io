@@ -1,3 +1,4 @@
+/* Estilos generales */
 .jumbotron,
 .card-body,
 .container,
@@ -5,7 +6,7 @@
   font-family: 'Verdana', serif !important;
 }
 
-main{
+main {
   background-image: url(../img/back.jpg);
   background-size: cover;
   background-position: center;
@@ -16,14 +17,9 @@ main{
   height: 50vh;
   padding: 5em;
   margin-bottom: 0;
-  background-color: #53C0FB;
   background: url('../img/cover_back.png') no-repeat center center;
   background-size: cover;
   color: black;
-  font-weight: bold;
-}
-
-.jumbotron .display-4 {
   font-weight: bold;
 }
 
@@ -36,6 +32,162 @@ main{
   position: relative;
   top: -10px;
   left: -5px;
+}
+
+/* Ajuste responsivo para pantallas pequeñas (320px a 576px) */
+@media (max-width: 576px) {
+  .jumbotron {
+    background-size: contain;
+    background-attachment: scroll;
+    height: 30vh;
+    padding: 1em;
+    font-size: 0.9rem;
+  }
+
+  form {
+    width: 100%;
+  }
+  .profile-pic img {
+    width: 90%;
+    height: auto;
+    border-radius: 50%;
+    border: 4px solid #f0b34a;
+    margin-top: auto;
+  }
+
+  .profile {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .profile-pic {
+    order: -1;
+    margin-bottom: 1rem; /* Espacio entre la imagen y el formulario */
+  }
+
+  .filter-row {
+    flex-direction: column;
+  }
+
+  .filter-inputs {
+    width: 100%;
+  }
+
+  .container .row .col-3 {
+    padding: 0 !important; /* Elimina el padding extra */
+  }
+  
+  .btn-group .btn {
+    width: 100%; /* Asegura que los botones ocupen todo el ancho disponible */
+    margin: 0; /* Elimina los márgenes */
+  }
+
+  .filter-buttons {
+    width: 100%;
+    margin-top: 10px;
+    margin-left: auto; /* Alinea el grupo de botones a la derecha */
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-nav .nav-item {
+    margin: 0;
+    padding: 0.5em 0;
+  }
+
+  .card-img-top {
+    height: 200px;
+  }
+
+  .list-group {
+    width: 96%; /* Ajusta el ancho de la tarjeta */
+    margin: 0 auto; /* Centra la tarjeta */
+  }
+
+  .container {
+    padding: 0.5rem;
+  }
+
+  .btn-primary,
+  .btn-secondary,
+  .dropdown-toggle {
+    background-color: #f80 !important;
+    border-color: #f80 !important;
+    color: white !important;
+  }
+
+  .dropdown-menu {
+    background-color: #f0b34a !important;
+  }
+
+  .dropdown-item {
+    color: white;
+  }
+
+  .dropdown-item:hover {
+    background-color: #e67300ea !important;
+    color: white;
+  }
+
+  #theme-toggle {
+    color: white;
+    background-color: #212529 !important;
+  }
+
+  #theme-icon {
+    font-size: 50px;
+    color: #808080;
+  }
+
+  #theme-toggle:hover #theme-icon {
+    color: #c7c7c7;
+  }
+
+  main {
+    background-image: url(../img/back-mobile.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+}
+
+/* Pantallas medianas y tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .jumbotron {
+    height: 50vh;
+    padding: 3em;
+    font-size: 1.5rem;
+    background-size: contain;
+  }
+
+  .navbar-nav {
+    justify-content: center;
+  }
+
+  .navbar-nav .nav-item {
+    margin: 0 5px;
+  }
+
+  .card-img-top {
+    height: 250px;
+  }
+
+  .container {
+    max-width: 720px;
+  }
+
+  .album .row {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .col-md-4 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
 }
 
 .jumbotron .container {
@@ -75,9 +227,10 @@ footer p {
   align-items: center;
   text-decoration: none;
 }
+
 .container {
-  margin: 0 auto; /* Centrar automáticamente */
-  padding: 0 1rem; /* Ajusta el padding para controlar el espacio interno */
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .material-symbols-outlined {
@@ -130,18 +283,6 @@ footer p {
   border-color: #fff transparent transparent transparent;
 }
 
-.lds-ring div:nth-child(1) {
-  animation-delay: -0.45s;
-}
-
-.lds-ring div:nth-child(2) {
-  animation-delay: -0.3s;
-}
-
-.lds-ring div:nth-child(3) {
-  animation-delay: -0.15s;
-}
-
 @keyframes lds-ring {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
@@ -179,71 +320,20 @@ a.custom-card:hover {
   color: orange;
 }
 
-
-@media (max-width: 1700px) {
-#spnUsuario{
+@media (max-width: 1366px) {
+  #spnUsuario {
     padding: 0;
-}
-}
-
-@media (max-width: 768px) {
-#spnUsuario{
-  padding: 0;
-}
+  }
 }
 
-@media (max-width: 576px) {
-#spnUsuario{
-  padding: 0;
+@media (max-width: 1024px) {
+  #spnUsuario {
+    padding: 0;
+  }
 }
 
-main{
-  background-image: url(../img/back-mobile.jpg);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-
-
-.btn-primary,
-.btn-secondary,
-.dropdown-toggle{
-    background-color: #f80 !important;
-    border-color: #f80 !important;
-    color: white !important;
-}
-
-.dropdown-menu {
-    background-color: #f0b34a !important;
-}
-
-.dropdown-item {
-    color: white;
-}
-
-.dropdown-item:hover {
-    background-color: #e67300ea !important;
-    color: white;
-}
-
-.btn .bi,
-.dropdown-item .bi {
-    color: white;
-    justify-content: right;
-}
-
-#userDropdown,
-#theme-toggle {
-  color: white;
-  background-color: #212529 !important;
-}
-
-#theme-icon {
-  font-size: 50px; /* Ajusta el tamaño del ícono según tus preferencias */
-  color: #808080; /* Color gris claro */
-}
-
-#theme-toggle:hover #theme-icon {
-  color: #c7c7c7; /* Cambia el color al pasar el cursor si deseas */
-}
+@media (max-width: 568px) {
+  #spnUsuario {
+    padding: 0;
+  }
 }

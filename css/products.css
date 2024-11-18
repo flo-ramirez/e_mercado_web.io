@@ -1,6 +1,7 @@
+/* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
-    background-image: url(img/background-image_page-0001.jpg);  
+  font-family: Arial, sans-serif;
+  background-image: url(img/background-image_page-0001.jpg);  
 }
 
 .navbar {
@@ -10,40 +11,11 @@ body {
   /* Banner */
 
 .banner {
-    position: relative;
-    width: 100%;
-    height: 300px;
-    overflow: hidden;
-  }
-  
-  .banner img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .banner-text {
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    transform: translateY(-50%);
-    text-align: left;
-    color: white;
-    padding: 20px;
-  }
-  
-  h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-  }
-  .text{
-    font-size: 2rem;
-    font-family: "Lexend Exa", sans-serif;
-  }
-  hr {  
-    width:12px;
-    color: black;
-  }
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
 
   /* Icono carrito */
 
@@ -74,13 +46,13 @@ body {
 }
 
 .card-title {
-    font-size: 1.25rem;
+  font-size: 1.25rem;
 }
 
 .descripcionCard,
 .priceCard,
 .cantCard {
-    font-size: 0.9rem;
+  font-size: 0.9rem;
 }
 
 .card-body{
@@ -88,30 +60,30 @@ body {
 }
 
 .pruebaCard {
-    width: 100%; 
-    height: 100%;
-    max-height: 400px;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    transition: all 0.5s;
+  width: 100%; 
+  height: 100%;
+  max-height: 400px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  transition: all 0.5s;
 }
 
 .card-img-top {
-    width: 100%; 
-    height: auto;
-    object-fit: cover;
-    max-height: 250px;
+  width: 100%; 
+  height: auto;
+  object-fit: cover;
+  max-height: 250px;
 }
 
 /* Blur other cards on hover */
 .pruebaCard:hover {
-    background-color: rgb(245, 234, 226);
-    transform: scale(1.02);
+  background-color: rgb(245, 234, 226);
+  transform: scale(1.02);
 }
 
 .card-list:has(div.wow:hover) div.wow:not(:hover) {
-  filter: blur(4px)
+  filter: blur(4px);
 }
 
   /* Precio */
@@ -191,22 +163,134 @@ input{
     width: 5rem;
     align-items: center;
 }
-@media (max-width: 768px) {
-    .card-title {
-        font-size: 1.25rem;
-    }
 
-    .descripcionCard,
-    .priceCard,
-    .cantCard {
-        font-size: 0.9rem;
-    }
+.ordenarBuscadorPrecio {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
-@media (max-width: 576px) {
-    .card-title {
-        font-size: 1rem;
-    }
+.nombreYPrecio {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+  align-items: center;
+}
+
+.rangoPrecio {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.rangoPrecio p {
+  width: 70%;
+  font-size: 0.8rem;
+}
+
+label {
+  font-size: 12px;
+}
+
+.filtrarNombre {
+  display: flex;
+  width: 30%;
+}
+
+.ordenar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.filtros {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+input.form-control {
+  font-weight: bold;
+  border-color: gold;
+  font-size: 0.8rem;
+}
+
+#precioUp, #precioDown, #filtroVentas, #botonFiltrar, #limpiarFiltro {
+  color: #a57c15;
+  font-weight: bold;
+  border-color: gold;
+  font-size: 0.8rem;
+}
+
+input {
+  width: 5rem;
+  align-items: center;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .banner {
+      height: 200px;
+  }
+  
+  .banner-text {
+      top: 60%;
+      left: 5%;
+      transform: translateY(-50%);
+      padding: 10px;
+  }
+
+  h1 {
+      font-size: 2.5rem;
+  }
+
+  .textoYFiltros {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .ordenarBuscadorPrecio {
+      width: 100%;
+      align-items: flex-start;
+      padding: 0;
+  }
+
+  .nombreYPrecio {
+      flex-direction: column;
+      align-items: flex-start;
+      padding-top: 0;
+  }
+
+  .filtros {
+      justify-content: flex-start;
+      width: 100%;
+      flex-direction: column;
+      gap: 5px;
+  }
+
+  .rangoPrecio, .filtrarNombre {
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .rangoPrecio input {
+      width: 100%;
+  }
+
+  #botonFiltrar, #limpiarFiltro {
+      width: 100%;
+  }
+}
+
+@media (max-width: 568px) {
+  .banner {
+      height: 150px;
+  }
 
     .descripcionCard,
     .priceCard,

@@ -1,248 +1,247 @@
 /* Estilos globales */
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
-  }
+}
 
 body {
     font-family: Arial, sans-serif;
     background-image: url(../img/background-img.jpg);
     background-size: cover;
+    background-color: #f5f5f5;
+    line-height: 1.6;
 }
 
-/* Tarjeta gris contenedora */
-.product-card {
-    background-color: #eaeaeb;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 0 auto;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    max-width: 1700px;
-    height: 650px;
+#calification-form {
+    background-color:#eaeaeb;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px auto;
+    max-width: 800px;
 }
 
 .product-container {
-    display: flex;
+    background-color: #eaeaeb;
+    max-width: 100%;
+    border-radius: 10px;
     padding: 20px;
-    width: 85%;
+    display: flex;
+    flex-direction: row;
 }
 
-/* Galería de imágenes pequeñas */
-.product-gallery {
-    width: 500px;
+/* Contenedor de la tarjeta principal */
+.product-card {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Por defecto, apilado vertical */
+    gap: 30px;
+    padding: 20px;
+    max-width: auto;
+    margin: 0 auto; /* Centra el contenido en la página */
+}
+
+
+
+.product-gallery {
+    display: flex;
+    flex-direction: column; /* Apilado vertical */
+    align-items: center;
+    gap: 10px;
+    max-width: 120px; /* Ajusta el ancho máximo */
+    flex-shrink: 0; /* Evita que la galería cambie de tamaño */
 }
 
 .product-gallery img.thumbnail {
-    width: 100%;
-    margin-bottom: 10px;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
     cursor: pointer;
     border: 2px solid transparent;
+    border-radius: 8px;
     transition: border 0.3s ease;
-    height: 150px;
-    object-fit: cover; 
 }
 
 .product-gallery img.thumbnail:hover {
     border: 2px solid #f80;
-    border-radius: 10px;
+    transform: scale(1.1);
 }
 
-/* Imagen principal */
+/* Imagen principal centrada */
+
 .product-main-image {
-    width: 1600px;
+    flex: 1;
+    display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 20px;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-bottom: 500px;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
-.product-main-image img { /* Borde de la imagen principal */
+.product-main-image img {
+    max-width: 600px; /* Tamaño máximo de la imagen principal */
     width: 100%;
-    max-width: 1600px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border-radius: 20px;
-}
-
-.descripcion {
-font-size: 30px;
-margin-top: 50px;  
-}
-
-/* Columna blanca con info */ 
-.product-details {
-    padding: 20px;
-    background-color: #fdfdfd;
+    height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    width: 850px; /* Ancho fijo en píxeles */
-    height: auto; /* Asegura que el alto sea automático o ajustable */
-    overflow: hidden; /* Esto asegura que cualquier contenido que sobrepase el contenedor no se muestre */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-
-.product-details h1 { /* Titulo del producto */
-    font-size: 2em;
-    color: #333;
-    margin-left: 20px;
+/* Sección de detalles */
+.product-details {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 350px;
 }
 
-.product-details p { /* Todos los textos de info */
-    font-size: 1.2em;
-    color: #555;
-    margin-left: 20px;
+/* Descripción del producto */
+.descripcion {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 20px 0;
 }
 
-.product-details .valor { /* Texto del precio */
-    font-size: 40px;
-    color: #555;
-    margin-left: 20px;
-}
-.product-details .cuentanos {
-    font-size: 12px;
-    color: #555;
-    margin-left: 20px;
-    margin-top: 30px;
-}
-
-button {
-    padding: 8px 15px;
-    margin-right: 10px;
-    background-color: #f80;
+/* Botones */
+.buy-button {
+    background-color: #28a745; /* Verde */
     color: white;
     border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
     cursor: pointer;
-    margin-left: 20px;
-    border-radius: 8px;
-    margin-top: 20px;
-}
-.buy-button {
-    padding: 8px 80px; 
-    margin-top: 7px;
-    background-color: rgb(16, 169, 34); 
-    color: white; /* Color del texto */
-    border: none; /* Sin borde */
-    border-radius: 10px; 
-    font-size: 1.2em; 
-    cursor: pointer; 
-    transition: background-color 0.3s ease; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #e76a00;
+.buy-button:hover {
+    background-color: #218838;
 }
 
-#theme-toggle {
-    padding: 10px 25px;
-    margin-right: 10px;
+button:not(.buy-button) {
+    background-color: #fd7e14; /* Naranja */
+    color: white;
     border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
     cursor: pointer;
-    margin-left: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button:not(.buy-button):hover {
+    background-color: #e65c00;
+}
+
+/* Contenedor de productos relacionados */
+#relatedProducts {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 30px auto;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+/* Estilo para las tarjetas */
+#relatedProducts .card {
+    flex: 1 1 calc(20% - 20px); /* Ajusta al 20% del contenedor menos el gap */
+    max-width: calc(20% - 20px); /* Ancho máximo */
+    height: auto; /* Ajuste automático a contenido */
+    text-align: center;
     border-radius: 8px;
-    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: #fff;
 }
 
-.seller-info {
-    margin-top: 10px;
-    font-size: 0.8em;
-    color: #666;
+/* Imagen dentro de las tarjetas */
+#relatedProducts .card img {
+    width: 100%; /* Imagen ocupa todo el ancho disponible */
+    height: auto; /* Mantiene proporciones */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    object-fit: cover; /* Ajusta la imagen al contenedor sin distorsionarla */
 }
 
-.estadistica {
-    max-width:55%; 
-    height: auto;
-    margin-top: 10px;
-    margin-left: 50px;      
-    display: block;
+/* Efecto hover para las tarjetas */
+#relatedProducts .card:hover {
+    transform: scale(1.03); /* Ligeramente más grande al pasar el ratón */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-
-footer {
-    margin-top: 40px;
-    padding: 15px;
-}
-
-
-/* Tablet Landscape 1024x768 */
-@media only screen and (max-width: 1024px) {
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
     .product-container {
+        background-color: #eaeaeb;
+        max-width: 100%;
+        border-radius: 10px;
+        padding: 20px;
+        display: flex;
         flex-direction: column;
         align-items: center;
+    }    
+        
+    .product-card {
+        flex-direction: row; /* Cambia a apilado vertical */
+        align-items: center;
+        padding: 10px;
     }
-    .product-gallery, .product-details {
-        width: 80%;
+
+    .product-gallery {
+        flex-direction: row; /* Apila miniaturas horizontalmente */
+        gap: 5px;
+        justify-content: center;
+    }
+
+    .product-gallery img.thumbnail {
+        width: 60px;
+        height: 60px;
+    }
+
+    .product-details {
+        max-width: 100%;
+        margin-top: 15px; /* Espacio adicional entre la imagen y el texto */
+        padding: 10px;
+    }
+
+    #relatedProducts .card {
+        flex: 1 1 calc(100% - 20px); /* Cambia a 1 tarjeta por fila */
+        max-width: calc(100% - 20px);
+    }
+
+    #relatedProducts {
+        height: auto;
+        justify-content: center;
     }
 }
 
-/* iPhone SE 320x568 */
-@media only screen and (max-width: 320px) {
-    header ul {
-        flex-direction: column;
+/* Responsividad para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    body {
+        background-image: none;
+        background-color: #ffffff;
     }
-    .product-gallery, .product-details {
-        width: 100%;
+
+    .product-gallery img.thumbnail {
+        width: 50px;
+        height: 50px;
     }
-    .product-details h1 {
-        font-size: 1.5em;
+
+    .product-details {
+        padding: 10px;
+        margin-top: 10px;
     }
-    button {
-        width: 100%;
-        margin: 10px 0;
+
+    #relatedProducts {
+        height: auto;
+        justify-content: center;
     }
-}
 
-#form-calificacion {
-    background-color: #eaeaeb !important;
-    padding: 20px !important;
-    width: 85%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 15px;
-    margin: 0 auto;
-    height: 200px;
-  }
-
-#userDropdown,
-#theme-toggle {
-  color: white;
-  background-color: #212529 !important;
-}
-
-
-.btn-primary,
-.btn-secondary,
-.dropdown-toggle{
-    background-color: #f80 !important;
-    border-color: #f80 !important;
-    color: white !important;
-}
-
-.dropdown-menu {
-    background-color: #f0b34a;
-}
-
-.dropdown-item {
-    color: white;
-}
-
-.dropdown-item:hover {
-    background-color: #e67300ea;
-    color: white;
-}
-
-.btn .bi,
-.dropdown-item .bi {
-    color: white;
-    justify-content: right;
+    #relatedProducts .card {
+        flex: 1 1 calc(100% - 20px); /* Cambia a 1 tarjeta por fila */
+        max-width: calc(100% - 20px);
+    }
 }
