@@ -26,15 +26,17 @@
 </head>
 
 <body>
-  <!-- Nav bar -->
+  <!-- Barra de navegación -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
     <div class="container">
+      <!-- Botón para el menú colapsable -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav w-100 justify-content-between">
+          <!-- Links principales de navegación -->
           <li class="nav-item">
             <a class="nav-link" href="index.html">Inicio</a>
           </li>
@@ -44,22 +46,31 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <!-- Menú desplegable de usuario -->
+          <!-- Menú desplegable del usuario -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
-              <!-- Aquí se mostrará dinámicamente el nombre del usuario -->
+              <!-- Aquí se muestra dinámicamente el nombre del usuario -->
             </a>
             <ul class="dropdown-menu" aria-labelledby="userDropdown">
-              <li><a class="dropdown-item" href="cart.html">Mi carrito <span id="cart-badge" class="badge badge-pill badge-warning">0</span></a></li> <!-- Badge -->
-              <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+              <!-- Enlace al carrito con badge -->
+              <li>
+                <a class="dropdown-item" href="cart.html">Mi carrito <span id="cart-badge" class="badge badge-pill badge-warning">0</span></a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+              </li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" id="logout" href="#">Cerrar sesión</a></li>
+              <li>
+                <a class="dropdown-item" id="logout" href="#">Cerrar sesión</a>
+              </li>
             </ul>
           </li>
+          <!-- Botón para alternar entre temas -->
+          <li class="nav-item">
             <button id="theme-toggle" class="btn p-0">
               <i id="theme-icon" class="bi bi-sun-fill text-secondary"></i>
-            </button>              
+            </button>
           </li>
         </ul>
       </div>
@@ -80,13 +91,16 @@
       <p class="text m-3" id="descripcion">Nuestra selección de </p>
       <div class="ordenarBuscadorPrecio">
         <div class="ordenar" data-bs-toggle="buttons">
-          <input type="radio" class="btn-check" name="options" id="sortAsc"> <!-- Filtro ascendente -->
+          <!-- Filtro ascendente de precios -->
+          <input type="radio" class="btn-check" name="options" id="sortAsc"> 
           <label class="btn btn-light" for="sortAsc" id="precioUp">$<i class="fa-solid fa-arrow-down-short-wide"></i></label>
     
-          <input type="radio" class="btn-check" name="options" id="sortDesc"> <!-- Filtro descendente -->
+          <!-- Filtro descendente de precios -->
+          <input type="radio" class="btn-check" name="options" id="sortDesc"> 
           <label class="btn btn-light" for="sortDesc" id="precioDown">$<i class="fa-solid fa-arrow-up-wide-short"></i></label>
     
-          <input type="radio" class="btn-check" name="options" id="sortByCount"> <!-- Filtro cantidad de vendidos -->
+          <!-- Filtro por cantidad de productos vendidos -->
+          <input type="radio" class="btn-check" name="options" id="sortByCount"> 
           <label class="btn btn-light" for="sortByCount" id="filtroVentas">
             <i class="fa-solid fa-bag-shopping"></i><i class="fa-solid fa-arrow-up-long"></i>
           </label>
@@ -95,9 +109,10 @@
         <div class="filtros">
           <div class="nombreYPrecio">
             <div class="filtrarNombre">
-              <input type="text" id="buscador" class="form-control" placeholder="Filtrar por Nombre del Artículo"> <!-- Buscador -->
+              <input type="text" id="buscador" class="form-control" placeholder="Filtrar por Nombre del Artículo"> <!-- Buscador por nombre de producto -->
             </div>
             <div class="rangoPrecio">
+              <!-- Filtro de rango de precio -->
               <p class="font-weight-normal m-2">Rango de Precio</p>
               <input class="form-control" type="number" placeholder="min." id="minFiltro"> <!-- Cantidad mínima -->
               <input class="form-control" type="number" placeholder="máx." id="maxFiltro"> <!-- Cantidad máxima -->
@@ -111,6 +126,7 @@
       </div>
     </div>
     <div id="listaP" class="row card-list m-2">
+      <!-- Aquí se mostrarán los productos filtrados según los criterios seleccionados -->
     </div>
   </main>
   <footer class="text-muted">

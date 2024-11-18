@@ -21,43 +21,51 @@
 </head>
 
 <body>
-  <!-- Nav bar -->
+  <!-- Barra de navegación -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
     <div class="container">
+      <!-- Botón para el menú colapsable -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav w-100 justify-content-between">
+          <!-- Links principales de navegación -->
           <li class="nav-item">
-            <a class="nav-link active" href="index.html">Inicio</a>
+            <a class="nav-link" href="index.html">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="categories.html">Categorías</a>
+            <a class="nav-link active" href="categories.html">Categorías</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          
-          <!-- Menú desplegable de usuario -->
+          <!-- Menú desplegable del usuario -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
-              <!-- Aquí se mostrará dinámicamente el nombre del usuario -->
-               
+              <!-- Aquí se muestra dinámicamente el nombre del usuario -->
             </a>
             <ul class="dropdown-menu" aria-labelledby="userDropdown">
-              <li><a class="dropdown-item" href="cart.html">Mi carrito <span id="cart-badge" class="badge badge-pill badge-warning">0</span></a></li> <!-- Badge -->
-              <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+              <!-- Enlace al carrito con badge -->
+              <li>
+                <a class="dropdown-item" href="cart.html">Mi carrito <span id="cart-badge" class="badge badge-pill badge-warning">0</span></a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+              </li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" id="logout" href="">Cerrar sesión</a></li>
+              <li>
+                <a class="dropdown-item" id="logout" href="#">Cerrar sesión</a>
+              </li>
             </ul>
           </li>
+          <!-- Botón para alternar entre temas -->
           <li class="nav-item">
             <button id="theme-toggle" class="btn p-0">
               <i id="theme-icon" class="bi bi-sun-fill text-secondary"></i>
-            </button>              
+            </button>
           </li>
         </ul>
       </div>
@@ -65,11 +73,11 @@
   </nav>
 
   <main>
-    <!-- Tarjeta de autos -->
-    <div class="jumbotron text-center"></div>
+    <div class="jumbotron text-center"></div> <!-- Banner decorativo al inicio de la página -->
     <div class="album py-5">
       <div class="container">
         <div class="row justify-content-center">
+          <!-- Tarjeta de la categoría "Autos" -->
           <div id="autos" class="col-12 col-md-4">
             <a href="products.html" class="card mb-4 shadow-sm custom-card cursor-active">
               <img class="bd-placeholder-img card-img-top" src="img/cars_index.jpg"
@@ -80,7 +88,7 @@
               </div>
             </a>
           </div>
-          <!-- Tarjeta de juguetes -->
+          <!-- Tarjeta de la categoría "Juguetes" -->
           <div id="juguetes" class="col-12 col-md-4">
             <a href="products.html" class="card mb-4 shadow-sm custom-card cursor-active">
               <img class="bd-placeholder-img card-img-top" src="img/toys_index.jpg"
@@ -91,7 +99,7 @@
               </div>
             </a>
           </div>
-          <!-- Tarjeta de muebles -->
+          <!-- Tarjeta de la categoría "Muebles" -->
           <div id="muebles" class="col-12 col-md-4">
             <a href="products.html" class="card mb-4 shadow-sm custom-card cursor-active">
               <img class="bd-placeholder-img card-img-top" src="img/muebles.jpg"
@@ -103,6 +111,7 @@
             </a>
           </div>
         </div>
+        <!-- Botón para ver más categorías -->
         <div class="row">
           <a class="btn btn-lg btn-block" href="categories.html">¡Y mucho más!</a>
         </div>

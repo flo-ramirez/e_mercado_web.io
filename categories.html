@@ -23,15 +23,17 @@
 </head>
 
 <body>
-  <!-- Nav bar -->
+  <!-- Barra de navegación -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
     <div class="container">
+      <!-- Botón para el menú colapsable -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav w-100 justify-content-between">
+          <!-- Links principales de navegación -->
           <li class="nav-item">
             <a class="nav-link" href="index.html">Inicio</a>
           </li>
@@ -41,70 +43,88 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <!-- Menú desplegable de usuario -->
-            <li class="nav-item dropdown">
+          <!-- Menú desplegable del usuario -->
+          <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                <!-- Aquí se mostrará dinámicamente el nombre del usuario -->
+              aria-expanded="false">
+              <!-- Aquí se muestra dinámicamente el nombre del usuario -->
             </a>
             <ul class="dropdown-menu" aria-labelledby="userDropdown">
-                <li><a class="dropdown-item" href="cart.html">Mi carrito <span id="cart-badge" class="badge badge-pill badge-warning">0</span></a></li> <!-- Badge -->
-                <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" id="logout" href="#">Cerrar sesión</a></li>
+              <!-- Enlace al carrito con badge -->
+              <li>
+                <a class="dropdown-item" href="cart.html">Mi carrito <span id="cart-badge" class="badge badge-pill badge-warning">0</span></a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+              </li>
+              <li><hr class="dropdown-divider"></li>
+              <li>
+                <a class="dropdown-item" id="logout" href="#">Cerrar sesión</a>
+              </li>
             </ul>
+          </li>
+          <!-- Botón para alternar entre temas -->
           <li class="nav-item">
             <button id="theme-toggle" class="btn p-0">
               <i id="theme-icon" class="bi bi-sun-fill text-secondary"></i>
-            </button>              
+            </button>
           </li>
         </ul>
       </div>
     </div>
   </nav>
+
   <main class="pb-5">
+    <!-- Encabezado principal de la página -->
     <div class="text-center p-4">
       <h2>Categorías</h2>
       <p class="lead">Verás aquí todas las categorías del sitio.</p>
     </div>
+
     <div class="container">
       <div class="row">
         <!-- Filtros -->
         <div class="col text-end">
-          <div class="btn-group btn-group-toggle mb-4" data-bs-toggle="buttons">
-            <input type="radio" class="btn-check" name="options" id="sortAsc"> <!-- Filtro ascendente -->
-            <label class="btn btn-light" for="sortAsc">A-Z</label>
-            <input type="radio" class="btn-check" name="options" id="sortDesc"> <!-- Filtro descendente -->
-            <label class="btn btn-light" for="sortDesc">Z-A</label>
-            <input type="radio" class="btn-check" name="options" id="sortByCount" checked> <!-- Filtro por cantidad de vendidos -->
+          <div class="btn-group btn-group-toggle mb-4" data-bs-toggle="buttons"> <!-- Filtro por orden alfabético ascendente -->
+            <input type="radio" class="btn-check" name="options" id="sortAsc">
+            <label class="btn btn-light" for="sortAsc">A-Z</label> <!-- Filtro por orden alfabético descendente -->
+            <input type="radio" class="btn-check" name="options" id="sortDesc">
+            <label class="btn btn-light" for="sortDesc">Z-A</label> <!-- Filtro por cantidad de vendidos -->
+            <input type="radio" class="btn-check" name="options" id="sortByCount" checked>
             <label class="btn btn-light" for="sortByCount"><i class="fas fa-sort-amount-down mr-1"></i></label>
           </div>
         </div>
       </div>
+      
       <div class="row">
         <div class="col-lg-6 offset-lg-6 col-md-12 mb-1 container">
           <div class="row container p-0 m-0">
             <div class="col">
               <p class="font-weight-normal text-end my-2">Cant.</p>
             </div>
+            <!-- Campo para ingresar cantidad mínima -->
             <div class="col">
-              <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin"> <!-- Cantidad mínima -->
+              <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
             </div>
+            <!-- Campo para ingresar cantidad máxima -->
             <div class="col">
-              <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax"> <!-- Cantidad máxima -->
+              <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
             </div>
             <div class="col-3 p-0">
               <div class="btn-group" role="group">
-                <button class="btn btn-block" id="rangeFilterCount" style="margin-top: 0px;">Filtrar</button> <!-- Botón de filtrar -->
-                <button class="btn btn-block" id="clearRangeFilter" style="margin-right: 0px; margin-top: 0px; ">Limpiar</button> <!-- Botón de limpiar -->
+                <!-- Botón para aplicar filtro -->
+                <button class="btn btn-block" id="rangeFilterCount">Filtrar</button>
+                <!-- Botón para limpiar filtros -->
+                <button class="btn btn-block" id="clearRangeFilter">Limpiar</button>
               </div>
             </div>
           </div>
         </div>
       </div>
+
       <div class="row">
-        <div class="list-group" id="cat-list-container">
-        </div>
+        <!-- Contenedor donde se muestran dinámicamente las categorías -->
+        <div class="list-group" id="cat-list-container"></div>
       </div>
     </div>
   </main>

@@ -18,79 +18,94 @@
 </head>
 
 <body>
-  <!-- Nav bar -->
-  <main>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
-      <div class="container">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav w-100 justify-content-between">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="categories.html">Categorías</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="sell.html">Vender</a>
-            </li>
-            <!-- Menú desplegable de usuario -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                <!-- Aquí se mostrará dinámicamente el nombre del usuario -->
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="userDropdown">
-                <li><a class="dropdown-item" href="cart.html">Mi carrito <span id="cart-badge" class="badge badge-pill badge-warning">0</span></a></li> <!-- Badge -->
-                <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" id="logout" href="#">Cerrar sesión</a></li>
-              </ul>
-            <li class="nav-item">
-              <button id="theme-toggle" class="btn p-0">
-                <i id="theme-icon" class="bi bi-sun-fill text-secondary"></i>
-              </button>
-            </li>
-          </ul>
-        </div>
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+    <div class="container">
+      <!-- Botón para el menú colapsable -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav w-100 justify-content-between">
+          <!-- Links principales de navegación -->
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="categories.html">Categorías</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sell.html">Vender</a>
+          </li>
+          <!-- Menú desplegable del usuario -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <!-- Aquí se muestra dinámicamente el nombre del usuario -->
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="userDropdown">
+              <!-- Enlace al carrito con badge -->
+              <li>
+                <a class="dropdown-item" href="cart.html">Mi carrito <span id="cart-badge" class="badge badge-pill badge-warning">0</span></a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+              </li>
+              <li><hr class="dropdown-divider"></li>
+              <li>
+                <a class="dropdown-item" id="logout" href="#">Cerrar sesión</a>
+              </li>
+            </ul>
+          </li>
+          <!-- Botón para alternar entre temas -->
+          <li class="nav-item">
+            <button id="theme-toggle" class="btn p-0">
+              <i id="theme-icon" class="bi bi-sun-fill text-secondary"></i>
+            </button>
+          </li>
+        </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
     <!-- Formulario de datos de usuario -->
     <h2><i class="fa-solid fa-user user"></i> Mi perfil</h2>
     <section class="profile">
       <form style="background-color: transparent;">
-          <label for="name" class="form-label">Primer Nombre *</label>
+          <!-- Campo para el primer nombre (requerido) -->
+          <label for="name" class="form-label">Primer Nombre *</label>  
           <input type="text" name="name" id="name" class="form-control verify" required>
-          <span class="error-message"></span>
+          <span class="error-message"></span> <!-- Mensaje de error para validación del campo -->
+
   
+          <!-- Campo para el segundo nombre (opcional) -->
           <label for="secName" class="form-label">Segundo Nombre</label>
           <input type="text" name="secName" id="secName" class="form-control">
           <span class="error-message"></span>
   
+          <!-- Campo para el primer apellido (requerido) -->
           <label for="surName" class="form-label">Primer Apellido *</label>
           <input type="text" name="surname" id="surname" class="form-control verify" required>
           <span class="error-message"></span>
   
+          <!-- Campo para el segundo apellido (opcional) -->
           <label for="secSurname" class="form-label">Segundo Apellido</label>
           <input type="text" name="secSurname" id="secSurname" class="form-control">
           <span class="error-message"></span>
   
+          <!-- Campo para el email (requerido) -->
           <label for="email" class="form-label">E-Mail *</label>
           <input type="text" name="email" id="email" class="form-control verify" required readonly>
           <span class="error-message"></span>
   
+          <!-- Campo para el número de teléfono (opcional) -->
           <label for="phone" class="form-label">Teléfono de Contacto</label>
           <input type="text" name="phone" id="phone" class="form-control verify">
           <span class="error-message"></span>
   
-          <!-- Botón de guardar cambios -->
+          <!-- Botón para guardar los cambios -->
           <button type="button" class="guardar" onclick="verify()">Guardar cambios</button>
-      </form>
+          </form>
 
       <!-- Foto de perfil -->
       <div class="profile-pic">
@@ -106,7 +121,6 @@
           <input type="file" id="img" name="img" accept=".jpg, .jpeg, .png">
       </div>
   </section>
-  </main>
 
   <footer>
     <div class="container">

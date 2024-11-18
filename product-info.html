@@ -22,60 +22,73 @@
   </head>
 
   <body>
-      <!-- Nav bar -->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
-        <div class="container">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav w-100 justify-content-between">
-              <li class="nav-item">
-                <a class="nav-link active" href="index.html">Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="categories.html">Categorías</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="sell.html">Vender</a>
-              </li>
-              <!-- Menú desplegable de usuario -->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  <!-- Aquí se mostrará dinámicamente el nombre del usuario -->
-                  Nombre de Usuario
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="userDropdown">
-                  <li><a class="dropdown-item" href="cart.html">Mi carrito <span id="cart-badge" class="badge badge-pill badge-warning">0</span></a></li> <!-- Badge -->
-                  <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" id="logout" href="#">Cerrar sesión</a></li>
-                </ul>
-              </li>
-                <button id="theme-toggle" class="btn p-0 material-symbols-outlined">
-                  <i id="theme-icon" class="bi bi-sun-fill text-secondary"></i>
-                </button>              
-              </li>
-            </ul>
-          </div>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+      <div class="container">
+        <!-- Botón para el menú colapsable -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav w-100 justify-content-between">
+            <!-- Links principales de navegación -->
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="categories.html">Categorías</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sell.html">Vender</a>
+            </li>
+            <!-- Menú desplegable del usuario -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <!-- Aquí se muestra dinámicamente el nombre del usuario -->
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                <!-- Enlace al carrito con badge -->
+                <li>
+                  <a class="dropdown-item" href="cart.html">Mi carrito <span id="cart-badge" class="badge badge-pill badge-warning">0</span></a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+                </li>
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                  <a class="dropdown-item" id="logout" href="#">Cerrar sesión</a>
+                </li>
+              </ul>
+            </li>
+            <!-- Botón para alternar entre temas -->
+            <li class="nav-item">
+              <button id="theme-toggle" class="btn p-0">
+                <i id="theme-icon" class="bi bi-sun-fill text-secondary"></i>
+              </button>
+            </li>
+          </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
 
     <main>
+      <!-- Tarjeta del producto -->
       <div class="product-card">
         <div class="product-container">
           <aside class="product-gallery" id="productGallery">
             <!-- Aquí se llenarán las imágenes de manera dinámica desde el JSON -->
           </aside>
 
+          <!-- Imagen principal y descripción del producto -->
           <section class="product-main-image">
             <img id="mainImage" src="img/default.jpg" alt="Imagen principal del producto">
             <h1 class="descripcion" id="productName"></h1>
             <p  class="caracteristicas" id="productDescription"></p>
           </section>
 
+          <!-- Detalles del producto -->
           <div class="product-details">
             <h1 id="productName"></h1>
             <p><strong>Precio:</strong> <span id="productPrice"></span></p>
@@ -85,6 +98,7 @@
             <button>WhatsApp</button>
             <p class="cuentanos">¿Tuviste un problema? Cuentanos</p>
             
+            <!-- Información del vendedor -->
             <div class="seller-info">
                 <p>Información del vendedor</p>
                 <p>Tiempo vendiendo en e-Mercado: 3 años</p>

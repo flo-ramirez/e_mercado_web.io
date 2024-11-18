@@ -23,39 +23,47 @@
 </head>
 
 <body>
-  <!-- Nav bar -->
+  <!-- Barra de navegación -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
     <div class="container">
+      <!-- Botón para el menú colapsable -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav w-100 justify-content-between">
+          <!-- Links principales de navegación -->
           <li class="nav-item">
             <a class="nav-link" href="index.html">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="categories.html">Categorías</a>
+            <a class="nav-link active" href="categories.html">Categorías</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <!-- Menú desplegable de usuario -->
+          <!-- Menú desplegable del usuario -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
-              <!-- Aquí se mostrará dinámicamente el nombre del usuario -->
+              <!-- Aquí se muestra dinámicamente el nombre del usuario -->
             </a>
             <ul class="dropdown-menu" aria-labelledby="userDropdown">
-              <li><a class="dropdown-item" href="cart.html">Mi carrito <span id="cart-badge"
-                    class="badge badge-pill badge-warning">0</span></a></li> <!-- Badge -->
-              <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+              <!-- Enlace al carrito con badge -->
               <li>
-                <hr class="dropdown-divider">
+                <a class="dropdown-item" href="cart.html">Mi carrito <span id="cart-badge" class="badge badge-pill badge-warning">0</span></a>
               </li>
-              <li><a class="dropdown-item" id="logout" href="#">Cerrar sesión</a></li>
+              <li>
+                <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+              </li>
+              <li><hr class="dropdown-divider"></li>
+              <li>
+                <a class="dropdown-item" id="logout" href="#">Cerrar sesión</a>
+              </li>
             </ul>
+          </li>
+          <!-- Botón para alternar entre temas -->
           <li class="nav-item">
             <button id="theme-toggle" class="btn p-0">
               <i id="theme-icon" class="bi bi-sun-fill text-secondary"></i>
@@ -95,7 +103,7 @@
               Datos de la Compra
             </h2>
           </div>
-          <!-- Envío -->
+          <!-- Datos de envío -->
           <div class="forms-container">
             <div id="shipment">
               <div class="title-purchase" id="shipment-title">
@@ -105,8 +113,8 @@
                 <form id="form-shipment-tipe" class="forms">
                   <h5>Datos de envio</h5>
                   <div class="radio-group">
-                    <!-- Tipo de envío -->
-                    <span>Tipo de envío</span>
+                  <!-- Opciones de tipo de envío -->
+                  <span>Tipo de envío</span>
                     <div class="radio-item">
                       <input type="radio" id="premium" name="envio" value="premium">
                       <label for="premium">Premium (15%) <span>2 - 5 días</span></label>
@@ -120,7 +128,7 @@
                       <label for="standard">Standard (5%) <span>8 - 12 días</span></label>
                     </div>
                   </div>
-                  <!-- Datos -->
+                  <!-- Campos para dirección -->
                   <div class="text-group">
                     <label for="departamento">Departamento</label>
                     <input type="text" id="departamento">
