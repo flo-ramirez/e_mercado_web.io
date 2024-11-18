@@ -184,7 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // Validar selección de forma de pago
-        const formaPagoSeleccionada = document.querySelector('input[name="envio"]:checked');
+        const formaPagoSeleccionada = document.querySelector('input[name="pago"]:checked');
         if (!formaPagoSeleccionada) {
             errores.push("Debe seleccionar una forma de pago.");
         }
