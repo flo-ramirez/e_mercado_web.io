@@ -134,3 +134,59 @@ function createStars(rating) {
   }
   return stars;
 }
+document.getElementById("final-button").addEventListener("click", function () {
+  // Obtener valores de los campos de dirección
+  const departamento = document.getElementById("departamento").value.trim();
+  const localidad = document.getElementById("localidad").value.trim();
+  const calle = document.getElementById("calle").value.trim();
+  const numeroDirec = document.getElementById("numeroDirec").value.trim();
+  const esquina = document.getElementById("esquina").value.trim();
+
+  // Validar tipo de envío seleccionado
+  const tipoEnvio = document.querySelector('input[name="envio"]:checked');
+
+  // Validar que al menos una forma de pago esté seleccionada
+  const formaPago = document.querySelector('input[name="envio"]:checked');
+
+  // Array para guardar errores
+  let errores = [];
+
+  // Validaciones
+  if (!departamento) errores.push("Debe ingresar el departamento.");
+  if (!localidad) errores.push("Debe ingresar la localidad.");
+  if (!calle) errores.push("Debe ingresar la calle.");
+  if (!numeroDirec || isNaN(numeroDirec)) errores.push("Debe ingresar un número de puerta válido.");
+  if (!esquina) errores.push("Debe ingresar la esquina.");
+  if (!tipoEnvio) errores.push("Debe seleccionar un tipo de envío.");
+  if (!formaPago) errores.push("Debe seleccionar una forma de pago.");
+
+  // Mostrar errores o continuar con la compra
+  if (errores.length > 0) {
+      mostrarAlertas(errores); // Mostrar mensajes de error en una alerta personalizada
+  } else {
+      // Aquí puedes continuar con el proceso de compra
+      mostrarExito("¡Compra realizada con éxito!");
+  }
+});
+
+// Función para mostrar alertas personalizadas
+function mostrarAlertas(mensajes) {
+  const alertContainer = document.createElement("div");
+  alertContainer.classList.add("alert", "alert-danger");
+  alertContainer.innerHTML = mensajes.map(msg => `<p>${msg}</p>`).join("");
+  document.body.prepend(alertContainer);
+
+  // Eliminar alerta después de 5 segundos
+  setTimeout(() => alertContainer.remove(), 5000);
+}
+
+// Función para mostrar mensaje de éxito
+function mostrarExito(mensaje) {
+  const successContainer = document.createElement("div");
+  successContainer.classList.add("alert", "alert-success");
+  successContainer.textContent = mensaje;
+  document.body.prepend(successContainer);
+
+  // Eliminar mensaje después de 5 segundos
+  setTimeout(() => successContainer.remove(), 5000);
+}
