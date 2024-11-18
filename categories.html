@@ -23,6 +23,7 @@
 </head>
 
 <body>
+  <!-- Nav bar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
     <div class="container">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -47,7 +48,7 @@
                 <!-- Aquí se mostrará dinámicamente el nombre del usuario -->
             </a>
             <ul class="dropdown-menu" aria-labelledby="userDropdown">
-                <li><a class="dropdown-item" href="cart.html">Mi carrito <span id="cart-badge" class="badge badge-pill badge-warning">0</span></a></li>
+                <li><a class="dropdown-item" href="cart.html">Mi carrito <span id="cart-badge" class="badge badge-pill badge-warning">0</span></a></li> <!-- Badge -->
                 <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" id="logout" href="#">Cerrar sesión</a></li>
@@ -68,13 +69,14 @@
     </div>
     <div class="container">
       <div class="row">
+        <!-- Filtros -->
         <div class="col text-end">
           <div class="btn-group btn-group-toggle mb-4" data-bs-toggle="buttons">
-            <input type="radio" class="btn-check" name="options" id="sortAsc">
+            <input type="radio" class="btn-check" name="options" id="sortAsc"> <!-- Filtro ascendente -->
             <label class="btn btn-light" for="sortAsc">A-Z</label>
-            <input type="radio" class="btn-check" name="options" id="sortDesc">
+            <input type="radio" class="btn-check" name="options" id="sortDesc"> <!-- Filtro descendente -->
             <label class="btn btn-light" for="sortDesc">Z-A</label>
-            <input type="radio" class="btn-check" name="options" id="sortByCount" checked>
+            <input type="radio" class="btn-check" name="options" id="sortByCount" checked> <!-- Filtro por cantidad de vendidos -->
             <label class="btn btn-light" for="sortByCount"><i class="fas fa-sort-amount-down mr-1"></i></label>
           </div>
         </div>
@@ -85,16 +87,16 @@
             <div class="col filter-inputs">
               <p class="font-weight-normal text-end my-2">Cant.</p>
             </div>
-            <div class="col filter-inputs">
-              <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
+            <div class="col">
+              <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin"> <!-- Cantidad mínima -->
             </div>
-            <div class="col filter-inputs">
-              <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
+            <div class="col">
+              <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax"> <!-- Cantidad máxima -->
             </div>
             <div class="col-3 filter-buttons p-0">
               <div class="btn-group" role="group">
-                <button class="btn btn-block" id="rangeFilterCount">Filtrar</button>
-                <button class="btn btn-block" id="clearRangeFilter">Limpiar</button>
+                <button class="btn btn-block" id="rangeFilterCount" style="margin-top: 0px;">Filtrar</button> <!-- Botón de filtrar -->
+                <button class="btn btn-block" id="clearRangeFilter" style="margin-right: 0px; margin-top: 0px; ">Limpiar</button> <!-- Botón de limpiar -->
               </div>
             </div>
           </div>

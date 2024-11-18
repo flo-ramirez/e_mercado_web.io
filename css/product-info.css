@@ -27,7 +27,7 @@ body {
     height: auto; /* Cambié de 650px a auto */
 }
 
-/* galería de imágenes pequeñas */
+/* Galería de imágenes pequeñas */
 .product-gallery {
     max-width: 98%;
     display: flex;
@@ -49,7 +49,7 @@ body {
     border-radius: 10px;
 }
 
-/* imagen principal */
+/* Imagen principal */
 .product-main-image {
     width: 100%; /* Cambié de 1600px a 100% para ser responsivo */
     justify-content: center;
