@@ -66,7 +66,7 @@ document.querySelectorAll("input").forEach(element => {
     });
 });
 
-// DESAFIATE
+// DESAFIATE 5
 const fotoPerfilInput = document.getElementById("img");
 const preview = document.getElementById("preview");
 const fotoPerfil = document.getElementById("pic");

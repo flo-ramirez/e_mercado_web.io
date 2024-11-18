@@ -26,6 +26,7 @@
 </head>
 
 <body>
+  <!-- Nav bar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
     <div class="container">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -50,7 +51,7 @@
               <!-- Aquí se mostrará dinámicamente el nombre del usuario -->
             </a>
             <ul class="dropdown-menu" aria-labelledby="userDropdown">
-              <li><a class="dropdown-item" href="cart.html">Mi carrito <span id="cart-badge" class="badge badge-pill badge-warning">0</span></a></li>
+              <li><a class="dropdown-item" href="cart.html">Mi carrito <span id="cart-badge" class="badge badge-pill badge-warning">0</span></a></li> <!-- Badge -->
               <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" id="logout" href="#">Cerrar sesión</a></li>
@@ -64,6 +65,7 @@
       </div>
     </div>
   </nav>
+  <!-- Banner -->
   <div class="banner">
     <img src="img/prod50925_1.jpg" alt="Imagen del banner" id="imagenTitulo">
     <div class="banner-text">
@@ -73,17 +75,18 @@
     </div>
   </div>
   <main>
+    <!-- Filtros -->
     <div class="textoYFiltros">
       <p class="text m-3" id="descripcion">Nuestra selección de </p>
       <div class="ordenarBuscadorPrecio">
         <div class="ordenar" data-bs-toggle="buttons">
-          <input type="radio" class="btn-check" name="options" id="sortAsc">
+          <input type="radio" class="btn-check" name="options" id="sortAsc"> <!-- Filtro ascendente -->
           <label class="btn btn-light" for="sortAsc" id="precioUp">$<i class="fa-solid fa-arrow-down-short-wide"></i></label>
     
-          <input type="radio" class="btn-check" name="options" id="sortDesc">
+          <input type="radio" class="btn-check" name="options" id="sortDesc"> <!-- Filtro descendente -->
           <label class="btn btn-light" for="sortDesc" id="precioDown">$<i class="fa-solid fa-arrow-up-wide-short"></i></label>
     
-          <input type="radio" class="btn-check" name="options" id="sortByCount">
+          <input type="radio" class="btn-check" name="options" id="sortByCount"> <!-- Filtro cantidad de vendidos -->
           <label class="btn btn-light" for="sortByCount" id="filtroVentas">
             <i class="fa-solid fa-bag-shopping"></i><i class="fa-solid fa-arrow-up-long"></i>
           </label>
@@ -92,15 +95,15 @@
         <div class="filtros">
           <div class="nombreYPrecio">
             <div class="filtrarNombre">
-              <input type="text" id="buscador" class="form-control" placeholder="Filtrar por Nombre del Artículo">
+              <input type="text" id="buscador" class="form-control" placeholder="Filtrar por Nombre del Artículo"> <!-- Buscador -->
             </div>
             <div class="rangoPrecio">
               <p class="font-weight-normal m-2">Rango de Precio</p>
-              <input class="form-control" type="number" placeholder="min." id="minFiltro">
-              <input class="form-control" type="number" placeholder="máx." id="maxFiltro">
+              <input class="form-control" type="number" placeholder="min." id="minFiltro"> <!-- Cantidad mínima -->
+              <input class="form-control" type="number" placeholder="máx." id="maxFiltro"> <!-- Cantidad máxima -->
               <div class="btn-group">
-                <button class="btn btn-light" id="botonFiltrar" style="margin-top: 0px;">Filtrar</button>
-                <button class="btn btn-light btn-sm" id="limpiarFiltro" style="margin-top: 0px;">Limpiar</button>
+                <button class="btn btn-light" id="botonFiltrar" style="margin-top: 0px;">Filtrar</button> <!-- Botón de filtrar -->
+                <button class="btn btn-light btn-sm" id="limpiarFiltro" style="margin-top: 0px;">Limpiar</button> <!-- Botón de limpiar -->
               </div>
             </div>
           </div>

@@ -40,7 +40,8 @@ body {
     margin: 0 auto; /* Centra el contenido en la página */
 }
 
-/* Galería de imágenes pequeñas (vertical a la izquierda) */
+
+
 .product-gallery {
     display: flex;
     flex-direction: column; /* Apilado vertical */
@@ -66,6 +67,7 @@ body {
 }
 
 /* Imagen principal centrada */
+
 .product-main-image {
     flex: 1;
     display: flex;

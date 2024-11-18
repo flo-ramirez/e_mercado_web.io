@@ -6,11 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>eMercado - Todo lo que busques está aquí</title>
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
-  <link id="light-theme" href="css/styles.css" rel="stylesheet">
-  <!-- Queda disabled para que tengamos el tema claro por defecto y se cambie al clckear el boton-->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link id="light-theme" href="css/styles.css" rel="stylesheet"> <!-- Queda disabled para que tengamos el tema claro por defecto y se cambie al clckear el boton-->
   <link id="dark-theme" href="css/dark_styles.css" rel="stylesheet" disabled>
   <link rel="stylesheet" href="css/cart.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
@@ -24,6 +23,7 @@
 </head>
 
 <body>
+  <!-- Nav bar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
     <div class="container">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -49,7 +49,7 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="userDropdown">
               <li><a class="dropdown-item" href="cart.html">Mi carrito <span id="cart-badge"
-                    class="badge badge-pill badge-warning">0</span></a></li>
+                    class="badge badge-pill badge-warning">0</span></a></li> <!-- Badge -->
               <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
               <li>
                 <hr class="dropdown-divider">
@@ -76,16 +76,18 @@
               <span class="cantCarrito"></span> <!--Aca deberia quedar lo del DESAFIATE-->
             </h2>
           </div>
-          <a class="delete-cart" href="#">Eliminar todos los articulos </a>
+          <a id="delateCartButton" class="delete-cart" href="#">Eliminar todos los articulos </a>
           <div id="empty-message">El carrito está vacío.</div>
           <div id="products-container" style="display: none;"></div> <!--Aca deberian aparecer los productos-->
-          <div class="botones">
+          <div class="buttons">
             <button class="continue-buying" id="continue-buying-button">Seguir comprando</button>
             <button class="finalize-purchase" id="finalize-purchase-button">Continuar Compra</button>
           </div>
         </div>
       </div>
-      <div id="purchse-hiden">
+
+      <!-- Sección de compra -->
+      <div id="purchase-hiden">
         <div class="container-content" id="purchase-data-section">
           <div class="cart-text">
             <h2>
@@ -93,15 +95,18 @@
               Datos de la Compra
             </h2>
           </div>
+          <!-- Envío -->
           <div class="forms-container">
             <div id="shipment">
               <div class="title-purchase" id="shipment-title">
                 <h3>Envio</h3>
               </div>
               <div class="forms-div">
-                <form id="form-shipment-tipe">
-                  <span>Tipo de envío</span>
+                <form id="form-shipment-tipe" class="forms">
+                  <h5>Datos de envio</h5>
                   <div class="radio-group">
+                    <!-- Tipo de envío -->
+                    <span>Tipo de envío</span>
                     <div class="radio-item">
                       <input type="radio" id="premium" name="envio" value="premium">
                       <label for="premium">Premium (15%) <span>2 - 5 días</span></label>
@@ -115,8 +120,9 @@
                       <label for="standard">Standard (5%) <span>8 - 12 días</span></label>
                     </div>
                   </div>
+                  <!-- Datos -->
                   <div class="text-group">
-                    <label for="departamento">Depratamento</label>
+                    <label for="departamento">Departamento</label>
                     <input type="text" id="departamento">
 
                     <label for="localidad">Localidad</label>
@@ -131,24 +137,81 @@
                     <label for="esquina">Esquina</label>
                     <input type="text" id="esquina">
 
-                    <input class="next" type="button" value="&#8594;">
+                    <input id="ship-next-button" class="next" type="button" value="&#8594;">
                   </div>
                 </form>
               </div>
             </div>
+            <!-- Formas de Pago -->
             <div id="pay">
               <div class="title-purchase" id="pay-title">
                 <h3>Pago</h3>
               </div>
               <div class="forms-div">
+                <form id="form-pay-tipe" class="forms">
+                  <h5>Seleccionar forma de pago</h5>
+                  <div class="radio-group">
+                    <div class="radio-item">
+                      <input type="radio" id="transferencia" name="pago" value="transferencia">
+                      <label for="transferencia">Transferencia bancaria</label>
+                    </div>
+                    <div class="radio-item">
+                      <input type="radio" id="tarjeta" name="pago" value="tarjeta">
+                      <label for="tarjeta">Tarjeta de crédito/débito</label>
+                    </div>
+                    <div class="radio-item">
+                      <input type="radio" id="redesCobranza" name="pago" value="redesCobranza">
+                      <label for="redesCobranza">Redes de cobranza</label>
+                    </div>
+                    <div class="radio-item">
+                      <input type="radio" id="mercadoPago" name="pago" value="mercadoPago">
+                      <label for="mercadoPago">Mercado pago</label>
+                    </div>
+                    <div class="radio-item">
+                      <input type="radio" id="paypal" name="pago" value="paypal">
+                      <label for="paypal">PayPal</label>
+                    </div>
+                    <div class="radio-item">
+                      <input type="radio" id="efectivo" name="pago" value="efectivo">
+                      <label for="efectivo">Efectivo en el momento de entrega</label>
+                    </div>
+                  </div>
+                  <div class="text-group"><input id="pay-next-button" class="next" type="button" value="&#8594;"></div>
+                </form>
               </div>
             </div>
+            <!-- Finalizar compra -->
             <div id="final-step">
               <div class="title-purchase" id="final-step-title">
                 <h3>Finalizar Compra</h3>
               </div>
-              <div class="forms-div">
-
+              <div class="forms-div resume">
+                <form id="form-final-step" class="forms">
+                  <h5>Resumen</h5>
+                  <div id="div-table">
+                    <table id="table-resume">
+                      <thead>
+                        <tr>
+                          <th>Producto</th>
+                          <th>Precio</th>
+                          <th>Cantidad</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- Costos finales -->
+                  <div class="costs">
+                    <h6>Costos</h6>
+                    <span id="totalUyu">Total UYU</span>
+                    <span id="totalUsd">Total USD</span>
+                    <span id="subtotal">Subtotal</span>
+                    <span id="shipCost">Costo de envio</span>
+                  </div>
+                  <h5 id="total">TOTAL</h5>
+                  <div class="text-group resume"><input id="final-button" class="next" type="button" value="Confirmar Compra"></div>
+                </form>
               </div>
             </div>
           </div>
