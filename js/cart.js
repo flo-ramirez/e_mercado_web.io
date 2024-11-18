@@ -134,7 +134,7 @@ function updateCartBadge() {
     cartBadge.textContent = totalQuantity;
 }
 
-// **Finalizar compra**
+// Mostrar Finalizar compra
 finalizePurchaseContainer.style.display = 'none';
 
 finalizePurchaseButton.addEventListener('click', () => {
@@ -146,7 +146,7 @@ finalizePurchaseButton.addEventListener('click', () => {
 function displayResumeItems(cartItems) {
     const tbody = tableResume.getElementsByTagName("tbody")[0];
     tbody.innerHTML = '';
-
+    
     cartItems.forEach(item => {
         const row = document.createElement("tr");
         row.innerHTML = `
