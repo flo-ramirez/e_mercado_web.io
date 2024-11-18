@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 // **Variables globales**
 const productsContainer = document.getElementById('products-container');
 const emptyMessage = document.getElementById('empty-message');
@@ -217,7 +216,6 @@ function mostrarExito(mensaje) {
 
     setTimeout(() => successContainer.remove(), 5000);
 }
-=======
   const productsContainer = document.getElementById('products-container');
   const emptyMessage = document.getElementById('empty-message');
   const cartTotal = document.createElement('p'); // Contenedor para el subtotal
@@ -447,4 +445,3 @@ function mostrarExito(mensaje) {
       option.addEventListener('change', () => calculateCosts(cartItems));
   });
   
->>>>>>> Stashed changes
