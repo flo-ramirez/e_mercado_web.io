@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>eMercado - Productos</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/products.css" rel="stylesheet">
+  <link id="light-theme" href="css/styles.css" rel="stylesheet">
+  <link id="dark-theme" href="css/dark_styles.css" rel="stylesheet" disabled> <!-- Queda disabled para que tengamos el tema claro por defecto y se cambie al clckear el boton-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@100..900&display=swap" rel="stylesheet">
+  <style>
+    .material-symbols-outlined {
+      font-size: 20px;
+      margin-top: 3px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+    <div class="container">
+      <!-- Botón para el menú colapsable -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav w-100 justify-content-between">
+          <!-- Links principales de navegación -->
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="categories.html">Categorías</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sell.html">Vender</a>
+          </li>
+          <!-- Menú desplegable del usuario -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <!-- Aquí se muestra dinámicamente el nombre del usuario -->
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="userDropdown">
+              <!-- Enlace al carrito con badge -->
+              <li>
+                <a class="dropdown-item" href="cart.html">Mi carrito <span id="cart-badge" class="badge badge-pill badge-warning">0</span></a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+              </li>
+              <li><hr class="dropdown-divider"></li>
+              <li>
+                <a class="dropdown-item" id="logout" href="#">Cerrar sesión</a>
+              </li>
+            </ul>
+          </li>
+          <!-- Botón para alternar entre temas -->
+          <li class="nav-item">
+            <button id="theme-toggle" class="btn p-0">
+              <i id="theme-icon" class="bi bi-sun-fill text-secondary"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Banner -->
+  <div class="banner">
+    <img src="img/prod50925_1.jpg" alt="Imagen del banner" id="imagenTitulo">
+    <div class="banner-text">
+      <h1 id="titulo"
+        style=" color: goldenrod; font-weight: 600; font-size: 400%; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+        Categoria </h1>
+    </div>
+  </div>
+  <main>
+    <!-- Filtros -->
+    <div class="textoYFiltros">
+      <p class="text m-3" id="descripcion">Nuestra selección de </p>
+      <div class="ordenarBuscadorPrecio">
+        <div class="ordenar" data-bs-toggle="buttons">
+          <!-- Filtro ascendente de precios -->
+          <input type="radio" class="btn-check" name="options" id="sortAsc"> 
+          <label class="btn btn-light" for="sortAsc" id="precioUp">$<i class="fa-solid fa-arrow-down-short-wide"></i></label>
+    
+          <!-- Filtro descendente de precios -->
+          <input type="radio" class="btn-check" name="options" id="sortDesc"> 
+          <label class="btn btn-light" for="sortDesc" id="precioDown">$<i class="fa-solid fa-arrow-up-wide-short"></i></label>
+    
+          <!-- Filtro por cantidad de productos vendidos -->
+          <input type="radio" class="btn-check" name="options" id="sortByCount"> 
+          <label class="btn btn-light" for="sortByCount" id="filtroVentas">
+            <i class="fa-solid fa-bag-shopping"></i><i class="fa-solid fa-arrow-up-long"></i>
+          </label>
+        </div>
+    
+        <div class="filtros">
+          <div class="nombreYPrecio">
+            <div class="filtrarNombre">
+              <input type="text" id="buscador" class="form-control" placeholder="Filtrar por Nombre del Artículo"> <!-- Buscador por nombre de producto -->
+            </div>
+            <div class="rangoPrecio">
+              <!-- Filtro de rango de precio -->
+              <p class="font-weight-normal m-2">Rango de Precio</p>
+              <input class="form-control" type="number" placeholder="min." id="minFiltro"> <!-- Cantidad mínima -->
+              <input class="form-control" type="number" placeholder="máx." id="maxFiltro"> <!-- Cantidad máxima -->
+              <div class="btn-group">
+                <button class="btn btn-light" id="botonFiltrar" style="margin-top: 0px;">Filtrar</button> <!-- Botón de filtrar -->
+                <button class="btn btn-light btn-sm" id="limpiarFiltro" style="margin-top: 0px;">Limpiar</button> <!-- Botón de limpiar -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="listaP" class="row card-list m-2">
+      <!-- Aquí se mostrarán los productos filtrados según los criterios seleccionados -->
+    </div>
+  </main>
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-end">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
+      </p>
+    </div>
+  </footer>
+
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/badge-cart.js"></script>
+  <script src="js/products.js"></script>
+  <script src="https://kit.fontawesome.com/59c8fae222.js" crossorigin="anonymous"></script>
+  <script src="js/index.js"></script>
+  <script src="js/logica-usuario.js"></script>
+  <script src="js/dark-mode.js"></script>
+</body>
+
+</html>
