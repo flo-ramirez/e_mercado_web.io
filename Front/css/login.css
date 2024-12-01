@@ -1,0 +1,158 @@
+/* Estilo basico para todo el sitio */
+body {
+  background-color: hsl(0, 0%, 100%);
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* asegura que ocupe casi todo el espacio */
+main {
+  flex: 1; /* deja el footer en la parte inferior */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+footer {
+  background-color: #fff; /* Cambiado a blanco */
+  width: 100%; /* Para que se extienda todo el ancho de la web */
+  margin: 0; /* Elimina el margen para ocupar todo el ancho */
+  padding: 10px 0; /* Ajusta el padding según sea necesario */
+  text-align: center;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  font-size: 14px; /* Ajusta el tamaño de la fuente si es necesario */
+}
+
+footer p {
+  margin: 0;
+  padding: 0;
+}
+
+footer a {
+  color: #007bff; /* Visibilidad del link */
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Ajustes para el contenedor */
+footer .container {
+  width: 100%;
+  max-width: 100%; 
+  padding-left: 15px; 
+  padding-right: 15px;
+  margin: 0;
+}
+
+
+/* Container */
+.container form {
+  background-color: rgba(255, 214, 149, 0.37);
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 0.93%;
+  text-align: center;
+  width: 100%;
+}
+
+form {
+  margin-top: 20px;
+  text-align: center;
+}
+@media (max-width: 768px) {
+form img{
+  width: 400px;
+}
+}
+@media (max-width: 576px) {
+  form img{
+    width: 300px;
+  }
+  }
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center; /* Centrar el texto del label */
+}
+
+input[type="text"],
+input[type="password"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center; /* Centrar el texto en los campos de entrada */
+}
+
+input[type="checkbox"] {
+  margin-left: 10px;
+}
+
+#ingBtn {
+  background-color: #FBB03B;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 49%;
+}
+
+#ingBtn:hover {
+  background-color: #E89B2C;
+}
+
+.col-sm-6{
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+div.formulario_ingreso{
+  display: block;
+  text-align: center;
+  background-color: rgb(255, 214, 149);
+}
+
+
+.toast {
+  position: fixed;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centra el toast */
+  z-index: 1050; /* Asegura que esté por encima de otros elementos */
+  opacity: 0; /* Comienza invisible */
+  transition: opacity 0.5s ease; /* Suaviza la aparición y desaparición */
+}
+
+.toast.show {
+  opacity: 1; /* Muestra el toast */
+}
+
+form {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#ingreso{
+  position: absolute;
+  text-align: center;
+}
+
+
